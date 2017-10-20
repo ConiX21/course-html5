@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/galerie.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/articleInitialise.js"></script>
+</head>
+<body>
+    <section>
+        <header>Galerie Photos</header>
+        <nav>
+
+        </nav>
+        <article>
+            <div id="tipsVideoContainer">
+                <p class="lireSuite"> Lorem Ipsum est un générateur de faux textes aléatoires. Vous choisissez le nombre de paragraphes, de mots ou de listes. Vous obtenez alors un texte aléatoire que vous pourrez ensuite utiliser librement dans vos maquettes.</p>
+                <p class="lireSuite">
+                    Lorem Ipsum est un générateur de faux textes aléatoires. Vous choisissez le nombre de paragraphes, de mots ou de listes.
+                    <input type="button" id="lireSuite" value="Lire la suite..." class="btn" /><br />
+                    Vous obtenez alors un texte aléatoire que vous pourrez ensuite utiliser librement dans vos maquettes.
+                    <br /><input type="button" id="lireTips" value="voir le tips" class="btn" />
+                </p>
+                <p class="lireSuite"> Lorem Ipsum est un générateur de faux textes aléatoires. Vous choisissez le nombre de paragraphes, de mots ou de listes. Vous obtenez alors un texte aléatoire que vous pourrez ensuite utiliser librement dans vos maquettes.</p>
+
+                <div id="containerTips">
+
+                </div>
+            </div>
+
+        </article>
+        <footer></footer>
+        <aside>
+            <div>
+                <a href="http://www.twitter.com" data-alt="allez sur twitter">T</a>
+            </div>
+            <div>
+                <a href="http://www.google.com" data-alt="allez sur google">G</a>
+            </div>
+            <div>
+                <a href="http://www.facebook.com" data-alt="allez sur facebook">f</a>
+            </div>
+        </aside>
+    </section>
+    <script type="text/javascript">
+        $("nav").load("menu.html");
+        $("footer").load("menuBottom.html");
+
+        $("#tipsVideoContainer #lireSuite").click(function () {
+            $(this.parentNode).toggleClass("open");
+        });
+
+        $("#lireTips").click(function () {
+            $.ajax({
+                url: "videos.html",
+                method: 'GET',
+                async: true,
+                cache: false,
+                type: "html",
+                success: function (data) {
+                    $("#containerTips").html(data);
+                }
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>

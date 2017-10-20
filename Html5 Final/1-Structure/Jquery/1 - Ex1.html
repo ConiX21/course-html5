@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr"
+      lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>1 - Ex1</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //permet de cacher les div qui utilise la class menu_point
+            $("div.menu_point").hide();
+
+            //function de clic sur un element de de type  p avec la class menu_chapitre
+            $("p.menu_chapitre").click(function () {
+                //permet de deplier l'element clique grace a this et de replier ces freres qui utilise la class menu_point
+                $(this).next("div.menu_point").slideDown(100).siblings("div.menu_point").slideUp("slow");
+            });
+        });
+    </script>
+    <style type="text/css">
+        body {
+            margin: 10px;
+            font: 0.8em Arial, Helvetica, sans-serif;
+        }
+
+        .menu {
+            width: 150px;
+        }
+
+        .menu_chapitre {
+            padding: 5px;
+            cursor: pointer;
+            position: relative;
+            margin: 1px;
+            font-weight: bold;
+            background: #9cf;
+            border: 1px solid black;
+        }
+
+        .menu_point a {
+            display: block;
+            color: black;
+            background-color: white;
+            padding-left: 30px;
+            text-decoration: none;
+        }
+
+            .menu_point a:hover {
+                color: black;
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="menu">
+            <p class="menu_chapitre">Chapitre 1</p>
+            <div class="menu_point">
+                <a href="#">Point 1</a>
+                <a href="#">Point 2</a>
+                <a href="#">Point 3</a>
+            </div>
+            <p class="menu_chapitre">Chapitre 2</p>
+            <div class="menu_point">
+                <a href="#">Point 1</a>
+                <a href="#">Point 2</a>
+                <a href="#">Point 3</a>
+            </div>
+            <p class="menu_chapitre">Chapitre 3</p>
+            <div class="menu_point">
+                <a href="#">Point 1</a>
+                <a href="#">Point 2</a>
+                <a href="#">Point 3</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

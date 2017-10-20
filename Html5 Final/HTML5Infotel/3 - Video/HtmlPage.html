@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        svg:hover .none {
+            fill: green;
+        }
+    </style>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            //var btnPlayPause = document.querySelector("input[value$=se]");
+            var btnPlayPause = document.querySelector("#btnPlayPause");
+            var btnStop = document.querySelector("#btnStop");
+            var video = document.querySelector("video");
+            var rangeVolume = document.querySelector("#rangeVolume");
+            var selectTaille = document.querySelector("#lstTaille");
+
+            btnPlayPause.addEventListener("click", function () {
+
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+
+            video.addEventListener("click", function (evt) {
+                console.log(this);
+            });
+
+            btnStop.addEventListener("click", function () {
+                video.pause();
+                video.currentTime = 0;
+            });
+
+            rangeVolume.addEventListener("change", function myfunction() {
+                video.volume = this.value;
+            });
+            
+            video.addEventListener("volumechange", function () {
+                rangeVolume.value = this.volume;
+            });
+
+            video.addEventListener("loadstart", function () {
+                rangeVolume.value = this.volume;
+            });
+
+            
+            selectTaille.addEventListener("change", function () {
+                eval(this.value+"();");
+            });
+
+            function small() {
+                video.height = 280;
+            }
+
+            function normal() {
+                video.height = 480;
+            }
+
+            function big() {
+                video.height = 680;
+            }
+
+            video.addEventListener("loadedmetadata", function (evt) {
+                console.log(evt);
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <video  id="myVideo" autoplay="autoplay" src="big.ogg" controls="controls"  >
+    </video>
+
+    <div>
+        <svg version="1.1" id="btnPlayPause" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="52px" height="21px" viewBox="0 0 52 21" enable-background="new 0 0 52 21" xml:space="preserve">
+            <path class="none" fill="#B3B3B3" stroke="#999999" stroke-width="2" stroke-miterlimit="10" d="M51,16.629C51,18.491,49.491,20,47.629,20H4.371
+	C2.509,20,1,18.491,1,16.629V4.371C1,2.509,2.509,1,4.371,1h43.259C49.491,1,51,2.509,51,4.371V16.629z" />
+            <polygon fill="#999999" stroke="#999999" stroke-width="5" stroke-miterlimit="10" points="16.5,7.389 22.348,10.765 16.5,14.141 
+	" />
+            <line fill="none" stroke="#999999" stroke-width="5" stroke-miterlimit="10" x1="38.5" y1="6" x2="38.5" y2="15" />
+            <line fill="none" stroke="#999999" stroke-width="5" stroke-miterlimit="10" x1="31.5" y1="6" x2="31.5" y2="15" />
+        </svg>
+        <svg version="1.1" id="btnStop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            width="52px" height="21px" viewBox="0 0 52 21" enable-background="new 0 0 52 21" xml:space="preserve">
+            <path class="none" fill="#B3B3B3" stroke="#999999" stroke-width="2" stroke-miterlimit="10" d="M51,16.629C51,18.491,49.491,20,47.629,20H4.371
+	C2.509,20,1,18.491,1,16.629V4.371C1,2.509,2.509,1,4.371,1h43.259C49.491,1,51,2.509,51,4.371V16.629z" />
+            <rect x="22.5" y="6.5" fill="#999999" stroke="#999999" stroke-width="5" stroke-miterlimit="10" width="8" height="8" />
+        </svg>
+        <progress max="100" value="50"></progress>
+        <input type="range" id="rangeVolume" min="0" max="1" step="0.1" />
+        <select id="lstTaille">
+            <option value="small">petit</option>
+            <option value="normal" selected="selected">normal</option>
+            <option value="big">grand</option>
+        </select>
+    </div>
+
+</body>
+</html>

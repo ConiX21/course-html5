@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #btnPlay:hover #fond {
+            fill:#556699;
+        }
+
+        svg {
+            background:#b6ff00;
+        }
+
+        input[value^='b']:hover {
+            background:#556699;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function load() {
+
+            var video = document.getElementById("myVideo");
+            var vol = document.querySelector("#sliderVolume");
+
+            vol.addEventListener("change", updateVolume);
+
+            video.addEventListener("timeupdate", timeChange);
+
+            video.addEventListener("volumechange", function (e) {
+                vol.value = e.currentTarget.volume;
+            });
+            
+            document.querySelector("#btnPlay").addEventListener("click", playPause);
+
+            video.addEventListener("error", function (event) {
+                switch (event.target.error.code) {
+                    case event.target.error.MEDIA_ERR_ABORTED:
+                        alert('La lecture du média a été annulée.');
+                        break;
+                    case event.target.error.MEDIA_ERR_NETWORK:
+                        alert('Une erreur ou une indisponibilité réseau n\'a pas permis le bon déroulement du téléchargement.');
+                        break;
+                    case event.target.error.MEDIA_ERR_DECODE:
+                        alert('La lecture a été annulée suite à une erreur de corruption du fichier, ou parce que le média utilise des fonctionnalités que ce navigateur ne peut supporter.');
+                        break;
+                    case event.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                        alert('Le fichier ne peut être chargé, soit parce que le serveur distant ou le réseau sont indisponibles, soit parce que le format n\'est pas supporté.');
+                        break;
+                }
+            });
+
+            function init() {
+                var lstInput = document.querySelectorAll("input[type='button']");
+                
+                video.volume = .5;
+
+                for (var i = 0; i < lstInput.length; i++) {
+                    lstInput[i].addEventListener("click", eval(lstInput[i].value));
+                }
+            }
+
+            function playPause() {
+                if (video.paused) {
+                    video.play();
+                }
+                else {
+                    video.pause();
+                }
+            }
+
+            function updateVolume(e) {
+                video.volume = e.target.value;
+            }
+
+            function big() {
+                video.width = 560;
+            }
+
+            function small() {
+                video.width = 320;
+            }
+
+            function normal() {
+                video.width = 420;
+            }
+
+            function timeChange(e) {
+                var p = document.getElementById("prog");
+                p.max = e.target.duration;
+                p.value = e.target.currentTime;
+            }
+
+            init();
+
+            document.querySelector("#btnHide").addEventListener("click", function () {
+                document.querySelector("#fleche").style.display = "none";
+            });
+
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+
+    </script>
+</head>
+<body>
+    <video id="myVideo" src="big.ogg"  >
+        
+    </video>
+    <br />
+   
+    <svg id="btnPlay" xmlns="http://www.w3.org/2000/svg" width="50"  
+        height="30">
+
+        <rect   id="fond"
+                fill="#ff7f2a"
+                width="50"
+                height="30"
+                x="0"
+                y="0"
+                ry="12" />
+
+        <path
+           style="fill:#e3dbdb;stroke:none"
+           d="m 14.783317,8.8245 0.23645,14.9335 13.62561,-7.7433 z"
+          />
+
+        <rect
+           style="fill:#e3dbdb"
+           id="rect2997"
+           width="3"
+           height="15"
+           x="30"
+           y="8"
+           ry="1.5" />
+
+        <rect
+           style="fill:#e3dbdb"
+           id="rect2997-1"
+           width="3"
+           height="15"
+           x="35"
+           y="8"
+           ry="1.5" />
+</svg>
+
+    <br />
+    <progress id="prog"></progress>
+    <br />
+    <input type="range" name="name" 
+        value="0.5" 
+        min="0" 
+        max="1" 
+        step="0.1" 
+        id="sliderVolume" />
+    <br />
+    <input type="button" value="big" />
+    <input type="button" value="normal" />
+    <input type="button" value="small" />
+    <input type="button" id="btnHide" />
+    <br />
+    <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="141px" height="121px" viewBox="0 0 141 121" enable-background="new 0 0 141 121" xml:space="preserve">
+<rect id="fleche" x="0.5" y="0.5" fill="#B17F4A" stroke="#000000" stroke-miterlimit="10" width="140" height="120"/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="25.641,8.701 115.359,60.5 25.641,112.299 "/>
+</svg>
+</body>
+</html>

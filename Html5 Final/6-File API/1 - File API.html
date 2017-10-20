@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>File API</title>
+    <script type="text/javascript">
+
+        function load() {
+            var finput = document.getElementById('monfichier');
+
+            finput.addEventListener('change', analyseFichiers, false);
+
+
+            function analyseFichiers(evt) {
+
+                var fichiers = evt.target.files;
+
+                if (fichiers.length != 0) {
+                    var infos = document.getElementById('infos');
+                    var nombreFichiers = fichiers.length;
+                    var tailleTotale = 0;
+
+                    infos.innerHTML = "<p>Il y a <b>" + nombreFichiers + "</b> fichiers</p>";
+                    infos.innerHTML += "<ul>";
+
+                    for (i = 0; i < nombreFichiers; i++) {
+                        infos.innerHTML += "<li>" + fichiers[i].name + " (" + fichiers[i].type + ")</li>";
+                        tailleTotale += fichiers[i].size;
+                    }
+
+                    infos.innerHTML += "</ul>";
+                    infos.innerHTML += "<p>Total : <b>" + Math.round(tailleTotale / 1024) + "</b> Kio </p>";
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+
+
+    </script>
+</head>
+<body>
+    <input type="file" id="monfichier" accept="image/jpeg, image/gif, image/png" multiple="multiple" />
+    <div id="infos"></div>
+</body>
+</html>

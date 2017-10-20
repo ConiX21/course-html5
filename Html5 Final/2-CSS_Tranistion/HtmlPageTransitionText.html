@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<meta http-equiv="Content-language" content="fr" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+		<title>Transition CSS3 background et color</title>
+
+
+
+		<style type="text/css">
+		
+		  body {
+		    margin: 50px;
+		    background: #fff;
+		    color: #000;
+		    font: 1em "lucida grande",arial;
+		  }
+		  
+		  p {
+		    background-color: #eee;
+		    padding: 5px;
+		    
+		    /* Fonctionne déjà sur webkit */
+		    -webkit-transition-property: background-color;
+				-webkit-transition-duration: 2s;
+				
+				/* Bientôt supporté par Firefox */
+        -moz-transition-property: background-color;
+				-moz-transition-duration: 2s;
+				
+				/* … et lorsque ce sera standardisé */
+				transition-property: background-color;
+				transition-duration: 2s;
+				
+		  }
+		  
+			p:hover, p:focus {
+				background-color: #fc0;
+
+			}
+				
+		</style>
+
+	</head>
+
+	<body>
+  <h1>Transition CSS3 : background-color</h1>
+
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dui neque, tristique in suscipit et, condimentum sed eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In nec tortor nulla. Praesent nisi libero, fringilla quis viverra ut, mattis sit amet lacus.
+    </p>
+    <p>
+    Suspendisse vehicula neque sit amet dolor pellentesque eget fringilla mauris auctor. Etiam eget eros varius justo condimentum faucibus quis in metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi diam, scelerisque ac hendrerit sed, sollicitudin in risus.
+	</p>
+
+
+	</body>
+</html>

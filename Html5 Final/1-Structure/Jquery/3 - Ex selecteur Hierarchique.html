@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr"lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>3 - Ex selecteur Hierarchique</title>
+<script type="text/javascript" src="jquery.js" ></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{	
+		//Selecteur Descendant
+		//met en forme tous les elements enfants de Box
+		$("#box *").css("border", "1px double black");
+		//$("#box #divLogo").css("border", "1px double black");
+		//$("#box #divLogo *").css("border", "1px double black");
+		
+		
+		//Selecteur Parent > Enfant
+		//met en forme tous les elements direct de Box2
+		$("#box2 > *").css("border", "1px double black");
+		
+		
+		//Selecteur de freres
+		//Selection les freres de Li.un
+		$("li.un ~ li").css("border", "1px double black");
+
+	
+		
+		//Selection le suivant de liDeux
+		$("li.liDeux + li").css("border", "1px double black");
+
+	});
+
+</script>
+<style type="text/css">
+	
+	div 
+	{ 
+		width: 80px; 
+		height: 100px; 
+		float: left;
+		background: #9cf; 
+		margin:5px;
+
+	}
+	
+	.largeur
+	{
+		width: 100%; 
+		height: 130px; 
+		background:#C60; 
+	}
+	
+	#divLogo
+	{
+		width: 230px; 
+		height: 100px; 
+		margin: 5px; 
+		background: #9cf;
+	}
+	
+	p 
+	{
+		text-align: center;
+	}
+	
+	li 
+	{ 
+		width: 150px;
+     	padding-left: 3px;
+	}
+</style>
+</head>
+    <body>
+    	
+    	<div class="largeur">
+            <span id="box">
+                <div>Pratique de Jquery</div>
+                <div id="divLogo">
+                    <p><img src="Images/logo_jquery_215x53.gif" width="215" height="53" /></p>
+                </div>
+                <div>
+                    <p>Jquery<br /><span>En</span><br />Action</p>
+                </div>
+            </span>
+       	</div>
+        <div class="largeur" >
+            <span id="box2">
+                <div>Pratique de Jquery</div>
+                <div id="divLogo">
+                    <p><img src="Images/logo_jquery_215x53.gif" width="215" height="53" /></p>
+                </div>
+                <div>
+                    <p>Jquery<br /><span>En</span><br />Action</p>
+                </div>
+            </span>
+        </div>
+         <div class="largeur">
+            <ul>
+                <li class="un">Item 1</li>
+                <li class="deux">Item 2</li>
+                <li class="trois">Item 3</li>
+                <li class="quatre">Item 4</li>
+                <li class="cinq">Item 5</li>
+            </ul>
+        </div>
+        <div class="largeur">
+            <ul>
+                <li class="liUn">Item 1</li>
+                <li class="liDeux">Item 2</li>
+                <li class="liTrois">Item 3</li>
+                <li class="liQuatre">Item 4</li>
+                <li class="liCinq">Item 5</li>
+            </ul>
+        </div>
+    </body>
+</html>

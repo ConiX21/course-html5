@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/galerie.css" rel="stylesheet" />
+    <link href="css/video.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/articleInitialise.js"></script>
+</head>
+<body>
+    <section>
+        <header>Galerie Photos</header>
+        <nav>
+
+        </nav>
+        <article>
+           <div class="Messagerie">
+               <div id="messages"></div>
+               <div>
+                   <label>Pseudo : </label>
+                   <input type="text" id="txtPseudo" />
+                   <label>Message : </label>
+                   <input type="text" id="txtMessage" />
+
+                   <svg width="51" height="51" xmlns="http://www.w3.org/2000/svg">
+                       <g>
+                           <g id="svg_6">
+                               <ellipse ry="25" rx="25" id="svg_1" cy="25.66667" cx="25" stroke-width="0" stroke="#000000" fill="#3498db" />
+                               <path transform="rotate(90 41.14547729492188,25.833368301391605) " id="svg_2" d="m28.81213,35.81215l24.66666,-0.44849l-12.1091,-19.5091l-12.55756,19.95758z" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                               <rect id="svg_3" height="10.38462" width="18" y="20.66667" x="17.66666" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                               <rect id="svg_4" height="10.38462" width="4.66667" y="20.66667" x="10.33333" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                               <rect id="svg_5" height="10.38462" width="8.66667" y="20.66669" x="-2.33334" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                           </g>
+                       </g>
+                   </svg>
+               </div>
+           </div>
+        </article>
+        <footer></footer>
+        <aside>
+            <div>
+                <a href="http://www.twitter.com" data-alt="allez sur twitter">T</a>
+            </div>
+            <div>
+                <a href="http://www.google.com" data-alt="allez sur google">G</a>
+            </div>
+            <div>
+                <a href="http://www.facebook.com" data-alt="allez sur facebook">f</a>
+            </div>
+        </aside>
+    </section>
+    <script src="Scripts/messagerie.js"></script>
+    <script type="text/javascript">
+        $("nav").load("menu.html");
+        $("footer").load("menuBottom.html");
+    </script>
+    
+</body>
+</html>

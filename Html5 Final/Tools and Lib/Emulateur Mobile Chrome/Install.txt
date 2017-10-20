@@ -1,0 +1,1 @@
+Chrome : drag and drop du fichier .crx dans les outils->Extension

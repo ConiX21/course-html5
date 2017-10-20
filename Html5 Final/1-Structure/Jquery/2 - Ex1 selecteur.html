@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2 - Ex1 selecteur</title>
+    <script src="jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //possiblitite de reecrire la css
+            //selecteur d' id de balise
+            $("#deux").css("border", "1px solid black");
+
+            //selecteur de balise
+            $("div").css("border", "1px solid black");
+
+            //selecteur de classe
+            $("p.gras").css("border", "1px solid black");
+
+            //ou encore
+            //selecteur de classe
+            //$(".gras").css("border","1px solid black");
+
+            //si nous utilisont * tous les éléments sont sélectionner
+            //donne une couleur rose a tous les éléments
+            $("*").css("color", "#FF66CC");
+
+            //Nous avons la possiblite d'utiliser plusieurs selecteurs
+            $("span,p.couleur").css("font-style", "italic");
+
+            //ICI ON VOIT QUE * PREND LE DESSUS SUR LES AUTRES SELECTEURS
+            //DESACTIVER LE SELECTEUR * POUR VERFIER LE MULTISELECTEUR
+
+        });
+
+    </script>
+    <style type="text/css">
+        p {
+            width: 200px;
+            padding: 3px;
+        }
+
+        div {
+            padding: 3px;
+        }
+
+        .gras {
+            font-weight: bold;
+        }
+
+        .couleur {
+            color: #30C;
+        }
+    </style>
+</head>
+<body>
+    <p>Paragraphe 1</p>
+    <p id="deux">Paragraphe avec ID</p>
+    <p class="gras">Paragraphe avec class</p>
+    <div>Division 1</div>
+    <br />
+    <div class="gras">Division avec <span>classe</span></div>
+
+    <p class="couleur">
+        Sympa Jquery et surtout rapide et facile a ecrire
+    </p>
+</body>
+</html>

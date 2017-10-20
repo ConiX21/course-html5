@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>33 - Accordeon</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$(".accordeon p").hide();
+		
+		$(".accordeon h3").click(function()
+		{
+			
+			$(this).next("p").slideToggle("slow")
+			.siblings("p:visible").slideUp("slow");
+			
+			$(this).toggleClass("active");
+			
+			$(this).siblings("h3").removeClass("active");
+		});
+	});
+</script>
+
+<style type="text/css">
+.accordeon { width: 250px;
+             border-bottom: solid 1px black;}
+.accordeon h3 { margin: 0;
+                background: #9cf url(arrow.gif) no-repeat right -51px;
+                padding: 7px 15px;
+                font: bold 0.9em Arial, sans-serif;
+                border: solid 1px black;
+                border-bottom: none;
+                cursor: pointer;}
+.accordeon h3:hover { background-color: #ccecff;}
+.accordeon h3.active { background-position: right 5px;}
+.accordeon p { margin: 0;
+               font: 0.9em Arial, sans-serif;
+               padding: 10px 15px 10px;
+               border-left: solid 1px black;
+               border-right: solid 1px black;}
+</style>
+</head>
+    <body>
+        <br />
+        <div class="accordeon">
+        <h3>Formation Word</h3>
+        <p>- Word 2000<br />- Word 2003<br />- Word 2007</p>
+        <h3>Formation Excel</h3>
+        <p>- Excel 2000<br />- Excel 2003<br />- Excel 2007</p>
+        <h3>Formation PowerPoint</h3>
+        <p>- PowerPoint 2000<br />- PowerPoint 2003<br />- PowerPoint
+        2007</p>
+        <h3>Formation Outlook</h3>
+        <p>- Outlook 2000<br />- Outlook 2003<br />- Outlook 2007</p>
+        <h3>Formation Access</h3>
+        <p>- Access 2000<br />- Access 2003<br />- Access 2007</p>
+        </div>
+    </body>
+</html>

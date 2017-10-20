@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/DragAndDrop.js"></script>
+    <link href="css/DragAdDrop.css" rel="stylesheet" />
+</head>
+<body>
+    <section>
+        <header>
+            <div>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     width="46px" height="46px" viewBox="0 0 26 26" enable-background="new 0 0 26 26" xml:space="preserve">
+                <rect fill="none" width="26" height="26" />
+                <path fill="#ffffff" d="M24.224,14.444c-0.077,0.375-0.333,0.725-0.804,0.612c-1.695-0.401-4.351-0.521-5.924-0.14
+	                c-0.578,0.14-0.848-0.112-1.065-0.803c-0.541-1.717-1.395-3.787-1.211-6.439c0.411-5.941,2.864-7.586,4.712-7.479
+	                S26.529,3.239,24.224,14.444z M16.622,17.989c0,0-0.331,1.031-0.517,2.71c-0.308,2.777,0.289,4.704,3.001,5.094
+	                c2.288,0.33,3.757-1.39,4.063-4.167c0.185-1.678,0.201-2.749,0.201-2.749L16.622,17.989z" />
+                <path fill="#ffffff" d="M6.068,0.195c1.848-0.106,4.301,1.538,4.712,7.479c0.184,2.652-0.67,4.723-1.211,6.439
+	                c-0.218,0.69-0.487,0.942-1.065,0.803c-1.573-0.381-4.229-0.262-5.924,0.14c-0.471,0.112-0.727-0.237-0.804-0.612
+	                C-0.529,3.239,4.221,0.302,6.068,0.195z M2.629,18.877c0,0,0.017,1.071,0.201,2.749c0.307,2.777,1.775,4.497,4.063,4.167
+	                c2.712-0.39,3.309-2.316,3.001-5.094c-0.186-1.679-0.517-2.71-0.517-2.71L2.629,18.877z" />
+            </svg>
+                Shoes Land
+            </div>
+        </header>
+
+        <article>
+            <div id="produits"></div>
+            <aside id="panier" dropzone="copy">
+                <div class="titlePanier">Panier</div>
+                <hr />
+            </aside>
+            <div id="total" style="">
+                <label class="HT">0</label>
+                <br />
+                <label class="TTC">0</label>
+            </div>
+
+        </article>
+    </section>
+
+    <!--TEmplate de produit-->
+    <div id="templateProduit" style="display:none">
+        <img draggable="true" />
+        <div>
+            <label class="Ref"></label><br />
+            <label class="Description"></label><br />
+            <label class="Prix"></label>
+        </div>
+    </div>
+</body>
+</html>

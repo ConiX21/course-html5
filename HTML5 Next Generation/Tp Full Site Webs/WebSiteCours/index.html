@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/galerie.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="Scripts/jquery-1.11.1.min.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+</head>
+<body>
+    <section>
+        <header>Mon Scrapbook</header>
+        <nav class="Navigation">
+        </nav>
+        <aside>
+            La plus <b>belle</b> galerie photos du monde entier en <span>France</span>...
+        </aside>
+        <article></article>
+        <footer>
+            <nav>
+            </nav>
+        </footer>
+    </section>
+    <script type="text/javascript">
+        $("nav.Navigation").load("menu.html", function () {
+            $("nav li").click(function () {
+                locFile = $(this).attr("data-destination") + ".html";
+
+                request = $.ajax({
+                    async: true,
+                    url: locFile,
+                    cache: false,
+                    type: 'GET',
+                    datatype: 'html',
+                    context: this
+                });
+
+                request.done(function (data) {
+                    $("article").html(data);
+                });
+
+                request.fail(function () {
+                    $("article").html("Request failed: ");
+                });
+
+            });
+        });
+
+        /* JS Normal */
+        //var listeLi = document.querySelectorAll("nav li");
+
+        //for (var i = 0; i < listeLi.length; i++) {
+        //    listeLi[i].addEventListener("click", function () {
+        //        console.log(this.destination);
+        //    });
+        //}
+
+    </script>
+</body>
+</html>

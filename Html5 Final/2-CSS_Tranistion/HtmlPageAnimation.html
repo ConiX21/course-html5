@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+
+        svg|Rect {
+            rotation:20deg;
+        }
+
+        @-webkit-keyframes anim2 {
+            from {
+                left: 0;
+                -webkit-transform: scale(1.0) rotate(0deg);
+            }
+
+            50% {
+                left: 250px;
+                -webkit-transform: scale(0.8) rotate(10deg);
+            }
+            
+            to {
+                left: 500px;
+                -webkit-transform: scale(1.2) rotate(-20deg);
+            }
+        }
+
+        .move {
+            -webkit-animation: anim2 ease-in-out 3s infinite alternate;
+
+            -webkit-animation-name:anim2;
+         
+        }
+        
+        div {
+            width: 500px;
+            margin: auto;
+            margin-top: 25%;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function load() {
+
+            var myBox = document.getElementById("box");
+
+            myBox.addEventListener("click", function (e) {
+                this.className = "move";
+                //this = e.currentTarget
+            });
+
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+
+    </script>
+</head>
+<body>
+    <div id="box">
+        <svg height="300" width="300">
+            <rect id="rect" width="150" height="150" fill="blue" />
+            <text id="ligne2" x="2" y="100" fill="white">Seconde ligne</text>
+        </svg>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>22 - Le positionnement</title>
+<script type="text/javascript" src="jquery.js" ></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		$("#go").click(function () 
+		{
+			//Jquery permet aussi bien de redimensionner que de se placer dans un élément
+			$("div").scrollTop(148);
+		});
+		
+		$("#reset").click(function () 
+		{
+			$("div").scrollTop(0);
+		});
+	});
+	
+</script>
+<style type="text/css">
+	div 
+	{ 
+		position: relative;
+		width: 250px;
+		height: 130px;
+		border: 1px solid black;
+		margin-top: 10px;
+		padding: 3px;
+		font-size: 0.9em;
+		overflow: auto;
+	}
+	
+	p 
+	{ 
+		margin:2px;
+		width:225px;
+		text-align: justify;
+	}
+	
+	span 
+	{ 
+		font-weight: bold;
+		text-decoration: underline;
+	}
+</style>
+</head>
+    <body>
+        <input type="button" value="Allez au paragraphe 2" id="go" />
+        <input type="button" value="Reset" id="reset" />
+        <div class="demo">
+        <p><span>Paragraphe 1</span> Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Integer id semper enim. Vestibulum
+        metus felis, elementum sit amet tristique non, pulvinar vitae
+        metus. Pellentesque interdum, felis non placerat volutpat, nisi
+        justo eleifend magna, at tincidunt massa velit non dolor</p>
+        <p><span>Paragraphe 2</span> In sem velit, placerat vel vestibulum
+        vel, interdum at tortor. Suspendisse vitae metus sem, ut venenatis
+        eros. Sed iaculis dapibus diam, in tempor eros tincidunt in. Ut id
+        vestibulum risus. Integer eu mauris at odio pharetra convallis.
+        In sem velit, placerat vel vestibulum vel, interdum at tortor.
+        Suspendisse vitae metus sem, ut venenatis eros. Sed iaculis
+        dapibus diam, in tempor eros tincidunt in. Ut id vestibulum risus.
+        Integer eu mauris at odio pharetra convallis.</p>
+        </div>
+    </body>
+</html>

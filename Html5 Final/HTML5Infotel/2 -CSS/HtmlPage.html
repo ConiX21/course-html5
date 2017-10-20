@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+
+            ul.Menu {
+                max-height: 20px;
+                background-color: #ff6a00;
+                overflow: hidden;
+                transition:max-height ease-in-out 0.23s;
+            }
+
+        ul.Menu:hover{
+            max-height:80px;  
+        }
+
+        a{
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+    <ul class="Menu">
+        <li>
+            <a href="#">Menu</a>
+            <ul>
+                <li>Menu 1.1</li>
+                <li>Menu 1.2</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

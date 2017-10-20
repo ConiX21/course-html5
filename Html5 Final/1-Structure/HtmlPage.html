@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Selecteur Html</title>
+    <style>
+        .red {
+           background-color:red;
+        }
+
+        .blue {
+           background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 60%;">
+        <tr id="header">
+            <td>id</td>
+            <td>Nom</td>
+            <td>Prénom</td>
+        </tr>
+        <tr class="content">
+            <td>1</td>
+            <td>Jean</td>
+            <td>GASQUET</td>
+        </tr>
+        <tr class="content">
+            <td>2</td>
+            <td>Nicolas</td>
+            <td>GASQUET</td>
+        </tr>
+        <tr class="content">
+            <td>3</td>
+            <td>Marcel</td>
+            <td>LECRAM</td>
+        </tr>
+        <tr class="content">
+            <td>4</td>
+            <td>Robert</td>
+            <td>TREBOR</td>
+        </tr>
+        <tr class="content">
+            <td>5</td>
+            <td>Sophie</td>
+            <td>EIPHOS</td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var liste = document.querySelectorAll(".content");
+
+        for (var i = 0; i < liste.length; i++) {
+            liste[i].style.color = "gray";
+            liste[i].style.fontStyle = "italic";
+            liste[i].style.fontSize = "8pt";
+        }
+
+        //var liste = document.querySelector(".header");
+        var head = document.querySelector("#header");
+        head.style.fontSize = "8pt";
+
+
+        var els = document.querySelectorAll('table tr:nth-child(odd)');
+        //var els = document.querySelectorAll('table tr');
+        //els.style.backgroundColor = "blue";
+         /* for (var i = 0; i < els.length; i++) {
+             if (els[i].getAttribute("id") != "header") {
+                els[i].setAttribute("class","red");
+             }
+            
+        }*/
+
+        var els = document.querySelectorAll('table tr');
+
+        for (var i = 0; i < els.length; i++) {
+            if (els[i].getAttribute("id") != "header") {
+                els[i].addEventListener("mouseover", mouseOver);
+                els[i].addEventListener("mouseout", mouseOut);
+            }
+
+        }
+
+        function mouseOver() {
+            this.setAttribute("class", "red");
+           // this.style.backgroundColor = "blue";
+            //this.setAttribute("color", "blue");
+        }
+
+        function mouseOut() {
+            this.setAttribute("class", "none");
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document sans nom</title>
+</head>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        if (navigator.geolocation) {
+            // Demande de position
+            navigator.geolocation.getCurrentPosition(succesGeo);
+        } else {
+            alert("lOCALISATION IMPOSSIBLE");
+        }
+
+
+        // Fonction de callback en cas de succès
+        function succesGeo(evt) {
+            var infopos = "Position déterminée : <br />";
+            infopos += "Latitude : " + evt.coords.latitude + "<br />";
+            infopos += "Longitude: " + evt.coords.longitude + "<br />";
+            infopos += "Altitude : " + evt.coords.altitude + "<br />";
+            infopos += "Speed : " + evt.coords.speed + "<br />";
+
+            document.getElementById("maPosition").innerHTML = infopos;
+        }
+    });    
+    
+</script>
+<body>
+    <div id="maPosition"></div>
+</body>
+</html>

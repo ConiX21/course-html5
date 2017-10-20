@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .box, .box2 {
+            width: 90%;
+            height: 150px;
+            margin: auto;
+            border: 1px solid #CCC;
+            float: left;
+            margin: 10px;
+        }
+
+        .padding {
+            padding-left: 100px;
+        }
+
+        img {
+            height: 100px;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.querySelector("div.box").addEventListener("dragstart", dragStart);
+            document.querySelector("div.box").addEventListener("dragover", dragOver);
+            document.querySelector("div.box").addEventListener("drop", drop);
+
+            document.querySelector("div.box2").addEventListener("dragover", dragOver);
+            document.querySelector("div.box2").addEventListener("drop", drop);
+            document.querySelector("div.box2").addEventListener("dragstart", dragStart);
+
+            function dragOver(evt) {
+                var elems;
+                evt.preventDefault();
+
+                console.log("dragover");
+                //cas survol div
+                if (evt.target == this) {
+
+                    elems = document.querySelectorAll("div.box2 img")
+
+                }
+                else {//cas survol img
+                    evt.target.style.paddingLeft = "150px";
+
+                    elems = document.querySelectorAll("div.box2 img:not(#" + evt.target.id + ")");
+
+                }
+
+                for (var i = 0; i < elems.length; i++) {
+                    elems[i].style.paddingLeft = "10px";
+                }
+
+
+            }
+
+            function dragStart(evt) {
+                evt.dataTransfer.effectAllowed = "move";
+                evt.dataTransfer.setData("idPhoto", evt.target.id);
+
+                var icon = document.createElement("img");
+                icon.src = evt.target.src;
+                icon.setAttribute("width",60);
+                evt.dataTransfer.setDragImage(icon, -10, -10);
+            }
+           
+            function drop(evt) {
+
+                var element = evt.dataTransfer.getData("idPhoto");
+                var img = document.querySelector("#" + element);
+
+                if (evt.target.nodeName != "DIV") {
+                    evt.currentTarget.insertBefore(img, evt.target);
+                    evt.target.style.paddingLeft = "10px";
+                }
+                else {
+                    evt.currentTarget.appendChild(img);
+                }
+
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <div class="box">
+        <img src="../Images/photo1.jpg" draggable="true" id="p1" />
+        <img src="../Images/photo2.jpg" draggable="true" id="p2" />
+        <img src="../Images/photo3.jpg" draggable="true" id="p3" />
+    </div>
+    <div class="box2">
+    </div>
+</body>
+</html>

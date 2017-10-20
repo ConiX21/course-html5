@@ -1,0 +1,160 @@
+﻿<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+           /* input[type="date"]::-webkit-validation-bubble-message::before {
+                content: "Téléphone : ";
+}               
+
+
+            input[type="date"]::-webkit-validation-bubble-message {
+                background: #f4f4f4;
+                border: 1px solid #D8000C;
+                color: #D8000C;
+                font-size: 100%;
+                box-shadow: 0 1px 5px #bbb;
+                text-shadow: 0 1px 0 #fff;
+            }*/
+           
+           figure{
+               box-shadow: 5px 5px 25px #000000;
+           }
+           
+           figcaption{
+               font-style: italic;
+               color:grey;
+               font-size: 1em;
+           }
+           
+           
+        </style>
+        <script type="text/javascript">
+            
+            document.addEventListener("DOMContentLoaded", function()-ç
+            {
+                var couleur =  localStorage.getItem("maCouleur");
+                var colorPicker = document.querySelector("input[type='color']");
+                var titrePage = document.querySelector("h1:nth-child(1)");
+                
+                
+                var date = new Date();
+                
+                var mois = date.getMonth()+1;
+                var year = date.getFullYear();
+                var day = (date.getDate() < 10)? "0" + date.getDate() : date.getDate() ;
+                var month = (mois < 10)? "0" + mois : mois ;
+                
+                document.querySelector(".none").value = year+"-"+month+"-"+day;
+                
+                if(couleur != "")
+                {
+                    titrePage.style.color = couleur;
+                    colorPicker.value = couleur;
+                }
+                
+                colorPicker.addEventListener("change",function (evt) {
+                            titrePage.style.color = this.value;
+                            localStorage.setItem("maCouleur", this.value);
+    
+                });
+                
+                
+                document.querySelector("#lstCivilite")
+                        .addEventListener("change", function (evt) {
+                            var ind = evt.currentTarget.selectedIndex;
+                            
+                            evt.currentTarget[ind].setAttribute("value", "ooooo");
+                            
+                            console.log(evt.currentTarget[ind].getAttribute("data-abb"));
+                             console.log(evt.currentTarget[ind].getAttribute("data-value"));
+                            
+                            
+                            alert(evt.currentTarget[ind].value);
+                });
+                //localstorage.removeItem("maCouleur");
+         });
+            
+         
+        
+        </script>
+    </head>
+    <body>
+        <h1>Mon titre</h1>
+        <form method="GET" autocomplete="on">
+            <input type="color" id="myColor" />
+            <br/>
+            <input type="date" 
+                   max="2013-12-22" 
+                    class="none"/>
+            <input type="datetime-local"/><br/>
+            <input type="email"  maxlength="100" size="50"><br/>
+            <input type="tel" maxlength="14" pattern="(([0-9]{2}[-]{1}){4})[0-9]{2}" title="format : 00-00-00-00-00" placeholder="ex:04-78-78-90-54"/><br/>
+            <input type="month"><br/>
+            <input type="week"><br/>
+            <input type="number" min="10" max="50" value="25" step="0.1"><br/>
+            <input type="range" min="0" max="1" step="0.1" value="0.5"><br/>
+            <input type="search" ><br/>
+            
+            <input type="text" autocomplete="on"/>
+            <br/>
+            
+            <input type="submit"/>
+            
+            <ruby>
+                Caract<rp>(</rp><rt>phone</rt><rp>)</rp>
+            </ruby>
+            
+            <figure>
+                <img src="Images/photo1.jpg" height="100">
+                <figcaption>Une fleur</figcaption>    
+            </figure>
+            
+            <details>
+                <summary>Détails photo</summary>
+                <div>
+                    <details style="margin:10px">
+                        <summary>Niveau 2</summary>
+                        <dl>
+                        <dt>Format</dt>
+                        <dd>16:9</dd>
+                    </dl>
+                    </details>
+                    <dl>
+                        <dt>Format</dt>
+                        <dd>4:3</dd>
+                    </dl>
+                    
+                </div>
+            </details>
+            
+           
+            
+        </form>
+        <p>
+        Température du corps :
+        <meter min="35" max="43" value="37.5"/>
+    </p>
+    <p>
+        Occupation du disque dur :
+        <meter low="0" high="400" max="500" value="450" optimum="250"/>
+    </p>
+    <p>
+        Score des votes :
+        <meter low="7" high="8" max="10" value="9"/>
+    </p>
+    
+    
+    <select id="lstCivilite">
+        <option value="1" data-abb="Mr">Monsieur</option>
+        <option value="2" data-abb="Mme">Madame</option>
+        <option value="3" data-abb="Mlle">Mademoiselle</option>
+    </select>
+        
+    </body>
+</html>

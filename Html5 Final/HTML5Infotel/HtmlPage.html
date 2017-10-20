@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+         input:required{
+            border:1px dotted green;
+        }
+         
+
+        input:required::after{
+            content:"*";
+        }
+
+    </style>
+    <script type="text/javascript">
+
+         document.addEventListener("DOMContentLoaded", function () {
+             var couleurPerm;
+             var color = document.querySelector("input[type=color]");
+             var date = document.querySelector("input[type=date]");
+             var range = document.querySelector("input[type=range]");
+
+             date.addEventListener("change", function () {
+                 console.log(this.value);
+             });
+
+             init();
+
+             color.addEventListener("change", function () {
+                 document.querySelector("h1").style.color = this.value;
+
+                 localStorage.setItem("couleur", this.value);
+             });
+
+             range.addEventListener("change", function () {
+                 console.log(document.querySelector("input[type=submit]"));
+                 document.querySelector("input[type=submit]").style.height = this.value+"px";
+                 document.querySelector("input[type=submit]").style.width = this.value + "px";
+             });
+
+             function supprimeLocal() {
+                 localStorage.removeItem("couleur");
+                 localStorage.clear();
+             }
+
+             function init() {
+                 //localStorage.setItem("couleur", color.value);
+
+                 couleurPerm = localStorage.getItem("couleur");
+
+                 if (couleurPerm != "") {
+                     document.querySelector("h1").style.color = couleurPerm;
+                 }
+
+                 date.value = new Date();
+
+                 console.log(new Date().getFullYear());
+             }
+         });
+
+    </script>
+</head>
+<body>
+    <form method="get" autocomplete="off">
+        <h1>Couleur</h1>
+        color : <input type="color"  value="#ff3366"  />
+        <br />
+        date : <input type="date" name="name" autocomplete="on" />
+        <br />
+        datetime : <input type="datetime-local" max="2014-05-01T00:00:00" min="2014-01-01T00:00:00" />
+        <br />
+        email : <input type="email" name="name" value="" />
+         <br />
+        tel : <input type="tel" name="name" value="" 
+            pattern="([0-9]{2}[.]{1}){4}[0-9]{2}"
+             title="format de type 00.00.00.00.00" placeholder="ex:00.00.00.00.00" />
+        <br />
+        url : <input type="url" name="name" value=" " />
+        <br />
+        mois :<input type="month" name="name" value=" " />
+        <br />
+        Semaine :<input type="week" name="name" value=" " />
+        <br />
+        Number :<input type="number" name="name" value=" " min="0" max="20" step="2" />
+        <br />
+        Range :<input type="range" name="name" value="20" min="0" max="100" step="0.1" />
+        <br />
+        search : <input type="search" name="name" value=" " />
+        <br />
+        time : <input type="time" name="name" value=" " />
+        <input type="submit" value="valider" />
+
+    </form>
+</body>
+</html>

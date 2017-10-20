@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document sans nom</title>
+
+    <style type="text/css">
+        #dessin {
+            background-color: rgba(255,36,14,0.5);
+        }
+    </style>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var moncanvas = document.getElementById('dessin');
+            var moncanvas2 = document.getElementById('dessin2');
+
+            var ctx = moncanvas.getContext('2d');
+            var ctx2 = moncanvas2.getContext('2d');
+
+            // Une largeur de trait de 2 pixels
+            ctx.lineWidth = 2;
+
+            // Un beau rouge pour le remplissage
+            ctx.fillStyle = "red";
+
+            // La nuit, tous les traits sont gris
+            ctx.strokeStyle = "blue";
+
+            // Un rectangle plein (rouge)
+            ctx.fillRect(10, 10, 200, 100);
+
+            // Deux rectangles effaçant le dessin (blancs)
+            ctx.clearRect(100, 20, 20, 80);
+            ctx.clearRect(70, 50, 80, 20);
+
+            ctx.strokeStyle = "turquoise";
+
+            ctx.moveTo(20, 40);
+            ctx.bezierCurveTo(80, 70, 80, 20, 140, 40);
+            ctx.moveTo(20, 50);
+            ctx.bezierCurveTo(80, 80, 80, 30, 140, 50);
+            ctx.stroke();
+          
+
+            ctx2.fillStyle = "yellowgreen";
+            ctx2.strokeStyle = "steelblue";
+
+            ctx2.lineWidth = 20;
+
+            ctx2.beginPath();
+           
+            ctx2.moveTo(25, 25);
+            ctx2.lineTo(100, 100);
+            ctx2.lineTo(25, 100);
+
+            ctx2.closePath();
+
+            ctx2.fill();
+            ctx2.stroke();
+
+            ctx2.beginPath();
+
+            ctx2.moveTo(300, 100);
+            ctx2.lineTo(220, 100);
+            ctx2.lineTo(220, 25);
+            ctx2.lineTo(300, 100);
+            // Sans closePath
+            //ctx2.closePath();
+            ctx2.fill();
+            ctx2.stroke();
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <canvas id="dessin" width="640" height="480">Ce navigateur ne supporte pas canvas
+    </canvas>
+
+    <canvas id="dessin2" width="640" height="480">Ce navigateur ne supporte pas canvas
+    </canvas>
+
+
+
+</body>
+</html>

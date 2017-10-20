@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="reset.css" type="text/css" rel="stylesheet" />
+    <link href="barousel_demo.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.barousel.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#barousel_itemnav').barousel({
+                manualCarousel: 1
+            });
+
+            $(window).resize(function () {
+                
+                var t = ($(".barousel_image img").first().attr("height"));
+
+                $(".barousel_nav").css({"top": t});
+            });
+
+
+            $('#any_id').barousel();
+        });
+    </script>
+</head>
+<body>
+    <div id="any_id" class="barousel">
+        <div class="barousel_image">
+            <img src="../Images/photo1.jpg" alt="" class="default" />
+            <img src="../Images/photo2.jpg" alt="" />
+            <img src="../Images/photo3.jpg" alt="" />
+            <img src="../Images/photo3.jpg" alt="" />
+            <img src="../Images/photo3.jpg" alt="" />
+        </div>
+        <div class="barousel_content">
+            <div class="default"></div>
+            <div></div>
+            <div ></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="barousel_nav"></div>
+    </div>
+</body>
+</html>

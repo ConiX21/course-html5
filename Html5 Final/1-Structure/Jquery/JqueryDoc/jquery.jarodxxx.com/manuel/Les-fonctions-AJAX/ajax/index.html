@@ -1,0 +1,601 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from jquery.jarodxxx.com/manuel/Les-fonctions-AJAX/ajax/ by HTTrack Website Copier/3.x [XR&CO'2010], Sun, 13 Feb 2011 14:09:04 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery.ajax jQuery documentation, manuel en francais, jQuery par jarodxxx</title>
+<meta name="description" content="Liste des paramètres acceptés : , ,    $.ajax(propriétés) , ,$.ajax(propriétés) ,Charge une page externe en utilisant une requete HTTP. Cette méthode fait partie de l'implémentation de bas niveau de j ..." />
+<meta name="keywords" content="jQuery.ajax , Liste,des,paramètres,acceptés,:,$.ajax(propriétés),$.ajax(propriétés),Charge,une,page,externe,en,utilisant,une,requete,HTTP.,Cette,méthode,fait,partie,de,l'implémentation,de,bas,niveau,de,j,...,  ajax" />
+
+<meta name="verify-v1" content="RdtM2kUpLJZV+Im7xJt//Hbq/vF+/uEwzo3s3iCaW5k=" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+<link rel="search" type="application/opensearchdescription+xml" title="Rechercher sur Jquery FR" href="http://jquery.jarodxxx.com/jarodxxx-jquery-search.xml">
+<script type="text/javascript" src="../../../js/jquery-1.3.1.min.js"></script>
+<script type="text/javascript" src="../../../js/load.js"></script>
+</head>
+<body>
+<div id="topheader">
+	<div class="topmenu_area"> <a href="http://jquery.jarodxxx.com/home/" class="home">Home</a>
+		<a href="http://jquery.jarodxxx.com/about/" class="about">About</a> 
+		<a href="http://www.jarodxxx.com/index.php?cx=partner-pub-7346806920069561%3A4v6hx65fhyj&amp;cof=FORID%3A10&amp;ie=ISO-8859-1&amp;q=jQuery&amp;sa=ok#1041" class="search">blog</a>
+	</div>
+	<div class="banner_textarea">
+		<p class="banner_head"> Le manuel jQuery recence toutes fonctions du Framework jQuery avec Demonstration et des explications personnelles </p>
+		<p>Vous pouvez essayer chacune des fonctions jQuery, testez leurs comportement, apprenez les astuces, posez vos questions sur jQuery ... </p>
+	</div>
+	<div class="search_menu_banner">
+		<div class="search_background">
+			<div class="searchname">Search</div>
+			<form id="formsearch" name="formsearch" method="get" action="http://jquery.jarodxxx.com/redirect.php">
+				<div class="searchbox">
+					<input name="b" id="b" type="text" class="searchtextbox" />
+				</div>
+				<script type="text/javascript">var q = $("#b").val();</script>				
+				<div class="searchbox">
+					<div align="center"><input type="submit" name="submit" class="go" value="go" /></div>
+				</div>
+			</form>
+		</div>
+		<div class="menu_area">
+		<a href="http://jquery.jarodxxx.com/news/" class="addidea">Blog jQuery</a> <a href="#nl" class="loginhere">Newsletter</a> <a href="../../index.html" class="comments">Manuel</a> <a href="http://jquery.jarodxxx.com/contact/" class="contact">Contact </a> </div>
+	</div>
+</div>
+<div id="body_area">
+
+
+
+	<div class="left">
+		<div class="morelinks_top"></div>
+		<div class="morelinks_area">
+			<div class="morelinks_head">Categories </div>
+			<div class="links_morearea">
+			<a class="morelink_txt" href="../../Les-fonctions-de-base/index.html">Les fonctions de base</a><a href="javascript:void(0);" id="fn1" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-fonctions-de-base/Aliasse-par/index.html">jQuery.// Aliassé par $</a></li>
+<li><a href="../../Les-fonctions-de-base/context/index.html">jQuery.context()</a></li>
+<li><a href="../../Les-fonctions-de-base/data/index.html">jQuery.data()</a></li>
+<li><a href="../../Les-fonctions-de-base/each/index.html">jQuery.each()</a></li>
+<li><a href="../../Les-fonctions-de-base/eq/index.html">jQuery.eq()</a></li>
+<li><a href="../../Les-fonctions-de-base/get/index.html">jQuery.get()</a></li>
+<li><a href="../../Les-fonctions-de-base/gt/index.html">jQuery.gt()</a></li>
+<li><a href="../../Les-fonctions-de-base/index/index.html">jQuery.index()</a></li>
+<li><a href="../../Les-fonctions-de-base/jQueryfnextend/index.html">jQuery.jQuery.fn.extend()</a></li>
+<li><a href="../../Les-fonctions-de-base/jQuerynoConflict/index.html">jQuery.jQuery.noConflict()</a></li>
+<li><a href="../../Les-fonctions-de-base/length/index.html">jQuery.length()</a></li>
+<li><a href="../../Les-fonctions-de-base/lt/index.html">jQuery.lt()</a></li>
+<li><a href="../../Les-fonctions-de-base/removeData/index.html">jQuery.removeData()</a></li>
+<li><a href="../../Les-fonctions-de-base/selector/index.html">jQuery.selector()</a></li>
+<li><a href="../../Les-fonctions-de-base/size/index.html">jQuery.size()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-attributs/index.html">Les attributs</a><a href="javascript:void(0);" id="fn3" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-attributs/addClass/index.html">jQuery.addClass()</a></li>
+<li><a href="../../Les-attributs/attr/index.html">jQuery.attr()</a></li>
+<li><a href="../../Les-attributs/hasClass/index.html">jQuery.hasClass()</a></li>
+<li><a href="../../Les-attributs/html/index.html">jQuery.html()</a></li>
+<li><a href="../../Les-attributs/removeAttr/index.html">jQuery.removeAttr()</a></li>
+<li><a href="../../Les-attributs/text/index.html">jQuery.text()</a></li>
+<li><a href="../../Les-attributs/toggleClass/index.html">jQuery.toggleClass()</a></li>
+<li><a href="../../Les-attributs/val/index.html">jQuery.val()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-parcours/index.html">Les parcours</a><a href="javascript:void(0);" id="fn4" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-parcours/add/index.html">jQuery.add()</a></li>
+<li><a href="../../Les-parcours/children/index.html">jQuery.children()</a></li>
+<li><a href="../../Les-parcours/contents/index.html">jQuery.contents()</a></li>
+<li><a href="../../Les-parcours/end/index.html">jQuery.end()</a></li>
+<li><a href="../../Les-parcours/filter/index.html">jQuery.filter()</a></li>
+<li><a href="../../Les-parcours/find/index.html">jQuery.find()</a></li>
+<li><a href="../../Les-parcours/is/index.html">jQuery.is()</a></li>
+<li><a href="../../Les-parcours/map/index.html">jQuery.map()</a></li>
+<li><a href="../../Les-parcours/next/index.html">jQuery.next()</a></li>
+<li><a href="../../Les-parcours/not/index.html">jQuery.not()</a></li>
+<li><a href="../../Les-parcours/parent/index.html">jQuery.parent()</a></li>
+<li><a href="../../Les-parcours/prev/index.html">jQuery.prev()</a></li>
+<li><a href="../../Les-parcours/siblings/index.html">jQuery.siblings()</a></li>
+<li><a href="../../Les-parcours/slice/index.html">jQuery.slice()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-manipulateurs/index.html">Les manipulateurs</a><a href="javascript:void(0);" id="fn5" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-manipulateurs/after/index.html">jQuery.after()</a></li>
+<li><a href="../../Les-manipulateurs/append/index.html">jQuery.append()</a></li>
+<li><a href="../../Les-manipulateurs/appendTo/index.html">jQuery.appendTo()</a></li>
+<li><a href="../../Les-manipulateurs/before/index.html">jQuery.before()</a></li>
+<li><a href="../../Les-manipulateurs/clone/index.html">jQuery.clone()</a></li>
+<li><a href="../../Les-manipulateurs/empty/index.html">jQuery.empty()</a></li>
+<li><a href="../../Les-manipulateurs/insertAfter/index.html">jQuery.insertAfter()</a></li>
+<li><a href="../../Les-manipulateurs/insertBefore/index.html">jQuery.insertBefore()</a></li>
+<li><a href="../../Les-manipulateurs/prepend/index.html">jQuery.prepend()</a></li>
+<li><a href="../../Les-manipulateurs/prependTo/index.html">jQuery.prependTo()</a></li>
+<li><a href="../../Les-manipulateurs/remove/index.html">jQuery.remove()</a></li>
+<li><a href="../../Les-manipulateurs/wrap/index.html">jQuery.wrap()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-css/index.html">Les css</a><a href="javascript:void(0);" id="fn6" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-css/css/index.html">jQuery.css()</a></li>
+<li><a href="../../Les-css/height/index.html">jQuery.height()</a></li>
+<li><a href="../../Les-css/width/index.html">jQuery.width()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-evenements/index.html">Les evenements</a><a href="javascript:void(0);" id="fn7" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-evenements/bind/index.html">jQuery.bind()</a></li>
+<li><a href="../../Les-evenements/blur/index.html">jQuery.blur()</a></li>
+<li><a href="../../Les-evenements/change/index.html">jQuery.change()</a></li>
+<li><a href="../../Les-evenements/click/index.html">jQuery.click()</a></li>
+<li><a href="../../Les-evenements/dblclick/index.html">jQuery.dblclick()</a></li>
+<li><a href="../../Les-evenements/die/index.html">jQuery.die()</a></li>
+<li><a href="../../Les-evenements/error/index.html">jQuery.error()</a></li>
+<li><a href="../../Les-evenements/focus/index.html">jQuery.focus()</a></li>
+<li><a href="../../Les-evenements/hover/index.html">jQuery.hover()</a></li>
+<li><a href="../../Les-evenements/keydown/index.html">jQuery.keydown()</a></li>
+<li><a href="../../Les-evenements/keypress/index.html">jQuery.keypress()</a></li>
+<li><a href="../../Les-evenements/keyup/index.html">jQuery.keyup()</a></li>
+<li><a href="../../Les-evenements/live/index.html">jQuery.live()</a></li>
+<li><a href="../../Les-evenements/load/index.html">jQuery.load()</a></li>
+<li><a href="../../Les-evenements/mousedown/index.html">jQuery.mousedown()</a></li>
+<li><a href="../../Les-evenements/mousemove/index.html">jQuery.mousemove()</a></li>
+<li><a href="../../Les-evenements/mouseout/index.html">jQuery.mouseout()</a></li>
+<li><a href="../../Les-evenements/mouseover/index.html">jQuery.mouseover()</a></li>
+<li><a href="../../Les-evenements/mouseup/index.html">jQuery.mouseup()</a></li>
+<li><a href="../../Les-evenements/one/index.html">jQuery.one()</a></li>
+<li><a href="../../Les-evenements/ready/index.html">jQuery.ready()</a></li>
+<li><a href="../../Les-evenements/resize/index.html">jQuery.resize()</a></li>
+<li><a href="../../Les-evenements/scroll/index.html">jQuery.scroll()</a></li>
+<li><a href="../../Les-evenements/select/index.html">jQuery.select()</a></li>
+<li><a href="../../Les-evenements/submit/index.html">jQuery.submit()</a></li>
+<li><a href="../../Les-evenements/toggle/index.html">jQuery.toggle()</a></li>
+<li><a href="../../Les-evenements/trigger/index.html">jQuery.trigger()</a></li>
+<li><a href="../../Les-evenements/unbind/index.html">jQuery.unbind()</a></li>
+<li><a href="../../Les-evenements/unload/index.html">jQuery.unload()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-effets/index.html">Les effets</a><a href="javascript:void(0);" id="fn8" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-effets/animate/index.html">jQuery.animate()</a></li>
+<li><a href="../../Les-effets/clearQueue/index.html">jQuery.clearQueue()</a></li>
+<li><a href="../../Les-effets/fadeIn/index.html">jQuery.fadeIn()</a></li>
+<li><a href="../../Les-effets/fadeOut/index.html">jQuery.fadeOut()</a></li>
+<li><a href="../../Les-effets/fadeTo/index.html">jQuery.fadeTo()</a></li>
+<li><a href="../../Les-effets/hide/index.html">jQuery.hide()</a></li>
+<li><a href="../../Les-effets/show/index.html">jQuery.show()</a></li>
+<li><a href="../../Les-effets/slideDown/index.html">jQuery.slideDown()</a></li>
+<li><a href="../../Les-effets/slideToggle/index.html">jQuery.slideToggle()</a></li>
+<li><a href="../../Les-effets/slideUp/index.html">jQuery.slideUp()</a></li>
+<li><a href="../../Les-effets/toggle/index.html">jQuery.toggle()</a></li>
+</ul>
+<a class="morelink_txt" href="../index.html">Les fonctions AJAX</a><a href="javascript:void(0);" id="fn9" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="index.html">jQuery.ajax</a></li>
+<li><a href="../ajaxComplete/index.html">jQuery.ajaxComplete()</a></li>
+<li><a href="../ajaxError/index.html">jQuery.ajaxError()</a></li>
+<li><a href="../ajaxSend/index.html">jQuery.ajaxSend()</a></li>
+<li><a href="../ajaxSetup/index.html">jQuery.ajaxSetup()</a></li>
+<li><a href="../ajaxStart/index.html">jQuery.ajaxStart()</a></li>
+<li><a href="../ajaxStop/index.html">jQuery.ajaxStop()</a></li>
+<li><a href="../ajaxSuccess/index.html">jQuery.ajaxSuccess()</a></li>
+<li><a href="../ajaxTimeout/index.html">jQuery.ajaxTimeout()</a></li>
+<li><a href="../get/index.html">jQuery.get()</a></li>
+<li><a href="../getIfModified/index.html">jQuery.getIfModified()</a></li>
+<li><a href="../getJSON/index.html">jQuery.getJSON()</a></li>
+<li><a href="../getScript/index.html">jQuery.getScript()</a></li>
+<li><a href="../load/index.html">jQuery.load()</a></li>
+<li><a href="../loadIfModified/index.html">jQuery.loadIfModified()</a></li>
+<li><a href="../post/index.html">jQuery.post()</a></li>
+<li><a href="../serialize/index.html">jQuery.serialize()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-inclassables/index.html">Les inclassables</a><a href="javascript:void(0);" id="fn10" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-inclassables/browser/index.html">jQuery.$.browser()</a></li>
+<li><a href="../../Les-inclassables/each/index.html">jQuery.$.each()</a></li>
+<li><a href="../../Les-inclassables/extend/index.html">jQuery.$.extend()</a></li>
+<li><a href="../../Les-inclassables/grep/index.html">jQuery.$.grep()</a></li>
+<li><a href="../../Les-inclassables/map/index.html">jQuery.$.map()</a></li>
+<li><a href="../../Les-inclassables/merge/index.html">jQuery.$.merge()</a></li>
+<li><a href="../../Les-inclassables/trim/index.html">jQuery.$.trim()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-selecteurs/index.html">Les selecteurs</a><a href="javascript:void(0);" id="fn11" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-selecteurs/selecteur/index.html">jQuery.selecteur $()</a></li>
+</ul>
+			</div>
+		</div>
+		<div class="morelinks_bottom"></div>
+
+		<br style="clear:both;" /><br />
+		
+		<div class="morelinks_top"></div>
+		<div class="morelinks_area">
+			<div class="morelinks_head">Bonus </div>
+			<div class="links_morearea">
+			<a class="morelink_txt" href="http://jquery.jarodxxx.com/bonus/Liens-en-vrac/">Liens en vrac</a><a href="javascript:void(0);" id="fn12" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="http://jquery.jarodxxx.com/bonus/Liens-en-vrac/Liens-en-vrac/">Liens en vrac</a></li>
+</ul>
+<a class="morelink_txt" href="http://jquery.jarodxxx.com/bonus/Plugins/">Plugins</a><a href="javascript:void(0);" id="fn13" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="http://jquery.jarodxxx.com/bonus/Plugins/Les-meilleurs-plugins/">Les meilleurs plugins</a></li>
+<li><a href="http://jquery.jarodxxx.com/bonus/Plugins/Nice-form/">Nice form</a></li>
+<li><a href="http://jquery.jarodxxx.com/bonus/Plugins/Rss-Reader/">Rss Reader</a></li>
+</ul>
+<a class="morelink_txt" href="http://jquery.jarodxxx.com/bonus/Fonctions-utiles/">Fonctions utiles</a><a href="javascript:void(0);" id="fn14" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="http://jquery.jarodxxx.com/bonus/Fonctions-utiles/Ajouter-aux-favoris/">Ajouter aux favoris</a></li>
+</ul>
+			</div>
+		</div>
+		<div class="morelinks_bottom"></div>
+	
+	
+	</div>
+
+
+
+
+
+	<div class="body_area1">
+		<div class="banner_bottom"></div>
+		<div class="mid">
+		<div id="linksbar">
+		<a class="share" href="javascript:void(0);"><img src="../../../images/bookmarklet.png" alt="Envoyer a un ami" /></a>
+		<a href="javascript:void(0);" id="extender"><img src="../../../images/etendre.png" alt="Etendre" /></a>
+		</div>
+			<script type="text/javascript">
+	$().ready(function(){	
+		$("#fn9").next("ul.ss_menu").show();
+		$("#fn_9").next("ul.ss_menu").show();
+	});
+</script>
+
+
+	<div class="inner_banner"><h1>jQuery.ajax</h1><p>Liste des param&egrave;tres accept&eacute;s :</p>
+<ul>
+    <li><a href="#fonction_124">$.ajax(propri&eacute;t&eacute;s)</a></li>
+</ul>
+<h3><a name="fonction_124">$.ajax(propri&eacute;t&eacute;s)</a></h3>
+<p>Charge une page externe en utilisant une requete HTTP. Cette m&eacute;thode fait partie de l'impl&eacute;mentation de bas niveau de jQuery. Pour une niveau d'abstraction plus grand et plus facile a comprendre et &agrave; utiliser, consultez les fonctions $.get ou $.post etc... A noter cependant que ces derni&egrave;res fonction ne proposent pas autant de fonctionnalit&eacute; que c$.ajax() (comme les retours d'erreurs).<br />
+<br />
+$.ajax() retourne l'objet XMLHttpRequest qu'il cr&eacute;e. Dnas la plupart des cas, vous n'aurez pas besoin de manipuler cet objet directement, mais vous pouvez l'utilisez si vous souhaitez annuler une requ&ecirc;te manuellement;<br />
+<br />
+Note: Si vous sp&eacute;cifiiez l'option dataType d&eacute;crite plus bas, soyez s&ucirc;rs que le serveur envoie le type MIME correct pour la r&eacute;ponse (exemple: wml as &quot;text/xml&quot;). Envoyer le mauvais type MIME peut causer des probl&egrave;mes inattendus dans votre script (voir l'option dataType pour le listing des types de donn&eacute;es disponibles). .<br />
+<br />
+<strong>Options</strong><br />
+<br />
+<strong>async</strong> (bool&eacute;en): par d&eacute;fault, toutes les requ&ecirc;tes sont asynchrones (ce param&egrave;tres vaut true par d&eacute;faut). Si vous avez besoin de requ&ecirc;tes synchrones, passez cette fonction &agrave; false. A nter que les requ&ecirc;tes synchrones bloque temporairement le naviguateur de l'utilisateur tant que la requ&ecirc;te n'est pas termin&eacute;e.<br />
+<strong>beforeSend</strong> (fonction): un pre-callback permettant de modifier l'objet XMLHttpRequest avant qu'il soit envoy&eacute;. A utiliser pour envoyer des ent&ecirc;tes personnalis&eacute;s par exemple etc. Seul l'objet XMLHttpRequest est pass&eacute; en argument de cette fonction.<br />
+<strong>complete</strong> (fonction): fonction &agrave; appeler lorsque la requ&ecirc;te se termine (apr&egrave;s que les callbakcs de succ&egrave;s et d'erreurs soient &eacute;x&eacute;cut&eacute;s). La fonction dispose de deux arguments: l'objet XMLHttpRequest et une chaine de caract&egrave;re d&eacute;crivant le type de succ&egrave;s de la requ&ecirc;te.<br />
+<strong>contentType</strong> (String): Quand vous envoyez des donn&eacute;es au serveur, utilisez ce param&egrave;tre. Par d&eacute;faut, il vaut &quot;application/x-www-form-urlencoded&quot;, ce qui correspond dans la plupart des cas.<br />
+<strong>data</strong> (objet|string): Donn&eacute;e &agrave; envoyer au serveur. Elle est converti en String, si elle ne l'est pas d&eacute;ja. Consultez l'option processData pour emp&ecirc;cher teh processus automatique. L'objet doit &ecirc;tre form&eacute;e de paires de la forme cl&eacute;/valeur. Si la valeur est un tableau, jQuery serialise les doff&eacute;rentes donn&eacute;es du tableau avec la m&ecirc;me cl&eacute;. Par exemple: {foo:[&quot;bar1&quot;, &quot;bar2&quot;]} devient '&amp;foo=bar1&amp;foo=bar2'. Ce param&egrave;tre n'est pas n&eacute;c&eacute;ssaire pour les requ&ecirc;tes utilisant le param&egrave;tre GET.<br />
+<strong>dataType</strong> (string): format des donn&eacute;es qui seront renvoy&eacute;es du serveur. Si aucune type n'est sp&eacute;cifi&eacute;, jQuery utilisera le type MIME pour d&eacute;terminer le format ad&eacute;quat: responseXMl ou ResponseText. Voici la liste des types disponibles:<br />
+&quot;xml&quot;: retourne un document XML qui pourra &ecirc;tre trait&eacute; par jQuery.<br />
+&quot;html&quot;: retourne du code HTML au format texte, inclus l'&eacute;valuation des script tags.<br />
+&quot;script&quot;: &eacute;value la r&eacute;ponse en Javascript et retourne cette derni&egrave;re au format texte.<br />
+&quot;json&quot;: &eacute;value la r&eacute;ponse en JSON et retourne un objet Javascript.<br />
+<strong>error</strong> (fonction): Fonction &agrave; appeler si la requ&ecirc;te &eacute;choue. La fonction dispose de trois arguments: l'objet XMLHttpRequest, une chaine de caract&egrave;re d&eacute;crivant le type d'erreur rencontr&eacute;, et un objet d'exception, dans la cas ou ce dernier a &eacute;t&eacute; g&eacute;n&eacute;r&eacute;.<br />
+<strong>global</strong> (bool&eacute;en): permet le d&eacute;clenchement du gestionnaire d'&eacute;v&egrave;nement global de AJAX. Par d&eacute;faut, il vaut true. Passez false &agrave; cette option si vous voulez emp&ecirc;cher les d&eacute;clenchementd d'&eacute;v&egrave;nements de type ajaxStart ou ajaxStop.<br />
+<strong>ifModified</strong> (bool&eacute;en): la requ&ecirc;te se termine avec succ&egrave;s seulement si les donn&eacute;es retourn&eacute;es sont diff&eacute;rentes de la derni&egrave;re requ&ecirc;te. Les ent&ecirc;tes sont utilis&eacute;s pour cette op&eacute;ration. Par d&eacute;faut, cette option vaut &quot;false&quot;.<br />
+<strong>processData</strong> (bool&eacute;en): permet de ne pas passer en chaine de caract&egrave;re les donn&eacute;es pass&eacute;e &agrave; l'option &quot;data&quot;. Si vous souhaitez envoyer des documents DOM, ou d'autres donn&eacute;es non traitables, passez cette option &agrave; false.<br />
+<strong>success</strong> (fonction): Fonction &agrave; appeler si la requ&ecirc;te s'&eacute;x&eacute;cute avec succ&egrave;s. Un seul argument est pass&eacute; en param&egrave;tre: les donn&eacute;es retourn&eacute;es par le serveur, format suivant le format d&eacute;fini par l'option &quot;dataType&quot;.<br />
+<strong>timeout</strong> (entier): sp&eacute;cifie un timeout local en millisecondes pour la requ&ecirc;te. Ce timeout prendra le pas sur le timeout global (d&eacute;fini par la fonction $.ajaxTimeout()) pour la requ&ecirc;te.<br />
+<strong>type</strong> (string): type de la requ&ecirc;te (GET ou POST), par d&eacute;faut, vaut GET. D'autres m&eacute;thodes d'envoi HTTP peuvent &ecirc;tre utilis&eacute;es, comme PUT ou DELETE, mais celles-ci ne sont pas support&eacute;es par tous les naviguateurs.<br />
+<strong>url</strong> (string): URL de la requ&ecirc;te.</p>
+<p><strong>Param&egrave;tres:</strong></p>
+<ul>
+    <li>propri&eacute;t&eacute;s (Map): paires cl&eacute;/valeurs de donn&eacute;es initialisant la requ&ecirc;te</li>
+</ul>
+<p><strong>Cette methode renvoie</strong>: XMLHttpRequest</p>
+<h4>Prenons l'exemple suivant:</h4>
+<p>Charge et &eacute;x&eacute;cute un fichier Javascript</p>
+<code> $.ajax({    type: &quot;GET&quot;,    url: &quot;test.js&quot;,    dataType: &quot;script&quot;  })</code>
+<h4>Prenons l'exemple suivant:</h4>
+<p>Charge les donn&eacute;es de mani&egrave;re synchronis&eacute;e. Blaoque le naviguateur tant que la requ&ecirc;te est en cours Il est pr&eacute;f&eacute;rable de bloquer l'utilisateur d'autres mani&egrave;res quand la synchronisation est n&eacute;c&eacute;ssaire.</p>
+<code>  var html = $.ajax({   url: &quot;some.php&quot;,   async: false  }).responseText;</code>
+<h4>Prenons l'exemple suivant:</h4>
+<p>Envoie des donn&eacute;es au serveru et informe l'utilisateur des que l'op&eacute;ration est termin&eacute;e.</p>
+<code>  $.ajax({    type: &quot;POST&quot;,    url: &quot;some.php&quot;,    data: &quot;name=John&amp;location=Boston&quot;,    success: function(msg){      alert( &quot;Data Saved: &quot;   +msg );    }  });</code>
+<h4>Prenons l'exemple suivant:</h4>
+<p>Envoi un document XML au serveur. En envoyant la param&egrave;tre processData=false, la conversion automatique des donn&eacute;es sera emp&ecirc;ch&eacute;e.</p>
+<code> var xmlDocument = [create xml document];  $.ajax({    url: &quot;page.php&quot;,    processData: false,    data: xmlDocument,    success: handleResponse  });</code>
+<h4 style="text-align: right;">&nbsp;</h4><br /></div><div class="inner_banner"><h1>Envie de vous exprimer ?</h1><form id="myform" name="formsearch" method="post" action="#">
+ <input type="hidden" name="fonction" value="49" />
+		<div class="search_background_comm">
+			<div class="searchname2">Nom / Pseudo <sup>(*)</sup></div>
+			<div class="searchbox"><input type="text"  value=""  name="nom" class="commenttextbox"/></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2">Email <sup>(*)</sup></div>
+			<div class="searchbox"><input type="text" value="" name="email" class="commenttextbox"/></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2">Site Web</div>
+			<div class="searchbox"><input type="text" name="web" value="" class="commenttextbox"/></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2">Commentaire <sup>(*)</sup></div>
+			<div class="searchbox2"><textarea class="commenttexareatbox" name="message"></textarea></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2"> </div>
+			<div class="searchbox"><input type="submit" name="submit_comment" class="register"/></div>
+		</div>
+	</form>
+<br style="clear:both;" />
+<h1>Ils ont osé le dire ...</h1>
+<table summary="commentaires" cellspacing="0" cellpadding="0">
+<tbody>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de Bro" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=ccdf0aaec6a184c7f2686c592c52928d&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 37</span> - Le jeudi 02 avril &agrave; 11h 30min 47s par Bro
+			<p>Bonjour :)
+
+Dans le cas où il y a une erreur, on obtient un XMLHttpRequest. Mais comment ensuite interpréter cette erreur ?</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de Khronos" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=524c4c60f20483f6485393c5c8be3047&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 62</span> - Le vendredi 19 juin &agrave; 10h 10min 50s par <a href="www_yyy.html">Khronos</a>
+			<p>Il manque un tout petit + dans cette exemple " $.ajax({ type: "POST", url: "some.php", data: "name=John&location=Boston", success: function(msg){ alert( "Data Saved: " msg ); } }); "
+
+Dans le alert( "Data Saved: " msg ); &gt;&gt;&gt; alert( "Data Saved: "+msg );
+
+Sinon ce site est génial !!! Il est beaucoup plus agréable de bosser avec une doc en français ! Merci :)</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de Xavier" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=2a9367712ae808f45115d7c650202b8d&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 71</span> - Le mardi 25 août &agrave; 09h 22min 11s par Xavier
+			<p>Bonjour, dans le cas d'un appel à un web service (asmx) le fonctionnement ne marche pas sous Firefox. Comment faire un POST sur un web Service qui fonctionne sur tout les navigateurs ?
+ 
+$(document).ready(function() {
+  $.ajax({
+    type: "POST",
+    url: "http://localhost:2776/Test.asmx/hello" ,
+    data: "{}",
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function(response) {                   
+       alert("OK");
+    },
+    failure: function(msg) {
+        alert("Erreur")
+    }
+  });
+  }</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de romuald" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=8cee92ab50aa1de2b91fdf790b199c9f&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 1166</span> - Le jeudi 12 novembre &agrave; 14h 55min 55s par romuald
+			<p>Est-ce qu'il existe un bon tutoriel, expliquant plus en détails les possibilité qu'offre les possibilités ajax du jquery?</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de fabrizio" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=5aa8de3614b141c4cdec5f7cbbdda05e&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 2076</span> - Le vendredi 05 février &agrave; 10h 08min 15s par <a href="http://www.eolians.fr/">fabrizio</a>
+			<p>Il y a une modification importante dans jquery 1.4 qui peut créer des bugs cachés qui ne sont pas lié directement à la librairie javascript.En fait ils sont passés en mode strict sur json et par conséquent ce que renvoi le serveur doit être 'json compatible'. J'ai écrit un &lt;a href='http://www.eolians.fr/jquery/jquery-1-4-attention-incompatibilite-json.html'&gt; petit article &lt;/a&gt; à ce sujet qui peut-être très utile.</p>
+		</td>
+  </tr>
+</tbody>
+</table>
+</div>
+		</div>
+<script language="JavaScript" type="text/javascript"><!--
+function addEngine() {
+  if ((typeof window.sidebar == "object") &&
+      (typeof window.sidebar.addSearchEngine == "function"))
+  {
+    window.sidebar.addSearchEngine(
+       "http://jquery.jarodxxx.com/jarodxxx-jquery-search.xml",
+        "Manuel jquery FR", "Script");
+  } else {
+    alert("Votre navigateur n'est pas compatible avec ce service. Utilisez FireFox ou Mozilla.");
+  }
+}
+//--></script>
+        
+		<div class="right_area">
+			<div class="right_top"></div>
+            <a href="javascript:addEngine();" style="display:block; width:171px; margin:0 auto;"><img src="../../../images/addEngine.png" alt="Ajoutez le moteur de recherche jquery a Firefox" /></a><br />
+			<div class="right_head">
+				<div class="morelinks_head">Liens sponsorisé</div>
+			</div>
+			<div class="right_links_area">
+				<script type="text/javascript"><!--
+			google_ad_client = "pub-7346806920069561";
+			/* 180x90, date de création 30/01/09 */
+			google_ad_slot = "7233790499";
+			google_ad_width = 180;
+			google_ad_height = 90;
+			//-->
+			</script>
+				<script type="text/javascript"
+			src="../../../../pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div>
+			<div class="right_head">
+				<div class="morelinks_head">Publicite</div>
+			</div>
+			<div class="right_links_area">
+				<script src="http://www.blogbang.com/demo/js/blogbang_ad.php?id=aec3866638&amp;bg=2&amp;c=FDF9EE&amp;w=190" type="text/javascript"></script>
+			</div>
+			<div class="right_bottom"></div>
+		</div>
+	</div>
+</div>
+<br style="clear:both" />
+
+<div class="body_areabackground">
+	<div id="body_area1">
+		<div class="inner_tabarea">
+			<div class="inner_menu">
+				<div align="center"> <a href="javascript:void(0)" class="innermenu_hover">Masquer</a> </div>
+			</div>
+		</div>
+		<div id="hider">
+			<div id="news_box">
+								<div class="tab_text">
+					<p class="tab_head">2009-02-25 11:48:44</p>
+					<p><span class="tab_head1">Nouvelles fonctions dans le manuel</span><br />
+						Et paf ca tombe comme s'il en pleuvait , les nouvelles fonctions jquertÂ  apport ... </p>
+				</div>
+				<div class="tab_readmore">
+					<p align="right" class="tab_head"><a class="readmore" href="http://jquery.jarodxxx.com/news/6/Nouvelles-fonctions-dans-le-manuel/">En savoir + </a></p>
+				</div>
+								<div class="tab_text">
+					<p class="tab_head">2009-02-05 17:03:07</p>
+					<p><span class="tab_head1">Insertion des commentaires</span><br />
+						Et voila , comme promis les commentaires sont ouverts a tous (et a toutes ;) 
+P ... </p>
+				</div>
+				<div class="tab_readmore">
+					<p align="right" class="tab_head"><a class="readmore" href="http://jquery.jarodxxx.com/news/5/Insertion-des-commentaires/">En savoir + </a></p>
+				</div>
+							</div>
+
+		<script type="text/javascript">
+$().ready(function(){
+	$("#confirm").hide();			   
+
+	$('.registered').click(function(){
+		$.ajax({ 
+			type: "POST", 
+			url: "/ajax/inscription_nl.php",
+			data: "nom="+ $("#name_nl").val() +"&email="+ $("#email_nl").val() +"", 
+			success: function(msg){ 
+				$("#form1").append( msg );
+			} 
+		});
+	});
+
+});
+
+</script>
+
+<div class="login_area">
+    <div class="login_head"><a name="nl"></a>Inscription Newsletter</div>
+    <form id="form1" name="form1" method="post" action="#">
+        <div class="login_textarea">
+            <div class="login_name">Prenom </div>
+            <div class="login_box">
+                <input id="name_nl" name="name_nl" type="text" class="logintextbox" />
+            </div>
+        </div>
+        <div class="login_textarea">
+            <div class="login_name">Email </div>
+            <div class="login_box">
+                <input id="email_nl" name="email_nl" type="text" class="logintextbox" />
+            </div>
+        </div>
+    <div class="login_textarea"><a  class="register registered">Je m'inscris</a></div>
+    </form>
+</div>
+
+		<div class="toolfree_area">
+        <a href="#" class="bookmark jqbookmark" title="Jquery documentation en francais ">Bookmark This Page</a>
+		Envie de nous soutenir ?<br />
+        <img src="../../../images/125x125jquery.png" alt="jquery documentation francaise" />
+        </div>
+		</div>
+		
+	</div>
+</div>
+<div id="fotter">
+	<div id="fotter_1">
+		<div class="fotter_leftarea">
+			<div class="fotter_links">
+				<a href="http://jquery.jarodxxx.com/home/" class="fotterlink">Home</a> | 
+				<a href="http://jquery.jarodxxx.com/about/" class="fotterlink">A propos</a>| 
+				<a href="http://jquery.jarodxxx.com/news/" class="fotterlink">Nouveaut&eacute;s</a> | 
+				<a href="http://jquery.jarodxxx.com/contact/" class="fotterlink">Contact</a> |
+				<script type="text/javascript">
+				try {Noowho_ref = top.document.referrer;}catch(e) {Noowho_ref = document.referrer;} 
+				document.write('<script type="text/javascript" src="http://www.noowho.com/text.php?site=67086&ref='+Noowho_ref.replace(/[<>"]/g, '').replace(/&/g, '%26')+'">');  
+				</script></script>
+
+				| <a href="http://jquery.developpeur-web2.com/">Traduction française JQuery</a> 
+			</div>
+			
+		</div>
+		<div class="fotter_rightarea">
+			<div class="fotter_validation">
+				<a href="http://validator.w3.org/check?uri=referer" class="validation">XHTML</a> 
+				<a href="http://jigsaw.w3.org/css-validator/check/referer" class="validation">CSS</a>
+				<a href="http://jquery.jarodxxx.com/sitemap/" class="validation">Sitemap</a>
+			</div>
+		</div>
+	</div>
+	<br style="clear:both;" />
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-827525-9");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+
+<!-- Mirrored from jquery.jarodxxx.com/manuel/Les-fonctions-AJAX/ajax/ by HTTrack Website Copier/3.x [XR&CO'2010], Sun, 13 Feb 2011 14:09:04 GMT -->
+</html>

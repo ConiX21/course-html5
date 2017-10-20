@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Document sans no - Ajouter plusieurs attributs et leurs valeursm</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{ 
+		$("a").click(function()
+		{
+			//ajout d'attribut et de valeur multiple
+			//permet de remplacer a la volee l'image
+			$("img").attr({ src: "Images/logo_jquery2.gif",	alt: "Tools",title: "Ecologie"});
+			
+		});
+		
+	});
+</script>
+<style type="text/css">
+a { color: black;}
+</style>
+</head>
+    <body>
+    	<p><a href="#">Image suivante</a></p>
+        <div>
+            <img src="Images/logo_jquery1.gif" alt="Jquery"/>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .palette span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+        }
+
+            .palette span:hover {
+                border-color: white;
+            }
+
+        canvas {
+            cursor: crosshair;
+            border: 5px solid #666;
+            box-shadow: 0 0 20px #666;
+            border-radius: 4px;
+            margin-top: 20px;
+            background-color: white;
+        }
+
+        body {
+            background-color: #eee;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .spanClear {
+            background: linear-gradient(to bottom, #b3dced 0%,#b5b520 50%,#bce0ee 100%);
+            color: white;
+            font-style: italic;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var div = document.querySelector("div.palette");
+            var etatDessin = false;
+            var canvas = document.querySelector("#dessin");
+            var ctx = canvas.getContext("2d");
+            var tabCouleur = ["#206BA4", "#54A4DE", "#BBD9EE", "#BEDF5D", "#D6EB9A", "#FF9834", "#FFBF80", "#F6E896", "#b07d42", "#FF5349"];
+            var btnClear;
+            var lstSize;
+            var defaultColor = "black";
+            var defaultStrokeSize = 4;
+
+            initSpanPalette();
+            initCanvasProperties();
+            bindClickOnAllSpan();
+            btnClear = AddClearButtonSpan();
+            lstSize = initSizeSelector(20);
+            
+            function AddClearButtonSpan() {
+                var span = document.createElement("span");
+
+                span.innerHTML = "Clear";
+                span.classList.add("spanClear");
+                span.id = "btnClear";
+                div.appendChild(span);
+
+                return document.querySelector("#" + span.id);
+            }
+
+            function initSpanPalette() {
+                for (var i = 0; i < tabCouleur.length; i++) {
+                    var span = document.createElement("span");
+                    span.innerHTML = "&nbsp;";
+                    span.style.backgroundColor = tabCouleur[i];
+
+                    div.appendChild(span);
+                }
+            }
+
+            function initSizeSelector(value) {
+                var select = document.createElement("select");
+
+                for (var i = 1 ; i <= value; i++) {
+                    var opt = document.createElement('option');
+
+                    if (i == defaultStrokeSize) {
+                        opt.selected = "selected";
+                    }
+
+                    opt.value = i;
+                    opt.innerHTML = i;
+                    select.appendChild(opt);
+                }
+
+                div.appendChild(select);
+
+                return document.querySelector(select.nodeName);
+            }
+
+            function dessiner(mouseX, mouseY) {
+                ctx.lineTo(mouseX, mouseY);
+                ctx.stroke();
+            }
+
+            function initCanvasProperties() {
+                ctx.strokeStyle = "black";
+                ctx.lineWidth = defaultStrokeSize;
+            }
+
+            function bindClickOnAllSpan() {
+                var lstSpan = document.querySelectorAll("span");
+
+                for (var i = 0; i < lstSpan.length; i++) {
+                    lstSpan[i].addEventListener("click", changeColor);
+                }
+
+            }
+
+            function changeColor(evt) {
+                ctx.strokeStyle = evt.currentTarget.style.backgroundColor;
+            }
+
+            function clearCanvas(evt) {
+                if (confirm("Voulez-vous supprimer ?")) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+                else {
+                    return;
+                }
+            }
+
+            /********Events*************/
+            lstSize.addEventListener("change", function () {
+                ctx.lineWidth = this.value;
+            })
+
+            btnClear.addEventListener("click", clearCanvas);
+
+            canvas.addEventListener("mousedown", function (evt) {
+                etatDessin = true;
+                ctx.beginPath();
+                ctx.moveTo(evt.offsetX, evt.offsetY);
+            });
+
+            canvas.addEventListener("mousemove", function (evt) {
+                if (etatDessin) {
+                    dessiner(evt.offsetX, evt.offsetY);
+                }
+            });
+
+            canvas.addEventListener("mouseup", function (evt) {
+                etatDessin = false;
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="palette">
+    </div>
+    <canvas id="dessin" width="480" height="360"></canvas>
+</body>
+</html>

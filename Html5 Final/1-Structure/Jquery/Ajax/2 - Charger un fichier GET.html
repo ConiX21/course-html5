@@ -1,0 +1,62 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr"
+lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery</title>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("#btnClient1").click(function() 
+		{
+			//Envoie des donnees en methode get et le recupere	 POST EST Le meme principe
+			$.get("client.php",{id:2} ,function(data)
+			{
+				$("#droit:hidden").show("slow",function()
+				{
+					$("#droit").append(data);
+					
+					//Execute un script pour avoir un callback
+					$.getScript("retour.js");
+				});
+
+			})
+			
+		});
+		
+	});
+</script>
+<style type="text/css">
+
+#gauche { width: auto;
+			margin-right:5px;
+          float: left;}
+		  
+#droit { width: 300px;
+         height: 150px;
+         border: 1px solid black;
+         padding: 3px;
+         font-size: 0.8em;
+         float: left;
+		 display:none;}
+		 
+.clean
+{
+	clear: both;		
+}
+</style>
+</head>
+<body>
+
+<div id="gauche">
+<input value="Client GET" id="btnClient1" type="button"/>
+</div>
+<div id="droit">
+</div>
+<br />
+
+</body>
+</html>

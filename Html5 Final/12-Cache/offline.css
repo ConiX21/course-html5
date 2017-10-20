@@ -1,0 +1,16 @@
+﻿.online {
+    background:green;
+}
+
+.offline {
+    background:red;
+    color:blue;
+}
+
+p {
+    line-height:150px;
+    text-align:center;
+    height:150px;
+    width:300px;
+    background:grey;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>32 - Bascule d'effet a un autre</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function() 
+	{
+		$("#start").click(function () 
+		{
+			//on peut utilser Toggle ou slideToggle
+			$("#div_toggle").slideToggle("slow");
+			
+		});
+	});
+</script>
+<style type="text/css" media="screen">
+#div_toggle 
+{ 
+	background-color:#9cf;
+	width:150px;
+	height:150px;
+	border: 1px solid black;
+}	
+			  
+p {
+	cursor: pointer;
+    margin-bottom: 25px;
+}
+</style>
+</head>
+<body>
+<p id="start">
+Cliquer ici
+</p>
+<div id="div_toggle"></div>
+</body>
+</html>

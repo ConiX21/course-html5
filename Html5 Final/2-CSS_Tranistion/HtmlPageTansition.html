@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-language" content="fr" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+		<title>Avec transition - Introduction aux animations en CSS 3</title>
+
+
+
+		<style type="text/css">
+		
+		  body {
+		    margin: 50px;
+		    background: #fff;
+		    color: #000;
+		    font: 1em "lucida grande",arial;
+		  }
+		  
+		  a {
+		    font-size: 3em;
+		    font-weight: bold;
+		    color: #789;
+		    text-decoration: none;
+            opacity:0.2;
+		    
+		/* Fonctionne déjà sur webkit */
+		    -webkit-transition-property: color;
+			-webkit-transition-duration: 2s;
+				
+			/* Bientôt supporté par Firefox */
+            -moz-transition-property: color;
+			-moz-transition-duration: 2s;
+				
+			/* … et lorsque ce sera standardisé */
+			transition-property: opacity;
+			transition-duration: 1s;
+				
+		  }
+		  
+			a:hover, a:focus {
+				color: #f00;
+                opacity:1;
+			}
+				
+		</style>
+
+	</head>
+
+	<body>
+	
+	 <h1>Transition CSS3 : couleur de lien</h1>
+
+		<p>
+			<a href="#">Survolez-moi&nbsp;!</a>
+		</p>
+
+		
+
+	</body>
+</html>

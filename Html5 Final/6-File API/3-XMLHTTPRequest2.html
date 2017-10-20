@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+
+        function load() {
+           
+            var formulaire      = document.getElementById('formulaire');
+            var progression     = document.getElementById('avancement');
+            var infos           = document.getElementById('infos');
+            var inputfichiers   = document.getElementById('mesfichiers');
+
+            var fichiers        = inputfichiers.files;
+            var xhr             = new XMLHttpRequest();
+
+
+            formulaire.onsubmit = function (event) {
+
+                event.preventDefault();
+
+                if (window.FormData) {
+                    var fd = new FormData();
+                } else {
+                    alert("FormData non supporté");
+                    return;
+                }
+              
+
+                xhr.open("POST", formulaire.getAttribute("action"), true);
+                
+                xhr.onreadystatechange = function (event) {
+                    if (this.readyState === 4) {
+                        infos.innerHTML += event.target.responseText;
+                    }
+                };
+                
+                xhr.onprogress = function (event) {
+                    if (event.lengthComputable) {
+                        var pourcentage = Math.round(event.loaded * 100 / event.total);
+                        
+                        progression.setAttribute("aria-valuenow", pourcentage);
+                        progression.value = pourcentage;
+                    }
+                };
+
+                xhr.onload = function (event) {
+                    infos.innerHTML += '<p style="color:green">Chargement terminé<p>';
+                };
+                
+                xhr.onerror = function (event) {
+                    infos.innerHTML += '<p style="color:red">Erreur<p>';
+                };
+                
+                xhr.onabort = function (event) {
+                    infos.innerHTML += '<p style="color:orange">Annulation<p>';
+                };
+                
+                for (i = 0; i < fichiers.length; i++) {
+                    infos.innerHTML += "Envoi de " + fichiers[i].name + "...<br>";
+                 
+                    fd.append(inputfichiers.name, fichiers[i]);
+                }
+
+                xhr.send(fd);
+            };
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+
+
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+
+
+        <form id="formulaire" method="post" action="upload.php" enctype="multipart/form-data">
+            <p>
+                <strong>File API (Upload)</strong>
+
+            </p>
+
+            <input type="file" multiple="multiple" name="mesfichiers[]" id="mesfichiers" />
+            <input type="submit" value="Envoyer" />
+
+        </form>
+
+        <progress id="avancement" max="100" aria-valuemin="0" aria-valuemax="100"></progress>
+
+        <output id="infos"></output>
+    </div>
+</body>
+</html>
+

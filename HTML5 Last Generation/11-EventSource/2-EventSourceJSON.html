@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        p {
+            color:#f00;
+        }
+
+
+    </style>
+    <script>
+
+        function load() {
+
+
+
+            var sse = new EventSource("EventSourceJSon.php");
+
+            var infos = document.getElementById("infos");
+
+            sse.addEventListener("message", function (evt) {
+               // var dt = new Date();
+                // Affectation du timestamp reçu
+                //dt.setTime(parseInt(event.data) * 1000);
+                // Insertion dans le document
+               // maintenant.innerHTML = dt.toString();
+                // Ajout des données brutes dans la zone d’information
+                infos.innerHTML = "<p>" + "rrrrrrrr"+event.data + "</p>";
+            });
+
+            /*sse.addEventListener("message", function (evt) {
+                var donnees = JSON.parse(event.data);
+                infos.innerHTML += "<p class=\"message\">";
+                infos.innerHTML += "Timestamp : " + donnees.time + "<br>";
+                infos.innerHTML += "Nombre aléatoire : " + donnees.aleatoire;
+                infos.innerHTML += "</p>";
+
+
+            });*/
+
+            sse.addEventListener("error", function (evt) {
+                infos.innerHTML += "<p class=\"erreur\">Fin de connexion à " + evt.srcElement.URL + "</p>";
+            });
+
+            sse.addEventListener("open", function (evt) {
+                infos.innerHTML += "<p class=\"ok\">Connexion ouverte</p>";
+            });
+           
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+
+
+    </script>
+</head>
+<body>
+    <div id="infos"></div>
+
+</body>
+</html>

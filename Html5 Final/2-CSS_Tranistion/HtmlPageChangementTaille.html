@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-language" content="fr" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+    <title>Transition CSS3 : dimensions</title>
+
+
+
+    <style type="text/css">
+        body {
+            margin: 100px;
+            background: #fff;
+            color: #000;
+            font: 1em "lucida grande",arial;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+            display: inline-block;
+            margin: 0 5px;
+            width: 150px;
+            height: 150px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            border: 1px solid #000;
+            z-index: 0;
+            /* Fonctionne déjà sur webkit */
+            -webkit-transition-property: width,height;
+            -webkit-transition-duration: 1s;
+            -webkit-transition-timing-function: ease-out;
+
+            /* … et lorsque ce sera standardisé */
+            transition-property: width,height;
+            transition-duration: 1s;
+            transition-timing-function: ease-out;
+        }
+
+            img:hover, img:focus {
+                width: 250px;
+                z-index: 100;
+            }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Transition CSS3 : dimensions</h1>
+
+    <ul>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+        <li>
+            <img alt="" src="../images/1.png" /></li>
+    </ul>
+
+
+
+</body>
+</html>

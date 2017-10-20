@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>27 - Méthodes ou gestionnaires d'événements avancés</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+
+/*La méthode bind() est plus flexible et plus puissante que les événements spécifiques 
+comme click() ou mouseover() parcourus ci-avant. La méthode permet non seulement 
+d'affecter un ou plusieurs événements à un objet jQuery sur lequel sera exécutée 
+une fonction passée en paramètre mais également de transmettre des données à cette fonction.
+ Ainsi un clic sur un lien ou le survol d'une image peut attribuer des informations différentes 
+ au gestionnaire d'événement. La fonction liée à l'événement pourra alors s'exécuter différemment 
+ selon le contexte fourni par les données.*/
+
+$(document).ready(function()
+{
+	//permet de placer deux evenement ou plus sur un element
+	$("p").bind("mouseenter mouseleave", function(e)
+	{
+		$(this).toggleClass("over");
+	});
+	
+	
+	/*$("#bntTest").click(function()
+	{
+		$("#oneClic").append("<b>Inutile de cliquer encore !</b>");
+	});*/
+	
+	//Execute une seule fois l'appel du gestionnaire
+	$("#bntTest").one("click", function()
+	{
+		$("#oneClic").append("<b>Inutile de cliquer encore !</b>");
+	});
+	
+	
+	//Permet de declencher un evenement soit un trigger
+	$('a').bind('click', function() 
+	{
+		$('input').trigger('click');
+		return false;
+	});
+	
+	$('input').bind('click', function()
+	{
+		alert('Checkbox coché');
+	});
+	
+	//L'element créé recupere la meme function click
+	$("p.delegue").live("click", function()
+	{
+		$(this).after("<p class='delegue'>Un autre paragraphe</p>");
+	});
+
+	
+});
+
+</script>
+<style type="text/css">
+	p 
+	{ 
+		cursor:pointer; 
+		padding-left:20px;
+	}
+	
+	p.over 
+	{ 
+		background: #9cf;
+	}
+	
+	.delegue
+	{
+		background: #9cf; 
+		cursor: pointer; 
+		padding-left: 5px; 
+		margin : 7px 0 7px 0;
+	}
+
+</style>
+</head>
+    <body>
+        <h3>Paragraphe</h3>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
+        non risus. Suspendisse lectus tortor, dignissim sit amet,
+        adipiscing nec, ultricies sed, dolor.</p>
+        <hr>
+        1 seul clic est permis<br />
+        <input type="button" id="bntTest" value="test" />
+        <div id="oneClic"></div>
+        <hr />
+		<p><input type="checkbox" /> Checkbox</p>
+		<p><a href="#">Déclenche le clic sur le checkbox</a></p>
+		<hr />
+        <p class="delegue">Cliquez moi !</p> 
+
+    </body>
+</html>

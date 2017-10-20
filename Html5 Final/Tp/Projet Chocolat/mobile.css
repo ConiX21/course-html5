@@ -1,0 +1,118 @@
+﻿body {
+    background: url(Assets/clavier.png) left top no-repeat, url(Assets/logo.png) center top no-repeat, linear-gradient(to bottom, rgba(255,255,255,0) 112px, rgba(239,227,190,1) 112px, rgba(239,227,190,1) 80%,rgba(255,255,255,0) 100%);
+    background-color: #2c1912;
+}
+
+
+h1 {
+    text-align: left;
+    color: #2c1912;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+#divCat {
+    border-radius: 0 0 4px 4px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height linear 1s;
+}
+
+    #divCat.open {
+        max-height: 500px;
+        overflow: hidden;
+    }
+
+
+svg {
+    margin-top: 10px;
+}
+
+    svg g, svg text {
+        cursor: pointer;
+    }
+
+    svg:nth-last-child(2) {
+        margin-bottom: 40px;
+    }
+
+    svg:nth-last-child(1) {
+        margin-bottom: 100px;
+    }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 108px;
+}
+
+article {
+    padding:5px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    *filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efe3be', endColorstr='#00ffffff',GradientType=0 );
+}
+
+span {
+    position: absolute;
+    bottom: 70%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+    *ul li a {
+        color: #2c1912;
+    }
+
+
+#footer {
+    position: relative;
+    clear: both;
+    margin-top: 0px;
+    height: 150px;
+    background: url(Assets/hachureT.png) 0px 40px repeat-x;
+}
+
+
+
+/****Detail Chocolat****/
+.box {
+    text-align:left;
+    border: 1px solid #2c1912;
+    border-radius: 10px;
+    width: 80%;
+    margin:auto;
+    height: 35px;
+    transition: height 1s ease-out;
+}
+
+    .box.develop {
+        height: 170px;
+    }
+
+.titleBox img {
+    float: left;
+    padding: 0 5px 5px 5px;
+}
+
+
+/****Liste Chocolat****/
+ #listeChocolat {
+
+            column-count:5;
+            -moz-column-count:5; /* Firefox */
+            -webkit-column-count:3;
+        }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="185.875px" height="49.667px" viewBox="0 0 185.875 49.667" enable-background="new 0 0 185.875 49.667"
+	 xml:space="preserve">
+<g>
+	<path fill="none" stroke="#2C1912" stroke-width="2" stroke-miterlimit="10" d="M176.236,1H9.639C4.868,1,1,5.204,1,10.39v20.97
+		c0,5.187,3.868,9.39,8.639,9.39h71.167c0-6.7,5.432-12.132,12.132-12.132s12.132,5.432,12.132,12.132h71.167
+		c4.771,0,8.639-4.203,8.639-9.39V10.39C184.875,5.204,181.008,1,176.236,1z"/>
+</g>
+<g>
+	<path fill="#2C1912" d="M92.938,31.833c-4.925,0-8.917,3.992-8.917,8.917s3.992,8.917,8.917,8.917s8.917-3.992,8.917-8.917
+		S97.862,31.833,92.938,31.833z M91.125,33.875h3.75V40h-3.75V33.875z M96.969,42.387l-3.971,3.965l-3.965-3.97l0.002-3.365
+		L93,42.986l3.97-3.965L96.969,42.387z"/>
+	<rect x="91.125" y="33.875" fill="#FFFFFF" width="3.75" height="6.125"/>
+	<polygon fill="#FFFFFF" points="89.035,39.017 89.033,42.382 92.998,46.352 96.969,42.387 96.971,39.021 93,42.986 	"/>
+</g>
+<rect x="53" y="12.75" fill="none" width="89.5" height="14.75"/>
+<text transform="matrix(1.13 0 0 1 53 23.3994)" fill="#1D1D1B" font-family="'MyriadPro-Regular'" font-size="15">CATEGORIE</text>
+</svg>

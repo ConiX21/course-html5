@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/galerie.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/jquery-ui-1.11.2.min.js"></script>
+    <script src="Scripts/articleInitialise.js"></script>
+</head>
+<body>
+    <section>
+        <header>Galerie Photos</header>
+        <nav></nav>
+        <article>
+            <div id="zoneDetente">
+                <div id="confOutilsRect">
+                    <svg id="svgBtnClose" width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <rect id="svg_13" height="25" width="25" y="0" x="0" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#3498db" />
+        <g id="svg_18">
+            <line stroke-width="7" id="svg_14" y2="19" x2="19" y1="6" x1="6" stroke-linecap="null" stroke-linejoin="null" stroke="#ffffff" fill="none" />
+            <line transform="rotate(-90 12.500000000000002,12.5) " id="svg_17" stroke-width="7" y2="19" x2="19" y1="6" x1="6" stroke-linecap="null" stroke-linejoin="null" stroke="#ffffff" fill="none" />
+        </g>
+    </g>
+</svg>
+                    <label>Position X</label>
+                    <input type="number"min="0" id="numberX"/>
+                    <label>Position Y</label>
+                    <input type="number" min="0" id="numberY"/>
+                    <label>Largeur</label>
+                    <input type="number" min="0" id="numberLargeur" />
+                    <label>Hauteur</label>
+                    <input type="number" min="0" id="numberHauteur" />
+                    <label>Couleur</label>
+                    <input type="color" />
+
+                    <input type="button" value="Ajouter" />
+                </div>
+                <div class="Palette"></div>
+                <input type="text" id="largeur" />
+                <div id="controls">
+                    <!--<object type="image/svg+xml" data="assets/SVGs/gomme.svg"></object>-->
+                    <svg id="svgOutilsGomme" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <g>
+                            <circle id="fondOutilsGomme" r="50" cy="50" cx="50" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#3498db" />
+                            <g id="outilGomme">
+                                <rect ry="8" rx="8" id="svg_2" height="73" width="44" y="13.5" x="28" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                                <line stroke-width="8" id="svg_3" y2="41" x2="77.64526" y1="41" x1="22.5" stroke-linecap="null" stroke-linejoin="null" stroke="#3498db" fill="none" />
+                            </g>
+                        </g>
+                    </svg>
+                    <svg id="svgOutilsRect" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <g id="outilsRect">
+                            <circle id="fondOutilsRect" r="50" cy="50" cx="50" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#3498db" />
+                            <rect id="fondRect" height="45" width="72" y="27.5" x="14" stroke-linecap="null" stroke-linejoin="null" stroke-width="3" stroke="#ffffff" fill="none" />
+                        </g>
+                    </svg>
+                    <svg id="svgOutilsSave" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <g id="outilsSave">
+                            <circle id="fondOutilsSave" r="50" cy="50" cx="50" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#3498db" />
+                            <rect id="svg_6" height="3" width="0" y="25.5" x="-145.60001" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                            <g id="disk">
+                                <rect ry="7" rx="7" class="rectDisk" height="50" width="50" y="25" x="25" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                                <rect ry="5" rx="5" id="svg_7" height="16.60714" width="31" y="29.5" x="36.00001" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#3498db" />
+                                <rect class="rectDisk" ry="2" rx="2" id="svg_9" height="11.9" width="7" y="31.81667" x="54.26666" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#ffffff" />
+                                <rect id="svg_12" height="20" width="32" y="50.05" x="34.59999" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" stroke="#000000" fill="#3498db" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <canvas></canvas>
+            </div>
+        </article>
+        <footer></footer>
+        <aside>
+            <div>
+                <a href="http://www.twitter.com" data-alt="allez sur twitter">T</a>
+            </div>
+            <div>
+                <a href="http://www.google.com" data-alt="allez sur google">G</a>
+            </div>
+            <div>
+                <a href="http://www.facebook.com" data-alt="allez sur facebook">f</a>
+            </div>
+        </aside>
+    </section>
+    <script type="text/javascript">
+        $("nav").load("menu.html");
+        $("footer").load("menuBottom.html");
+    </script>
+    <script src="Scripts/canvasDetente.js"></script>
+    <script src="Scripts/outils.js"></script>
+</body>
+</html>

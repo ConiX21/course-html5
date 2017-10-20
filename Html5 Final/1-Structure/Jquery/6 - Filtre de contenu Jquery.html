@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>6 - Filtre de contenu Jquery</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		//Selectionne les element qui contienne Jquery
+		$("p:contains(Jquery)").css("background", "#9cf");
+		
+		//Selectionne les celulles vide-
+		$("#table1 td:empty").css("background", "#9cf");
+		
+		//selectionne toutes les celulles qui ont le chiffre 1
+		$("#table2 td:contains(11)").css("background", "#9cf");
+		
+		/*sélectionne les divisions qui ont des éléments enfants.
+		Ce sélecteur est en quelque sorte l'inverse du précédent.
+		SI les CELULLES CONTIENENT DES VALEURS ELLES SONT DONC PARENTS DES VALEURS ELLES MEMES*/
+		$("#table3 td:parent").css("background", "#9cf");
+		
+		//Un sélecteur déterminé
+		//Selectionne le pargraphe qui contient une balise a 
+		$("p:has(a)").css("background", "#9cf");
+
+	});
+
+</script>
+<style type="text/css">
+	a 
+	{ 
+		color: black;
+	}
+	
+	p 
+	{ 
+		width: 150px;
+		border: 1px dotted black;
+		padding-left: 10px;
+		margin-bottom: 0px;
+	}
+	
+	table 
+	{ 
+		width: 210px; 
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	
+	td 
+	{ 
+		text-align: center;
+		border: 1px solid black;
+	}
+	 
+
+</style>
+</head>
+<body>
+    <p>Jquery</p>
+    <p>Spécialisé en Javascript amélioré</p>
+    <p>Jquery - USA</p>
+	<br />
+    <table id="table1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td></td>
+        </tr>
+        <tr>
+       		<td></td>
+            <td>5</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td></td>
+            <td>9</td>
+        </tr>
+    </table>
+    <br />
+    <table id="table2">
+        <tr>
+            <td>1</td>
+            <td>11</td>
+            <td></td>
+            </tr>
+        <tr>
+            <td></td>
+            <td>5</td>
+            <td>1</td>
+            </tr>
+        <tr>
+            <td>7</td>
+            <td></td>
+            <td>9</td>
+        </tr>
+	</table>
+	<br />
+    <table id="table3">
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>5</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td></td>
+            <td>9</td>
+        </tr>
+    </table>
+    <br />
+    <p>Paragraphe</p>
+    <p>Paragraphe <a href="#">Lien</a></p>
+    <p>Paragraphe</p>
+
+</body>
+</html>

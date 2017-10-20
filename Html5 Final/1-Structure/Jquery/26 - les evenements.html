@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>26 - Les evenements</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		//simple clic
+		$("p.monPara").click(function () 
+		{
+			//effet de remontee
+			$(this).slideUp();
+		});
+		
+		//double clic
+		$("h1, h2, h3").dblclick(function () 
+		{
+			$(this).toggleClass('bordure');
+		});
+		
+		//prise de focus
+		$("#mail").focus(function () 
+		{
+			$(this).val("Mention obligatoire");
+		});
+		
+		//donne le focus au nom
+		$("#nom").focus();
+		
+		//surcharge de la fonction blur qui remplie le champs de couleur
+		$("#nom").blur(function () 
+		{
+			//Changfe la couleur de fond
+			$(this).css({"background-color":"#9cf"});
+			
+			//Ajoute au champs p.texte le texte OK
+			$("p.texte").append(" OK");
+		});
+		
+		//function scroll
+		$("textarea").scroll(function () 
+		{
+			//a cahqe scroll le span change d'aspect et lance un fade
+			$("span").css({"display": "inline"}).fadeOut("slow");
+		});
+
+		//Mousedown
+		$("#btnMouse").mousedown(function()
+		{	
+			//ajoute dans le champs sortie mousedown<br>
+			$("#sortie").append("mousedown<br>");
+		});
+		
+		//Mouseup
+		$("#btnMouse").mouseup(function()
+		{
+			$("#sortie").append("mouseup<br>");
+		});
+		
+		//click
+		$("#btnMouse").click(function()
+		{
+			$("#sortie").append("click<br>");
+		});
+		
+		
+		
+		//DAbs jQuery nous pouvons trouver aussi similaire a mouseout mouseover
+		//mouseenter(), mouseleave()
+		//Survol
+		$("#survol").mousemove(function(e)
+		{
+			//ajoute les coordonnes de mouvement dans la balise span
+			var pageCoords = "( " + e.pageX + ", " + e.pageY + " )";
+			$("#resSurvol").text("Position du curseur :  " + pageCoords);
+		});
+		
+		//Sortie
+		$("#survol").mouseout(function(e)
+		{
+			$("#resSurvol").text("");
+		});
+		
+		$("#survol").mouseenter(function(e)
+		{	
+			$(this).addClass("bord");
+			$("#resEtat").text("Entrer dans le champs");
+		});
+		
+		$("#survol").mouseleave(function(e)
+		{	
+			$(this).removeClass("bord");
+			$("#resEtat").text("Sortie du champs");
+		});
+		
+		$("form").submit(function() 
+		{
+			if ($("#pass").val() == "login") 
+			{
+				return true;
+			}
+			
+			$("#retourForm").html("<b>Mot de passe non valide.</b><br>Recommencez!").show();
+			
+			
+			return false;
+		});
+
+		
+	});
+	/*
+	Il existe encore d'autres événements mais d'un emploi plus rare. Parcourons ceux-ci plus rapidement.
+
+      change() : déclenche un événement lorsqu'un contrôle de formulaire est modifié, par exemple lorsqu'une case à cocher de formulaire est activée.
+      error() : cet événement est déclenché lorsqu'une erreur survient dans le script.
+      keydown(), keyup() et keypress() : déclenchent un événement lorsqu'une touche du clavier est pressée (vers le bas), lorsqu'une touche du clavier est relâchée (vers le haut) et lorsqu'un caractère est encodé.
+      load() et unload() : se produit lorsque la page en cours est chargée ou quittée.
+      resize() : associe un événement lorsque la taille d'un élément, généralement la fenêtre du navigateur, est modifiée.
+      select() : se produit lorsque l'utilisateur sélectionne un texte (ou une partie de celui-ci). Parfois appliqué aux champs de formulaire du type ligne de texte ou zone de texte (textarea).
+*/
+
+</script>
+<style type="text/css">
+	p 
+	{ 
+		cursor: pointer;
+	}
+	
+	.bordure 
+	{
+		 border: 1px solid black;
+	}
+	
+	h1,h2 
+	{ 
+		cursor: pointer;
+	}
+	
+	span
+	{ 
+		display:none;
+	}
+	
+	div#survol
+	{
+		width:240px; 
+		height:100px; 
+		margin-left:10px; 
+		border-color: #00;
+		border-style: solid;
+	 }
+	 
+	 #resSurvol, #resEtat
+	 {
+		 
+		 display:block;
+	 }
+
+	.bord
+	{
+		background-color: #9cf;
+		border-color: #3F6;
+		border-style: solid;
+		border-width: 8px;
+	}	
+
+</style>
+</head>
+    <body>
+        <p class="monPara">Paragraphe</p>
+        <p class="monPara">Paragraphe</p>
+        <p class="monPara">Paragraphe</p>
+        <br />
+        <h1>Titre de niveau 1</h1>
+        <h2>Titre de niveau 2</h2>
+        <h3>Titre de niveau 3</h3>
+        <br />
+        Mail : <input id="mail" type="text" value="" />
+        <br />
+        <p>Nom : <input id="nom" type="text" value="" /></p>
+        <p class="texte">Cliquez dans la ligne de texte suivante.</p>
+        <p>Mail : <input id="mail" type="text" value="" /></p>
+		<p>Faites défiler le texte...</p>
+        <textarea cols="28" rows="5">Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. Sed non risus. Lectus tortor,
+        dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras
+        elementum ultrices diam. Maecenas ligula massa, varius a, semper
+        congue, euismod non, mi. Proin porttitor, orci nec nonummy
+        molestie, enim est eleifend mi, non fermentum diam nisl sit amet
+        erat. Duis semper.</textarea>
+        <p><span>Vous utilisez la barre de défilement !</span></p>
+		<br />
+        <p><input type="button" value="Cliquez ici" id="btnMouse" /></p>
+		<div id="sortie"></div>
+		<div id="survol"></div>
+		<span id="resSurvol"></span>
+        <span id="resEtat"></span>
+        <p>Encodez "login" pour accéder au site.</p>
+        <form action="javascript:window.location.href='http://www.google.fr';">
+        <div>
+        <input type="password" size="10" id="pass" />
+        <input type="submit" />
+        </div>
+        </form>
+        <span id="retourForm"></span>
+
+
+    </body>
+</html>

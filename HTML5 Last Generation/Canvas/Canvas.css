@@ -1,0 +1,35 @@
+﻿body {
+    background-color:#eee;
+    text-align:center;
+    padding-top:10px;
+}
+
+canvas{
+    cursor:crosshair;
+    border:5px solid #666;
+    box-shadow:0 0 20px #666;
+    border-radius:4px;
+    margin-top:20px;
+    background-color:white;
+}
+
+.Palette span{
+    display:inline-block;
+    height:40px;
+    width:40px;
+    cursor:pointer;
+    border:2px solid transparent;
+    border-radius:4px;
+    opacity:0.5;
+    transition:all 0.5s;
+}
+
+.Palette span:hover{
+    border-color:white;
+    opacity:1;
+}
+
+/*.test{
+    border-radius:4px;*/
+    border:1px solid black;
+}

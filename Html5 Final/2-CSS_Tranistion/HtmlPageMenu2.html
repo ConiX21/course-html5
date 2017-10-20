@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" media="all" href="styles.css" />
+    <meta name="author" content="Raphaël Goetter" />
+    <title>Menu animé en CSS</title>
+
+    <style type="text/css" media="screen">
+        body {
+            margin: 50px;
+            background: #000;
+            color: #fff;
+            font: 1em "lucida grande",arial;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #menu > li {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            background: #333;
+            color: #fff;
+            height: 200px;
+            width: 200px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li ul {
+            font-size: 0.85em;
+            margin: 8px;
+            line-height: 1.4;
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: none;
+            transition-property: padding-left;
+            transition-duration: .5s;
+            transition-timing-function: ease-out;
+        }
+
+            img:hover, img:focus {
+                padding-left: 140px;
+            }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <ul id="menu">
+        <li id="item1">
+            <ul>
+                <li>Bébés</li>
+                <li>Grossesse</li>
+                <li>Naissance</li>
+            </ul>
+            <a href="#">
+                <img alt="bébés et maternité" src="../images/1.png" /></a>
+        </li>
+        <li id="item2">
+            <ul>
+                <li>Portraits</li>
+                <li>Famille</li>
+                <li>Evénements</li>
+            </ul>
+            <a href="#">
+                <img alt="portraits et famille" src="../images/1.png" /></a></li>
+        <li id="item3">
+            <ul>
+                <li>Mariages</li>
+                <li>Cérémonies</li>
+                <li>Baptêmes</li>
+                <li>Bar-Mitzvah</li>
+            </ul>
+            <a href="#">
+                <img alt="mariage et église" src="../images/1.png" /></a></li>
+        <li id="item4">
+            <ul>
+                <li>Sport</li>
+                <li>Manifestations</li>
+                <li>Reportages</li>
+            </ul>
+            <a href="#">
+                <img alt="sport et reportage" src="../images/1.png" /></a></li>
+        <li id="item5">
+            <ul>
+                <li>Lifestyle</li>
+                <li>Studio</li>
+                <li>Divers</li>
+            </ul>
+            <a href="#">
+                <img alt="photos diverses" src="../images/1.png" /></a></li>
+    </ul>
+</body>
+
+</html>

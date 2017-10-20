@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+
+        function PageLoad() {
+
+            var myBody = document.body;
+
+            var div = document.createElement("div");
+            div.setAttribute("id", "divHtml");
+
+            var txtHtml = document.createElement("input");
+            txtHtml.setAttribute("type", "text");
+            txtHtml.setAttribute("id", "txtHtml");
+
+            div.appendChild(txtHtml);
+
+            myBody.appendChild(div);
+
+            var divButton = document.createElement("div");
+            divButton.setAttribute("id", "divButton");
+
+            var btnAdd = document.createElement("input");
+            btnAdd.setAttribute("type", "button");
+            btnAdd.setAttribute("value", "Add");
+            btnAdd.setAttribute("id", "btnAdd");
+    
+            var btnDel = document.createElement("input");
+            btnDel.setAttribute("type", "button");
+            btnDel.setAttribute("value", "Clear");
+            btnDel.setAttribute("id", "btnDel");
+
+            divButton.appendChild(btnAdd);
+            divButton.appendChild(btnDel);
+            myBody.appendChild(divButton);
+               
+            var divResultat = document.createElement("div");
+            divResultat.setAttribute("id", "divResultat");
+
+            myBody.appendChild(divResultat);
+
+            var buttonCollection = document.querySelectorAll("input[type=button]");
+
+            for (var i = 0 ; i < buttonCollection.length; i++) {
+                buttonCollection[i].addEventListener("click", clickButton);
+            }
+
+
+            function clickButton(e) {
+
+                var res = document.getElementById("divResultat");
+
+                if (e.target.getAttribute("value") == "Add") {
+
+                    res.innerHTML = document.getElementById("txtHtml").value;
+                }
+                else {
+                    res.innerHTML = "";
+                }   
+            }
+        }
+    </script>
+</head>
+<body onload="PageLoad();">
+</body>
+</html>

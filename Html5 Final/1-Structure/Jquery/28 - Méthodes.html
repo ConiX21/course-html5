@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>28 - Les methodes</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function () 
+	{
+		//cette ecriture permet de passer d'une fonction a l'autre pour survol et sortie de l'element
+		$('img').hover(function () 
+		{
+			this.src = 'Images/tulips.jpg';
+		},
+		function () 
+		{
+			this.src = 'Images/Chrysanthemum.jpg';
+		});
+		
+		//Permet de parametrer le switch d'un element a l'autre 
+		$("#div").toggle( function () 
+		{
+			$(this).css({"background-color": "#9cf","text-align": "right"});
+		},
+		function () 
+		{
+			$(this).css({"background-color": "white", "text-align": "left"});
+		});
+
+		
+	});
+
+</script>
+<style type="text/css">
+	.image 
+	{
+		top: 10px;
+		left: 10px;
+	}
+
+	#div 
+	{ 
+		width: 150px; 
+		height: 60px;
+		cursor: pointer; 
+		border: 1px solid black;
+		padding-left: 10px;
+        padding-right: 10px;
+	}
+
+</style>
+</head>
+    <body>
+        <div class="image">
+        <img src="Images/Chrysanthemum.jpg" alt="" />
+        </div>
+        <hr />
+        <div id="div">jQuery</div>
+
+    </body>
+</html>

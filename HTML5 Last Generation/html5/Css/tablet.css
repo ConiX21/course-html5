@@ -1,0 +1,36 @@
+﻿.nav {
+    display: none;
+}
+
+.menuTablet {
+    display: "";
+}
+
+.Consultant {
+    *top: 40%;
+}
+
+footer div div:nth-child(3) {
+    padding-left: 100px;
+}
+
+/*@media screen and (orientation:landscape) {
+    footer div div img {
+        width: 50px;
+        margin: 5px 15px;
+    }
+}*/
+
+
+
+
+@media screen and (orientation:portrait) {
+    .Consultant {
+        top: 40%;
+    }
+
+    footer div div img {
+        width: 50px;
+        margin: 5px 15px;
+    }
+}

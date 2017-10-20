@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        img{
+            position:absolute;
+            background:white;
+            padding:20px;
+            max-width:250px;
+            *height:50px;
+            box-shadow:0px 0px 0px #bbb;
+            transition:all 1s ease-out;
+            z-index:0 !important;
+        }
+            img:hover {
+                *height: 100px;
+                z-index: 100 !important;
+                -webkit-transform: rotate(0deg) scale(1.2) !important;
+                transform: rotate(0deg) scale(1.2) !important;
+            }
+    </style>
+
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            var fichiers = document.querySelector("#mesFichiers");
+            
+            var f;
+
+            fichiers.addEventListener("change", function (evt) {
+                var listeFichiers = evt.target.files;
+
+                if (listeFichiers)
+                {
+                    var reader = new FileReader();
+
+                    for (var i = 0; f = listeFichiers[i]; i++) {
+
+                        reader.onload = function (event) {
+                            var image;
+                            var rotation;
+
+                            event.preventDefault();
+
+                            image = document.createElement("img");
+                            image.src = event.target.result;
+
+                            document.body.appendChild(image);
+
+                            image.style.top = Math.round(Math.random() * window.innerHeight / 2) + "px";
+                            image.style.left = Math.round(Math.random() * window.innerWidth / 2) + "px";
+
+                            rotation = Math.round(Math.random() * 20) + "deg";
+                            image.style.webkitTransform = "rotate(" + rotation + ")";
+                            image.draggable = true;
+
+                            document.addEventListener("dragend", function (e) {
+                                e.target.style.top = e.clientY + "px";
+                                e.target.style.left = e.clientX + "px";
+
+                            });
+
+                        }
+
+                        reader.readAsDataURL(f);
+                    }
+                }
+                
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <input type="file" multiple id="mesFichiers"/>
+</body>
+</html>

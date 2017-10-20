@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .txtStyle {
+            height: 83px;
+        }
+        
+
+    </style>
+    <script type="text/javascript">
+        function PageLoad() {
+            var myBody = document.querySelector("body");
+            // alert(test.lastChild);
+
+            var div = document.createElement("div");
+
+            var textSaisie = document.createElement("input");
+            textSaisie.setAttribute("type", "text");
+            textSaisie.setAttribute("id", "txtHtml");
+            textSaisie.setAttribute("class", "txtStyle");
+
+            var btnAjouter = document.createElement("input");
+            btnAjouter.setAttribute("type", "button");
+            btnAjouter.setAttribute("value", "Ajouter");
+
+            myBody.appendChild(div);
+            myBody.appendChild(textSaisie);
+            myBody.appendChild(btnAjouter);
+
+            var buttonCollection = document.querySelectorAll("input[type=button]");
+
+            for (var i = 0 ; i < buttonCollection.length; i++) {
+                buttonCollection[i].addEventListener("click", btnClick);
+            }
+
+            function btnClick() {
+                //var myDelete = document.querySelector("#myDiv");
+                document.getElementsByTagName("div").innerHTML = document.getElementById("txtHtml").value;
+                alert(document.getElementById("txtHtml").value);
+                //document.body.insertBefore(
+                //document.body.removeChild(myDelete);
+            }
+        }
+    </script>
+</head>
+<body onload="PageLoad();">
+
+</body>
+</html>

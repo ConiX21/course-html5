@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/galerie.css" rel="stylesheet" />
+    <link href="css/video.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/articleInitialise.js"></script>
+</head>
+<body>
+    <section>
+        <header>Galerie Photos</header>
+        <nav>
+
+        </nav>
+        <article>
+            <form method="GET" novalidate autocomplete="off" 
+                  oninput="outSalaire.value = rangeSalaire.value;">
+                <label>Nom</label>
+                <input type="text" name="txtNom"
+                       pattern="[A-Z]{2,35}"
+                       title="Pas le bon format" maxlength="35" autocomplete="on" />
+
+                <label>Prénom</label>
+                <input type="text" name="txtPrenom" required />
+
+                <label>Adresse</label>
+                <textarea name="txtAdresse" cols="22"></textarea>
+
+                <label>Code postal</label>
+                <input type="text" name="txtCP" size="5" pattern="[0-9]{5,5}" title="Code postal invalide !" />
+
+                <label>Ville</label>
+                <select name="lstVille">
+                    <option>Toulon</option>
+                    <option>Marseille</option>
+                    <option>Brest</option>
+                    <option>Paris</option>
+                </select>
+
+                <label>Couleur préférée</label>
+                <input type="color" name="colorPref" value="#66ff55" />
+
+                <label>Tel.</label>
+                <input type="tel" name="txtTel" pattern="[0-9]{10}" />
+
+                <label>site Web</label>
+                <input type="url" name="txtSite" placeholder="ex:http://www.monsite.com" />
+
+                <label>Date de Naissance</label>
+                <input type="datetime-local" name="txtDOB"
+                       max="2015-01-01T00:00" min="2014-01-01T12:00" value="2014-12-03T15:00" />
+
+                <label>Nombre d'enfant(s)</label>
+                <input type="number" name="txtNbEnfant" value="0" min="0" max="4" />
+
+                <label>Salaire</label>
+                <input id="rangeSalaire" type="range" name="rangeSalaire" value="1200" max="2000" min="1000" step="100" />
+                <output id="outSalaire" for="rangeSalaire"></output>
+
+                <label>Meilleur semaine</label>
+                <input type="week" name="weekMeilleur" value="2014-W32" />
+
+                <label>Meilleur mois</label>
+                <input type="month" name="monthMeilleur" value="2014-01" />
+
+                <label>Heure du levé</label>
+                <input type="time" name="timeLeve" value="01:00" />
+
+                <label>E-mail</label>
+                <input type="email" name="emailAbonnement" />
+
+                <div class="ButtonsControls">
+                    <input type="submit" name="btnSubmit" value="Envoyer" />
+                    <input type="reset" name="btnReset" value="Vider" />
+                </div>
+            </form>
+        </article>
+        <footer></footer>
+        <aside>
+            <div>
+                <a href="http://www.twitter.com" data-alt="allez sur twitter">T</a>
+            </div>
+            <div>
+                <a href="http://www.google.com" data-alt="allez sur google">G</a>
+            </div>
+            <div>
+                <a href="http://www.facebook.com" data-alt="allez sur facebook">f</a>
+            </div>
+        </aside>
+    </section>
+    <script type="text/javascript">
+        $("nav").load("menu.html");
+        $("footer").load("menuBottom.html");
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿img {
+    position:absolute;
+    background-color:white;
+    padding:20px;
+    max-width:250px;
+    box-shadow:0 0 20px #bbb;
+    transition:transform, width 1s, 2s linear;
+
+    /*transition-delay:0.2s 1.2s;
+    transition-property:height transform;
+    transition-timing-function:ease ease-in-out;
+    transition-duration:2s;*/
+
+    z-index:0 !important;
+}
+
+img:hover{
+    transform:rotate(0deg) scale(1.2) !important;
+    z-index:100 !important;
+    width:100% !important;
+}

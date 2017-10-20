@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+            ul.menu {
+                max-height:20px;
+                overflow: hidden;
+                background: #ff6a00;
+                transition:max-height 2s ease-in-out;
+            }
+
+            ul.menu:hover {
+                max-height: 80px;
+            }
+
+        a {
+            text-decoration:none;
+        }
+        </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">Menu</a>
+            <ul>
+                <li><a href="#">Menu 1.1</a></li>
+                <li><a href="#">Menu 1.2</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

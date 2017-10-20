@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        p {
+            padding: 0.5em;
+            margin: 0;
+            font-family: sans-serif;
+            border-radius:4px;
+        }
+
+        .message {
+            background: #F1F1F1;
+            padding: 0.5em;
+            border-top: 1px solid #ccc;
+        }
+
+        .erreur {
+            background: #FF7800;
+            color: white;
+        }
+
+        .ok {
+            background: #A9C832;
+            color: white;
+            margin-top: 0.5em;
+        }
+
+        #maintenant {
+            font-size: 1.5em;
+            color: #666;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function load() {
+
+            var sse = new EventSource('event-source.php');
+
+            sse.addEventListener("message", function (evt) {
+                var dt = new Date();
+                // Affectation du timestamp reçu
+                dt.setTime(parseInt(event.data) * 1000);
+                // Insertion dans le document
+                maintenant.innerHTML = dt.toString();
+                // Ajout des données brutes dans la zone d’information
+                infos.innerHTML += "<p class=\"message\">" + event.data + "</p>";
+            });
+
+            sse.addEventListener("error",function (evt) {
+                infos.innerHTML += "<p class=\"erreur\">Fin de connexion à "+evt.srcElement.URL+"</p>";
+            });
+
+            sse.addEventListener("open", function (evt) {
+                infos.innerHTML += "<p class=\"ok\">Connexion ouverte</p>";
+            });
+
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+
+    </script>
+</head>
+<body>
+    <p id="maintenant"></p>
+    <div id="infos"></div>
+</body>
+</html>

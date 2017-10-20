@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>8 - Les filtres d'attribut Jquery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{	
+		//Selectionne tous les elements qui ont un attribut class
+		$("#ul1 li[class]").css("border", "1px solid black");
+		
+		//Selectionne tous les elements qui ont un attribut class = a gras
+		$("#ul1 li[class='gras']").css("background", "#9cf");
+		
+		//Selectionne tous les elements qui ont la propriete title mais qui ne contient
+		//pas lien interne grace au caracte ! 
+		$("#para1 a[title!='lien interne']").css("background", "#9cf");
+		
+		//Selectionne les liens dont l'attribut title commence par X grace au symbole ^
+		$("#para2 a[title^='X']").css("background", "#9cf");
+		
+		//Selectionne les liens dont l'attribut title finit par s grace au symbole $
+		$("#para2 a[title$='s']").css("background", "red");
+		
+		//Selectionne les liens dont l'attribut title contient W grace au symbole *
+		$("#para2 a[title*='W']").css("background", "green");
+		
+		//Il est possible de faire des filtres multiples
+		//$("a[title^='lien'][title$='interne'][title*='chapitre1']")
+
+		
+	});
+
+</script>
+<style type="text/css">
+	li
+	{
+		width: 150px;
+	}
+	
+	.italique
+	{ 
+		font-style: italic; 
+	}
+	
+	.gras
+	{ 
+		font-weight: bolder;
+	}
+
+</style>
+</head>
+    <body>
+        <ul id="ul1">
+            <li class="italique">Item de liste 1</li>
+            <li class="gras">Item de liste 2</li>
+            <li>Item de liste 3</li>
+            <li class="italique">Item de liste 4</li>
+            <li class="italique">Item de liste 5</li>
+            <li class="gras">Item de liste 6</li>
+            <li>Item de liste 7</li>
+        </ul>
+        <br />
+      	<p id="para1">
+            <a href="#" title="lien interne">Lien 1</a><br />
+            <a href="#" title="lien interne">Lien 2</a><br />
+            <a href="#" title="lien externe">Lien 3</a><br />
+            <a href="#" title="lien interne">Lien 4</a><br />
+            <a href="#" title="lien externe">Lien 5</a><br />
+        </p>
+        <p id="para2">
+            <a href="#" title="Html">Html</a> <a href="#" title="Xhtml">Xhtml</a><br />
+            <a href="#" title="Dhtml">Dhtml</a> <a href="#" title="Xml">Xml</a><br />
+            <a href="#" title="Xslt">Xslt</a> <a href="#" title="Xpath">Xpath</a><br />
+            <a href="#" title="Xforms">Xforms</a> <a href="#" title="CSS">CSS</a><br />
+            <a href="#" title="Wml">Wml</a> <a href="#" title="Rds">Rds</a>
+		</p>
+
+    </body>
+</html>

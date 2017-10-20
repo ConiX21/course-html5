@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        img {
+            position: absolute;
+            background: white;
+            padding: 20px;
+            max-width: 250px;
+            box-shadow: 0px 0px 20px #bbb;
+            transition: all 1s ease-out;
+            z-index: 0 !important;
+        }
+
+            img:hover {
+                -webkit-transform: rotate(0deg) scale(1.2) !important;
+                z-index: 100 !important;
+            }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var selecteurFichier = document.querySelector("#mesFichiers");
+
+            selecteurFichier.addEventListener("change", function (evt) {
+
+                var fichiers = evt.target.files;
+                var fic;
+
+                for (var i = 0; fic = fichiers[i]; i++) {
+
+                    var reader = new FileReader();
+
+                    reader.addEventListener("load", function (event) {
+                        evt.preventDefault();
+
+                        var img = document.createElement("img");
+                        var rotation;
+
+                        img.src = event.target.result;
+                        document.body.appendChild(img);
+
+                        img.style.top = Math.round(Math.random() * window.innerHeight / 2) + "px";
+                        img.style.left = Math.round(Math.random() * window.innerWidth / 2) + "px";
+                        
+                        rotation = Math.round(Math.random() * 20);
+
+                        img.style.webkitTransform = "rotate(" + rotation + "deg)";
+                        img.draggable = true;
+
+
+                        img.addEventListener("dragend", function (e) {
+                            e.dataTransfer = "move";
+                            e.target.style.top = e.clientY + "px";
+                            e.target.style.left = e.clientX + "px";
+
+                            console.log("eee" + e.offsetX);
+
+                        });
+
+                        
+                    });
+
+                    reader.readAsDataURL(fic);
+                    
+                }
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <input type="file" multiple="multiple" id="mesFichiers" />
+    </div>
+</body>
+</html>

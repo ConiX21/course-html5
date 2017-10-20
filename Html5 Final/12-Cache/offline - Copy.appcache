@@ -1,0 +1,18 @@
+﻿CACHE MANIFEST
+# VERSION 2
+
+CACHE:
+styles.css
+script.js
+photos/photo1.jpg
+http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
+
+
+NETWORK:
+identification.php
+http://api.twitter.com
+
+FALLBACK:
+styles.css styles-offline.css 
+realtime.php info-offline.html 
+photos/ horsligne.png

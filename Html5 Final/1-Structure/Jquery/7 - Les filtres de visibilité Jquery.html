@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>7 - Les filtres de visibilité Jquery
+</title>
+<script type="text/javascript" src="jquery.js" ></script>
+<script type="text/javascript">
+
+$(document).ready(function()
+{
+	
+	//Pour ce filtre jQuery, un élément est considéré comme visible s'il consomme de l'espace 
+	//dans le document. Les propriétés CSS de visibilité ne sont pas prises en compte.
+	$("div:visible").css("background", "#9cf");
+	
+	$("#bntAffiche").click(function () 
+	{
+		//affiche les div cache en rouge avec un effet d'affichage (show(fast))
+		$("div:hidden").css("background", "red").show("fast");
+	});
+
+
+});
+
+
+
+</script>
+<style type="text/css">
+	.hidden 
+	{ 
+		display:none;
+	}
+	
+	div 
+	{ 
+		width: 40px; 
+		height: 40px; 
+		margin: 5px; 
+		float: left;
+		border: 1px solid black;
+	}
+	
+	p 
+	{ 
+		text-align: center;
+	}
+</style>
+</head>
+	<body>
+    	<input type="button" value="Montrer les &lt;div&gt; cachés" id="bntAffiche"/></p>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div class="hidden">6</div>
+        <div class="hidden">7</div>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>30 - Zoom sur vignette</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("ul.thumb li").hover(function() 
+		{
+			$(this).css({'z-index' : '10'});
+			
+			$(this).find('img').stop()
+			.animate({ marginTop: '-90px', 
+					   marginLeft: '-50px',
+					   top: '50%',
+					   left: '50%',
+					   width: '225px',
+					   height: '150px'
+					   }, 200);
+		} ,
+		function() 
+		{
+			$(this).css({'z-index' : '0'});
+			
+			$(this).find('img').stop()
+			.animate({ marginTop: '0',marginLeft: '0',top: '0',left: '0',width: '90px',height: '60px'}, 400);
+		});
+	});
+</script>
+<style type="text/css">
+
+body { padding: 3px; 
+       margin: 0px;}
+	   
+.container { position: absolute;
+             top: 50px; 
+             left : 10px;}
+			 
+ul.thumb { padding: 0px; 
+           list-style-type: none; 
+           margin: 0px; 
+           width: 260px; 
+           float: left;}
+		   
+ul.thumb li { position: relative; 
+              padding: 0px; 
+              margin: 0px;  
+              width: 100px; 
+              height: 100px;
+              float: left;}
+			  
+ul.thumb li img { position: absolute; 
+                  padding : 0px; 
+                  width: 90px;  
+                  height: 60px;  
+                  left: 0px; 
+                  border: none;}
+</style>
+
+</head>
+<body>
+<p> Survolez la vignette pour agrandir l'image.</p>
+<div class="container">
+<ul class="thumb">
+<li><img alt="" src="Images/Chrysanthemum.jpg" /></li>
+<li><img alt="" src="Images/Hydrangeas.jpg" /></li>
+</ul>
+</div>
+</body>
+</html>

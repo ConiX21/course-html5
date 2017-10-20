@@ -1,0 +1,587 @@
+﻿@font-face {
+    font-family: 'drift';
+    src: url('../fonts/Lobster-Regular.ttf');
+}
+
+
+body {
+    background: #B2B2B2;
+    color: #EAEAEA;
+    font-family: 'drift', Georgia;
+    font-size: 1em;
+}
+
+section {
+    width: 80%;
+    min-width: 955px;
+    min-height: 500px;
+    margin: auto;
+}
+
+header {
+    height: 350px;
+    background-image: url(../assets/requin.jpg);
+    background-position-y: -500px;
+}
+
+nav {
+    height: 50px;
+    background-color: rgba(255,255,255, 0.5);
+    border-top: 2px solid #3498DB;
+    border-bottom: 2px solid #3498DB;
+}
+
+    /**************Barre de navigation***************/
+    nav ul {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 100000;
+    }
+
+        nav ul.Niveau1 > li, ul.Niveau2 > li {
+            line-height: 50px;
+            background-color: #2980B9;
+            width: 100px;
+            list-style: none;
+            text-align: center;
+            transition: all 1s ease-in-out;
+        }
+
+        nav ul.Niveau1 > li {
+            display: inline-block;
+        }
+
+        nav ul li:hover {
+            background-color: #3498DB;
+            color: #1053ae;
+        }
+
+        nav ul ul.Niveau2 {
+            display: none;
+        }
+
+
+        nav ul li:hover > ul {
+            display: block;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+    nav li:hover > ul.Niveau3 {
+        display: inline-block;
+        margin-left: 50px;
+    }
+
+
+    nav li:hover ul.Niveau2 li:last-child, ul.Niveau2 {
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    nav ul a {
+        text-decoration: none;
+        line-height: 50px;
+        width: 100%;
+        display: inline-block;
+        color: #EAEAEA;
+    }
+
+/*************** Article *****************/
+article {
+    padding: 5px;
+    background-color: rgba(234,234,234, 0.5);
+    min-height: 500px;
+    overflow: hidden;
+    display: none;
+}
+
+    article p {
+        font-style: italic;
+    }
+
+/**************Pied de page***************/
+footer {
+    height: 250px;
+    background: #2980B9;
+    color: #B2B2B2;
+    border-top: 2px inset #B2B2B2;
+    box-shadow: 0 0 25px #B2B2B2 inset;
+    text-align: center;
+}
+
+    footer ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        footer ul li {
+            display: inline-block;
+            line-height: 100px;
+        }
+
+            footer ul li:before, footer ul li:after {
+                content: " | ";
+                color: white;
+            }
+
+            footer ul li a {
+                color: #B2B2B2;
+                text-decoration: none;
+            }
+
+    footer span {
+        font-size: .5em;
+        font-style: italic;
+        line-height: 220px;
+        color: white;
+    }
+
+/************Aside social**************/
+@font-face {
+    font-family: 'social';
+    src: url('../fonts/Social.ttf');
+}
+
+aside {
+    position: fixed;
+    top: 150px;
+    right: 0;
+    display: block;
+    font-family: social;
+    text-align: right;
+}
+
+    aside a {
+        font-size: 100px;
+        text-decoration: none;
+        color: #3498DB;
+        display: inline-block;
+        line-height: .6em;
+        transition: all .5s;
+        transform-origin: 50% 100%;
+        *-webkit-animation: animSocial 1s infinite ease-in-out alternate;
+    }
+
+    aside div:hover a {
+        color: white;
+        padding-right: 45px;
+        transform: rotate(-20deg) scale(.8) translateX(-50px);
+    }
+
+/*************Images Galeries**********************/
+.container {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    border: 15px solid white;
+    border-radius: 7px;
+    box-shadow: 0 0 40px black;
+    margin: 20px;
+    opacity: 0.5;
+    transition-property: opacity, transform;
+    transition-duration: .5s, 0.5s;
+    transition-delay: 0s, .5s;
+    transition-timing-function: ease-in-out;
+}
+
+    .container:hover {
+        cursor: pointer;
+        opacity: 1;
+        transform: rotate(0deg) scale(1.2) !important;
+    }
+
+    .container img {
+        position: absolute;
+    }
+
+/*************Canvas*****************/
+canvas {
+    background-color: white;
+    border: 2px solid #3498DB;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #B2B2B2;
+    cursor: crosshair;
+}
+
+.Palette span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    opacity: 0.5;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all .5s ease-in-out;
+}
+
+    .Palette span:hover {
+        transform: rotate(10deg);
+        cursor: pointer;
+        border-color: white;
+        opacity: 1;
+    }
+
+#zoneDetente {
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#controls {
+    position: absolute;
+    display: inline-block;
+    left: 400px;
+}
+
+#outilGomme:hover rect, #outilsRect:hover rect, #outilsSave:hover .rectDisk {
+    fill: #B2B2B2;
+}
+
+svg {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/**********box config Shape*********/
+#confOutilsRect {
+    border: 2px solid #3498DB;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgb(0, 0, 0);
+    position: absolute;
+    background-color: #B2B2B2;
+    color: #3498DB;
+    padding: 5px;
+    display: none;
+    width: 300px;
+    margin-top: 100px;
+    z-index: 999;
+}
+
+    #confOutilsRect svg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    #confOutilsRect label {
+        margin: 1px;
+        margin-right: 10px;
+        float: left;
+        clear: both;
+        width: 80px;
+        text-align: right;
+    }
+
+        #confOutilsRect label:after {
+            content: " : ";
+        }
+
+    #confOutilsRect input {
+        margin: 4px;
+        float: left;
+    }
+
+        #confOutilsRect input[type='number'] {
+            width: 80px;
+        }
+
+        /*#confOutilsRect input[type='button'], .btn {
+            width: 60px;
+            height: 30px;
+            border-width: 0;
+            color: white;
+            font-style: italic;
+            text-align: center;
+            border-radius: 4px;
+            background-color: #3498DB;
+        }*/
+
+        #confOutilsRect input[value^='Ajou'] {
+            clear: both;
+            margin-left: calc(300px - 60px - 10px);
+        }
+
+/*************tips vidéos************/
+/*.btn {
+    width: 100px;
+    margin: 10px;
+}
+
+    .btn:hover {
+        background-color: #EAEAEA;
+        color: #3498DB;
+        cursor: pointer;
+        transition: all .5s;
+    }*/
+
+.lireSuite {
+    height: 40px;
+    overflow: hidden;
+    border-bottom: 2px solid #3498DB;
+    margin: 10px;
+    padding: 5px;
+    transition: all .5S;
+}
+
+#tipsVideoContainer > p:nth-child(odd) {
+    background-color: #B2B2B2;
+}
+
+.lireSuite.open {
+    height: 100px;
+}
+/**************videos**************/
+
+/*@font-face {
+    font-family: SymbolVideo;
+    src: url(../fonts/LL_RECOR.woff);
+}*/
+
+div#videoControls button{
+    width: 50px;
+    height: 40px;
+    box-shadow: 3px 3px 10px rgba(78,78,78,1);
+    margin-left: inherit;
+    margin-right: inherit;
+    margin-top: 40px;
+}
+
+div#videoControls input[value='j'] {
+    color: red;
+}
+
+div#videoControls input[type='range'] {
+    -webkit-appearance: slider-vertical;
+    width: 20px;
+    height: 30px;
+}
+
+#videoControls input, #videoControls button {
+    margin-top: 35px;
+}
+
+.standard {
+    position: absolute;
+    opacity: 0.5;
+    *display: inline-block;
+    background: white;
+    border: 2px solid rgba(78,78,78,1);
+    height: 30px;
+    padding: 5px;
+    overflow: hidden;
+    transition: height 0.6s ease-out;
+    bottom: 10px;
+    width: 400px;
+    margin: 0 auto;
+    transition: all 1s;
+}
+
+#videoControls:hover {
+    opacity: 1;
+}
+
+
+#videoControls.Down {
+    height: 80px;
+}
+
+
+
+video, #videoControls {
+    border-radius: 4px;
+}
+
+.glyphicon-tasks {
+     height: 30px !important;
+    width: 30px !important;
+}
+
+.btn{
+    padding:0;
+    margin:0;
+}
+
+button.std{
+    height: 30px !important;
+    width: 30px !important;
+    background: white !important;
+    color: red !important;
+    *border: 1px solid rgba(149,149,149,1) !important;
+    box-shadow: none !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0 !important;
+}
+
+progress {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 315px;
+}
+
+#player {
+    position: relative;
+    display: inline-block;
+}
+
+/***************formulaire**********/
+form {
+    margin-top: 10px;
+}
+
+    form label,
+    form input,
+    .ButtonsControls,
+    form select,
+    form textarea {
+        margin: 3px;
+    }
+
+    form input,
+    form select,
+    form textarea,
+    form output {
+        float: left;
+    }
+
+    form label {
+        float: left;
+        clear: both;
+        width: 130px;
+        text-align: right;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    form output:after {
+        content: " €";
+        font-size: 2em;
+    }
+
+textearea {
+    width: 165px;
+}
+
+.ButtonsControls {
+    clear: both;
+}
+
+form label:after {
+    content: " : ";
+}
+
+.ButtonsControls input[type='submit'], .ButtonsControls input {
+    border: 0px;
+    background-color: #207cca;
+    min-width: 100px;
+    height: 35px;
+    *font-family: 'personal font';
+    font-size: 1em;
+    font-style: italic;
+    color: white;
+    padding-left: 3px;
+    text-align: left;
+    border-radius: 8px 0 0 8px;
+    transition-property: padding-left, background-color, border-radius;
+    transition-duration: 1s, 1s, 0.5s;
+    transition-delay: 0, 1s, 0;
+}
+
+    .ButtonsControls input:hover {
+        padding-left: 100px;
+        background-color: #7db9e8;
+        border-radius: 0 8px 8px 0;
+    }
+
+/************Messagerie*************/
+.Messagerie{
+    text-align:center;
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+#messages{
+    height:300px;
+    width:300px;
+    border:2px solid #3498DB;
+    box-shadow:0 0 100px white;
+    border-radius:5px;
+    display:inline-block;
+    background-color:white;
+    overflow:auto;
+}
+
+.Messagerie label {
+    float: left;
+    clear:both;
+    width:80px;
+    text-align:right;
+}
+
+.Messagerie input {
+    float: left;
+    color:#3498DB;
+    font-style:italic;
+}
+
+ .Messagerie label, .Messagerie input{
+    margin:5px;
+}
+
+ .Messagerie div{
+    width:300px;
+    margin:auto;
+
+ }
+
+/************Animations*************/
+@-webkit-keyframes animSocial {
+    from {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes animSocial {
+    from {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        rect {
+            *-webkit-transform: rotate(20deg);
+        }
+
+        @-webkit-keyframes anim {
+            from {
+                left: 0;
+                -webkit-transform: rotate(20deg) scale(1);
+            }
+
+            50% {
+                left: 250px;
+                -webkit-transform: rotate(10deg) scale(0.8);
+            }
+
+            to {
+                left: 500px;
+                -webkit-transform: rotate(-20deg) scale(1.2);
+            }
+        }
+
+        .move {
+            -webkit-animation: anim ease-in 3s infinite alternate;
+        }
+
+        div:not(#box) {
+            background: #b6ff00;
+            overflow:hidden;
+        }
+    </style>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("#box").className = "move";
+            document.querySelector("#box")
+                .addEventListener("click", function () {
+                    //this.className = "move";
+                });
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <div id="box">
+            <svg height="300" width="300">
+                <rect width="300" height="300" fill="blue" />
+            </svg>
+        </div>
+
+    </div>
+</body>
+</html>

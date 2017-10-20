@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootflat.min.css" rel="stylesheet" />
+    <link href="css/galerie.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <!--<script src="Scripts/imageInitialise.js"></script>-->
+    <script src="Scripts/articleInitialise.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        /*.modal-dialog {
+            width: 800px;
+        }*/   
+    </style>
+</head>
+<body>
+    <section>
+        <header>Galerie Photos</header>
+        <nav>
+
+        </nav>
+        <article>
+            <div class="container" data-toggle="modal" data-target="#myModal" ><img src="images/hebus_320x240_1418134572_5470.jpg"/></div>
+            <div class="container" data-toggle="modal" data-target="#myModal"><img  src="images/hebus_320x240_1418134574_9360.jpg" style="left:-100px;"/></div>
+            <div class="container" data-toggle="modal" data-target="#myModal"><img  src="images/hebus_320x240_1418134576_6693.jpg" /></div>
+            <div class="container" data-toggle="modal" data-target="#myModal"><img  src="images/hebus_320x240_1418134578_6779.jpg" /></div>
+
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" >
+                    <div class="modal-dialog" style="max-width:1200px;min-width:1000px;">
+                        <div class="modal-content">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <img src="" id="ImgLarge" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </article>
+        <footer></footer>
+        <aside>
+            <div>
+                <a href="http://www.twitter.com"  data-alt="allez sur twitter">T</a>
+            </div>
+            <div>
+                <a href="http://www.google.com" data-alt="allez sur google">G</a>
+            </div>
+            <div>
+                <a href="http://www.facebook.com" data-alt="allez sur facebook">f</a>
+            </div>
+        </aside>
+    </section>
+
+    <script type="text/javascript">
+        var rotate = 10;
+
+        $("div.container:odd").each(function () {
+            rotateImg(this,rotate);
+        });
+
+        $("div.container:even").each(function () {
+            rotateImg(this,rotate * -1);
+        });
+
+        function rotateImg(img,deg)
+        {
+            $(img).css("transform", "rotate(" + Math.ceil(deg) + "deg)");
+        }
+
+
+        $("div.container").click(function () {
+          
+            $("#ImgLarge").attr("src", event.currentTarget.firstChild.src);
+
+            $("#ImgLarge").css(
+                {
+                    "width": "100%",
+                    "padding": "20px"
+                });
+
+            $('#myModal').show();
+        });
+
+    </script>
+
+
+    <script type="text/javascript">
+        $("nav").load("menu.html");
+        $("footer").load("menuBottom.html");
+    </script>
+</body>
+</html>

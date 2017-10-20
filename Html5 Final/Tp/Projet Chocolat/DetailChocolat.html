@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="mobile.css" media="screen and (max-width: 480px)" rel="stylesheet" />
+</head>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+
+        var elem = document.querySelectorAll(".box .titleBox img");
+
+        for (var i = 0; i < elem.length; i++) {
+
+
+            elem[i].addEventListener("click", function () {
+
+                var parent = this.parentNode.parentNode;
+
+                if (parent.className == "box") {
+                    parent.className += " develop";
+                }
+                else {
+                    parent.className = "box";
+                }
+            });
+        }
+    });
+</script>
+<body>
+    <section>
+
+        <header></header>
+        <article>
+            <img src="Assets/calisson_chocolat.png" />
+            <h1>Calisson Chocolat</h1>
+            <div id="detail" style="text-align: left">
+                Rogatus ad ultimum admissusque in consistorium ambage nulla praegressa inconsiderate et leviter proficiscere inquit ut praeceptum est, Caesar sciens quod si cessaveris, et tuas et palatii tui auferri iubebo prope diem annonas. hocque solo contumaciter dicto subiratus abscessit nec in conspectum eius postea venit saepius arcessitus.
+            </div>
+            <br />
+            <div class="box">
+                <div class="titleBox ">
+                    <label>Ingrédients</label>
+                    <img src="Assets/feuille.png" />
+                </div>
+            </div>
+            <br />
+            <div class="box">
+                <div class="titleBox ">
+                    <label>Valeurs Energétiques</label>
+                    <img src="Assets/panier.png" />
+                </div>
+            </div>
+            <br />
+            <div class="box">
+                <div class="titleBox ">
+                    <label>Allergènes</label>
+                    <img src="Assets/valide.png" />
+                </div>
+            </div>
+            <br />
+            <svg style="text-align: center" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="107px" height="41px" viewBox="0 0 107 41" enable-background="new 0 0 107 41" xml:space="preserve">
+                <g>
+                    <g>
+                        <g>
+                            <path fill="none" stroke="#2C1912" stroke-miterlimit="10" d="M97.543,0.5H17.457c-4.347,0-8.101,2.479-9.052,6.805
+				C8.765,7.27,9.13,7.124,9.5,7.124c6.167,0,11.167,4.937,11.167,11.104s-4.833,11.137-11,11.137c-0.452,0-1.167-0.066-1.167-0.118
+				v0.164c0,5.572,3.917,11.089,8.957,11.089h80.087c5.038,0,8.957-5.517,8.957-11.089V9.232C106.5,3.66,102.582,0.5,97.543,0.5z" />
+                            <path fill="none" stroke="#2C1912" stroke-miterlimit="10" d="M9.5,29.334c6.167,0,11.167-5,11.167-11.168
+				S15.667,7.133,9.5,7.133" />
+                        </g>
+                        <circle fill="#2C1912" cx="9.167" cy="18.233" r="9.167" />
+                        <rect x="10" y="18" fill="#FFFFFF" width="6" height="2" />
+                        <line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="9.667" y1="14" x2="4.167" y2="19.333" />
+                        <line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="5.324" y1="18.394" x2="9.842" y2="23.007" />
+                    </g>
+                    <rect x="7.542" y="14.25" fill="none" width="95.75" height="10" />
+                    <text transform="matrix(1 0 0 1 38.6348 22.7695)" font-family="'MyriadPro-Regular'" font-size="12">Retour</text>
+                </g>
+            </svg>
+            <br />
+        </article>
+
+    </section>
+    <br />
+
+    <div id="footer">Pied</div>
+</body>
+</html>

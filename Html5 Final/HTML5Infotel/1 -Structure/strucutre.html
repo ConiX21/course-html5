@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            var obj = document.querySelector("#lstCivilite");
+
+            obj.addEventListener("change", function (evt) {
+                var ind = evt.currentTarget.selectedIndex;
+
+                console.log(evt.currentTarget[ind].getAttribute("data-abbr"));
+                evt.currentTarget[ind].setAttribute("data-pouet", 10);
+                
+                console.log(evt.currentTarget[ind].dataset.pouet);
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <section>
+        <header></header>
+        <article>
+            <header></header>
+            <time pubdate="" datetime="2014-06-06"></time>
+            <article>
+                <a href="#" download="mondoc.pdf">Document</a>
+                <figure>
+                    <img src="../Images/photo1.jpg" />
+                    <figcaption>text</figcaption>
+                </figure>
+                <meter low="0" high="400" max="500" value="450" optimum="250"></meter>
+                <meter min="35" max="43" value="37.5"></meter>
+                <meter low="7" high="8" max="10" value="9"></meter>
+                
+                <img src="../Images/photo1.jpg" />
+                <details open="open">
+                    <summary>Détails photo</summary>
+                    <dl>
+                        <dt>Format</dt>
+                        <dd>24x36</dd>
+                    </dl>
+                </details>
+
+                <select id="lstCivilite">
+                    <option value="1" data-abbr="Mr">Monsieur</option>
+                    <option value="10" data-abbr="Mme">Madame</option>
+                    <option value="2" data-abbr="Mlle">Mademoiselle</option>
+                </select>
+
+            </article>
+            <aside>
+                <nav></nav>
+            </aside>
+        </article>
+        <footer>
+            <address>
+            </address>
+        </footer>
+    </section>
+</body>
+</html>

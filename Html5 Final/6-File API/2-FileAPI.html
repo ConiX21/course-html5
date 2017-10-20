@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 : File API (FileReader)</title>
+    <style>
+        img {
+            position: absolute;
+            background: white;
+            padding: 20px;
+            max-width: 250px;
+            box-shadow: 0px 0px 20px #bbb;
+            -webkit-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+            z-index: 0 !important;
+        }
+ img:hover {
+            -webkit-transform: rotate(0deg) scale(1.2) !important;
+            transform: rotate(0deg) scale(1.2) !important;
+            z-index: 100 !important;
+        }
+        [draggable] {
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            /* Required to make elements draggable in old WebKit */
+            -khtml-user-drag: element;
+            -webkit-user-drag: element;
+        }
+
+       
+    </style>
+    <script type="text/javascript">
+
+        function load() {
+            var name;
+            document.getElementById("mesfichiers").addEventListener("change", analyseFichiers);
+            var f;
+
+            function analyseFichiers(evt) {
+
+                var fichiers = evt.target.files;
+                var posX, posY;
+
+                if (fichiers) {
+
+                    for (var i = 0; f = fichiers[i]; i++) {
+
+                        var reader = new FileReader();
+
+                        reader.onload = function () {
+                            evt.preventDefault();
+                            var img = document.createElement('img');
+
+
+                            img.src = event.target.result;
+                            img.setAttribute("data-info", img.src);
+
+                            /*img.addEventListener("click", function (e) {
+                            });*/
+
+                            document.body.appendChild(img);
+
+                            img.style.top = Math.round(Math.random() * window.innerHeight / 2) + "px";
+                            img.style.left = Math.round(Math.random() * window.innerWidth / 2) + "px";
+
+                            var rotation = Math.round(Math.random() * 20);
+
+                            img.style.webkitTransform = "rotate(" + rotation + "deg)";
+                           
+                            img.draggable = true;
+
+                            console.log("load");
+
+                            img.addEventListener("dragend", function (e) {
+                                e.dataTransfer = "move";
+                               
+                                e.target.style.top = e.offsetY + "px !important";
+                                e.target.style.left = e.offsetX + "px";
+                                
+                                
+
+                            });
+
+                        }
+
+
+                        reader.readAsDataURL(f);
+                    }
+
+
+                }
+            }
+
+         
+        }
+        document.addEventListener("DOMContentLoaded", load);
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <p><strong>File API (FileReader)</strong></p>
+        <input type="file" multiple name="mesfichiers" id="mesfichiers" />
+    </div>
+
+</body>
+</html>

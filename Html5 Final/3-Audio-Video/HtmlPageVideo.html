@@ -1,0 +1,144 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #btnPlay:hover #fond {
+            fill:#fff;
+        }
+
+        #avance{
+            width:300px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var myVideo = null;
+        function pageLoad() {
+
+            var btnP = document.getElementById("btnPlay");
+            var avance = document.getElementById("avance");
+             myVideo =  document.getElementById("myVideo");
+            
+            avance.value = 0;
+            btnP.addEventListener("click", clickPlayPause);
+            console.log(avance);
+            myVideo.volume = .5;
+
+
+
+
+            function clickPlayPause() {
+
+                if (myVideo.paused) {
+                    
+                    myVideo.play();
+                }
+                else {
+                    myVideo.pause();
+                }
+
+
+            }
+
+            avance.addEventListener("change", function () {
+                 myVideo.currentTime = this.value;
+            });
+
+        }
+
+        
+
+        function updateVolume(e) {
+
+            myVideo.volume = e.target.value;
+
+        }
+
+        function makeBig() {
+            myVideo.width = 560;
+        }
+
+        function makeSmall() {
+            myVideo.width = 320;
+        }
+
+        function makeNormal() {
+            myVideo.width = 420;
+        }
+
+        function timeChange(e) {
+            var p = document.getElementById("prog");
+            p.max = e.target.duration;
+            p.value = e.target.currentTime;
+            avance.max = e.target.duration;
+            //avance.value = myVideo.currentTime;
+            console.log(e.target.currentTime);
+        }
+
+        
+
+        
+
+    </script>
+</head>
+<body onload="pageLoad();">
+    <div style="vertical-align:middle">
+        <svg id="btnPlay"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="52"
+   height="30">
+    <rect id="fond"
+        fill="#ff7f2a"
+       width="49.870605"
+       height="30.584608"
+       x="0.064696342"
+       y="1.7128906"
+       ry="12.743587" />
+    <path
+       style="fill:#e3dbdb;stroke:none"
+       d="m 14.783317,8.8245 0.23645,14.9335 13.62561,-7.7433 z"
+       id="path2995"
+ />
+    <rect
+       style="fill:#e3dbdb"
+       id="rect2997"
+       width="3.0304577"
+       height="15.152288"
+       x="30.427324"
+       y="8.34021"
+       ry="1.5152289" />
+    <rect
+       style="fill:#e3dbdb"
+       id="rect2997-1"
+       width="3.0304577"
+       height="15.152288"
+       x="34.72047"
+       y="8.34021"
+       ry="1.5152289" />
+</svg>
+        <input type="button" value="big" onclick="makeBig();" />
+        <input type="button" value="normal" onclick="makeNormal();" />
+        <input type="button" value="small" onclick="makeSmall();" />
+    </div>
+    <video id="myVideo" src="big.ogg" preload="auto"
+         ontimeupdate="timeChange(event);"></video>
+    <br />
+    <input type="range" max="1" min="0" step="0.1" value="0.5" onchange="updateVolume(event);"  />
+    <meter value="0" id="prog"></meter>
+    <input type="range" id="avance" step="0.100" />
+    <script>
+        var laVideo = document.getElementById("myVideo");
+
+        console.log(laVideo);
+
+        laVideo.addEventListener("canplay", function () {
+            
+            console.log(this.duration);
+        });
+        //console.log();
+    </script>
+</body>
+</html>

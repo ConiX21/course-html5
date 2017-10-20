@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>13 - Ajouter un attribut et sa valeur</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function()
+{
+	$("#btnAgrandir").click(function(){
+		
+		//permet d'appliquer une classe
+		$("table").attr("width","240px");
+	});
+});
+
+</script>
+<style type="text/css">
+	table { 
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	
+	td { 
+		text-align: center;
+		border: 1px solid black;
+	}
+	 
+</style>
+</head>
+    <body>
+        <p><input type="button" value="Agrandir le tableau" id="btnAgrandir"/></p>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+    </body>
+</html>

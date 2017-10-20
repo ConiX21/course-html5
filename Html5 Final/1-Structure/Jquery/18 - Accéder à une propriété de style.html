@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>18 - Accéder à une propriété de style</title>
+<script type="text/javascript" src="jquery.js" ></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("#div1").click(function () 
+		{
+			
+			//Recuperation de valeur css
+			var couleur = $(this).css("background-color");
+			$("#resultat").html("La couleur est <span>" + couleur + "</span>.");
+		});
+		
+		$("#div2").click(function () 
+		{
+			var bordure = $(this).css("border-color");
+			$("#resultat").html("La couleur de la bordure est <span>" +	bordure + "</span>.");
+		});
+		
+		$("#div3").click(function () 
+		{
+			var visibility = $(this).css("visibility");
+			$("#resultat").html("La visibilité est <span>" + visibility + "</span>.");
+		});
+	});
+
+</script>
+<style type="text/css">
+	div 
+	{ 
+		width:60px; 
+		height:60px; 
+		margin:5px; 
+		float:left; 
+		background-color:#9cf;	
+		
+	}
+</style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2" style="border: 3px solid black;"></div>
+<div id="div3" style="visibility: visible;"></div>
+<p style="clear: left;" id="resultat">Résultat </p>
+</body>
+</html>

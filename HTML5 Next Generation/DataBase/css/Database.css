@@ -1,0 +1,77 @@
+﻿@font-face {
+    font-family: 'digital';
+    src: url('/fonts/digital.TTF');
+}
+
+body {
+    font-family: digital;
+    margin: 10px;
+    padding: 0;
+    color:#29a7e8;
+}
+
+span {
+    font-size: 1em;
+    padding-top:15px;
+    display: inline-block;
+    width: 50%;
+    text-align:right;
+}
+
+input {
+    margin-top: -15px;
+    padding: 5px 0;
+    vertical-align: middle;
+    font-family: digital;
+    color:#0a70a4;
+}
+
+    input[type=submit], input[type=reset] {
+        margin-top: 20px;
+        width: 120px;
+        height: 30px;
+        color:#0a70a4;
+        background-color:#29a7e8;
+        vertical-align:bottom;
+
+    }
+
+input[type=range] {
+    -webkit-appearance: none;
+    *border-radius: 20px;
+    box-shadow: inset 0 0 5px #333;
+    background-color: #29a7e8;
+   *height: 30px;
+    *vertical-align: middle;
+    width: 160px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: #0a70a4;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    border: 1px solid #999;
+    height: 15px;
+    width: 15px;
+}
+
+div:not(.ValueDb){
+    float:left;
+    display:inline-block;
+    width:50%;
+    border:1px groove #0a70a4;
+    padding:10px;
+    min-height:500px;
+}
+
+.ResultDB{
+    border:1px groove #0a70a4;
+    padding:15px;
+    
+    font-size:0.81em;
+
+}
+
+*{
+    box-sizing:border-box;
+}

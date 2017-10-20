@@ -1,0 +1,19 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Travailleurs, travailleuses...</title>
+</head> 
+
+<body>
+<p id=resultat></p>
+</body>
+   
+<script>
+    var travailleur = new Worker('worker.js');
+
+    travailleur.onmessage = function (event) {
+        document.getElementById('resultat').innerHTML = event.data;
+    };
+</script>
+
+</html>

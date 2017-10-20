@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dom Javascript</title>
+    <script src="Jquery/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function ()
+        {
+
+            $("#valider").click(function () {
+                nodeList = document.getElementsByTagName("h2");
+
+                nodeList.length;  // nombre de h3 dans le document
+                nodeList.item(2); // accession à la 3 ème balise h2 rencontrée
+                nodeList[2].value; //accession à la 3 ème balise h2 rencontrée
+                
+
+                document.getElementById("resultat").innerHTML = nodeList[2].innerHTML;
+
+
+                alert(nodeList[2].nodeList[2].innerHTML);
+
+                var myLenghtCSS = document.getElementsByClassName("classArticle");
+
+                for (var i = 0; i < myLenghtCSS.length ; i++) {
+                    $(".classArticle:eq("+i+")").css("color", "gray");
+                }
+
+                //ou
+                //$(".classArticle").css("color", "gray");
+            });
+
+
+        });
+
+       
+
+    </script>
+</head>
+<body>
+    <h1>Html5 l'avenir du web</h1>
+    <h2>le Html</h2>
+    <section>
+        <article class="classArticle">
+            Sed quid est quod in hac causa maxime homines admirentur et reprehendant meum consilium, cum ego idem antea multa decreverim,
+             que magis ad hominis dignitatem quam ad rei publicae necessitatem pertinerent? Supplicationem quindecim dierum decrevi sententia mea.
+             Rei publicae satis erat tot dierum quot C. Mario ;
+             dis immortalibus non erat exigua eadem gratulatio quae ex maximis bellis. Ergo ille cumulus dierum hominis est dignitati tributus.
+        </article>
+    </section>
+
+    <h2>CSS3</h2>
+    <section>
+        <article class="classArticle">
+            Sed quid est quod in hac causa maxime homines admirentur et reprehendant meum consilium, cum ego idem antea multa decreverim,
+             que magis ad hominis dignitatem quam ad rei publicae necessitatem pertinerent? Supplicationem quindecim dierum decrevi sententia mea.
+             Rei publicae satis erat tot dierum quot C. Mario ;
+             dis immortalibus non erat exigua eadem gratulatio quae ex maximis bellis. Ergo ille cumulus dierum hominis est dignitati tributus.
+        </article>
+    </section>
+
+    <h2>Javasript</h2>
+    <section>
+        <article class="classArticle">
+            Sed quid est quod in hac causa maxime homines admirentur et reprehendant meum consilium, cum ego idem antea multa decreverim,
+             que magis ad hominis dignitatem quam ad rei publicae necessitatem pertinerent? Supplicationem quindecim dierum decrevi sententia mea.
+             Rei publicae satis erat tot dierum quot C. Mario ;
+             dis immortalibus non erat exigua eadem gratulatio quae ex maximis bellis. Ergo ille cumulus dierum hominis est dignitati tributus.
+        </article>
+    </section>
+
+    <input type="button" value="Valider" id="valider" />
+
+    <div id="resultat" class="CssResultat">aaa</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<meta http-equiv="Content-language" content="fr" />
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+		<title>Avec transition - Introduction aux animations en CSS 3</title>
+
+
+
+		<style type="text/css">
+		
+		  body {
+		    margin: 100px;
+		    background: #fff;
+		    color: #000;
+		    font: 1em "lucida grande",arial;
+		  }
+		  
+		  a {
+		    font-size: 4em;
+		    font-weight: bold;
+		    color: #789;
+		    text-decoration: none;
+		    
+		    /* Fonctionne déjà sur webkit */
+		    -webkit-transition-property: padding-left;
+				-webkit-transition-duration: 1s;
+				-webkit-transition-timing-function: ease-in;
+				
+				/* Bientôt supporté par Firefox */
+                -moz-transition-property: padding-left;
+				-moz-transition-duration: 1s;
+				-moz-transition-timing-function: ease-in;
+				
+				/* … et lorsque ce sera standardisé */
+				transition-property: padding-left, color;
+				transition-duration: 1s;
+				transition-timing-function: ease-in;
+                transition-delay:0s, 4s;
+				
+		  }
+		  
+			a:hover, a:focus {
+				color: #0a0;
+				padding-left: 150px;
+			}
+				
+		</style>
+
+	</head>
+
+	<body>
+	
+	 <h1>Transition CSS3 : padding-left</h1>
+
+		<p>
+			<a href="#">Survolez-moi&nbsp;!</a>
+		</p>
+	</body>
+</html>

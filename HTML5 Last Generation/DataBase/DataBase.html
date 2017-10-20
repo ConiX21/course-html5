@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/Database.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <form method="get" novalidate autocomplete="on">
+            <span>Nom :</span>
+            <input type="text" pattern="[A-Z]{2,35}" title="Tout en Majuscule"/>
+            <br /><span>Prenom :</span>
+            <input type="text" placeholder="votre prenom" autocomplete="off"/>
+            <br /><span>Date de naissance :</span>
+            <input type="date" min="2000-01-01"/>
+            <br /><span>Heure de naissance :</span>
+            <input type="time" value="12:00"  />
+            <br /><span>Telephone :</span>
+            <input type="tel" pattern="[0-9]{10}" title="10 chiffres pour le numero" />
+            <br /><span>E-mail :</span>
+            <input type="email" />
+            <br /><span>Couleur des yeux : </span>
+            <input type="color" value="#ff66ff" style="height:30px;"/>
+            <br /><span>Site web :</span>
+            <input type="url" placeholder="http://" value="http://"/>
+            <br /><span>Nb. enfant(s) :</span>
+            <input type="number" min="0" max="8" step="1" />
+            <br /><span>Taille :</span>
+            <input type="range" min="100" max="250" step="10" value="150"/>
+            <br /><span>Semaine de conges :</span>
+            <input type="week" value="2000-W32" />
+            <br />
+            <input type="submit" value="Valider" />
+            <input type="reset" value="Vider" />
+        </form>
+    </div>
+    <div class="ResultDB">
+    resultat DB :
+        <hr />
+        <div class="ValueDb">wait...</div>
+    </div>
+</body>
+</html>

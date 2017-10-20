@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        p.example {
+            margin: 0;
+            padding: 10px;
+            color: #000;
+        }
+
+            p.example[title^="ess"] {
+                color: #fff;
+                background: #333;
+            }
+
+            p.example[title$="xt"] {
+                color: #fff;
+                background: #045FB4;
+            }
+
+            p.example[title*="val"] {
+                color: #fff;
+                background: #990000;
+            }
+
+        .example div ~ p {
+            color: #fff;
+            margin: 20px;
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #333;
+            background: #006644;
+        }
+    </style>
+</head>
+<body>
+    <p class="example">je n'ai pas d'attribut title</p>
+    <p class="example" title="comment">j'ai un attribut title mais il ne commence pas par "ess"</p>
+    <p class="example" title="essai">j'ai un attribut title commençant par "ess"</p>
+    <p class="example" title="essai2">j'ai un attribut title commençant par "ess" également</p>
+
+    <p class="example" title="text">j'ai un attribut title qui fini par  "text"</p>
+    <p class="example" title="1text">j'ai un attribut title qui fini par "text" </p>
+
+    <p class="example">je n'ai pas d'attribut title</p>
+    <p class="example" title="comment">j'ai un attribut title mais il ne contient pas "val"</p>
+    <p class="example" title="val">j'ai un attribut title contenant au moins "val"</p>
+    <p class="example" title="evaluer">j'ai un attribut title contenant au moins "val" également</p>
+    <p class="example" title="eval">j'ai un attribut title contenant au moins "val" </p>
+
+    <div class="example">
+        <div>je suis l'élément particulier div</div>
+        <p>je suis un p qui suit le div (l'élement particulier)</p>
+        <p>je suis un p qui suit le div (l'élement particulier)</p>
+        <span>je suis un span</span>
+		<p>je suis un p qui ne suit pas le div (l'élement particulier)</p>
+    </div>
+
+
+</body>
+</html>

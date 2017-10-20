@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Document sans nom</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script  type="text/javascript">
+        function load() {
+
+            if (navigator.geolocation) {
+
+                // Fonction de callback en cas de succès
+                function succesGeo(position) {
+
+                    var infopos = "Position déterminée : <br>";
+                    infopos += "Latitude : " + position.coords.latitude + "<br>";
+                    infopos += "Longitude: " + position.coords.longitude + "<br>";
+                    document.getElementById("maPosition").innerHTML = infopos;
+
+                    var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    var optionsGmaps = {
+                        mapTypeControl: false,
+                        center: latlng,
+                        navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL },
+                        mapTypeId: google.maps.MapTypeId.ROADMAP, zoom: 15
+                    };
+                    var map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
+                    var marker = new google.maps.Marker({ position: latlng, map: map, title: "Vous êtes ici" });
+                }
+
+                //console.log("okk");
+                // Requête de géolocalisation
+                navigator.geolocation.getCurrentPosition(succesGeo);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+    </script>
+
+</head>
+
+<body>
+
+<div id="maPosition"></div>
+<!-- Un élément HTML pour recueillir la carte  -->
+<div id="map" style="width:640px;height:480px"></div>
+
+</body>
+</html>

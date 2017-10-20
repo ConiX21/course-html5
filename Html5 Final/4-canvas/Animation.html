@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document sans nom</title>
+    <style type="text/css">
+        body {
+            overflow:hidden;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function load() {
+            var moncanvas = document.getElementById('dessin');
+            var ctx = moncanvas.getContext('2d');
+
+            moncanvas.height = window.innerHeight;
+            moncanvas.width = window.innerWidth;
+
+            ctx.lineWidth = 2;
+            ctx.fillStyle = "rgba(206,0,0,255)";
+
+            // Positionnement au centre
+            ctx.translate(moncanvas.width / 2, moncanvas.height / 2);
+            var i = 0;
+
+            function dessiner() {
+              
+                ctx.translate(4, 1);
+                ctx.rotate(0.2);
+
+               ctx.save();
+               ctx.scale(i / 1000, i / 1000);
+                ctx.fillRect(i, 0, 20, 20);
+                ctx.restore();
+              
+                i++;
+
+                if (i > 800) clearInterval(inter);
+
+                ctx.fillStyle = "rgba(206,0," + i + ",1)";
+            }
+
+            var inter = setInterval(dessiner, 10);
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+    </script>
+
+</head>
+
+<body>
+    <canvas id="dessin"></canvas>
+
+</body>
+</html>

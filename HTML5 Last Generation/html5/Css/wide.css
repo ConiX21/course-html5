@@ -1,0 +1,240 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url(/fonts/Ropa.woff);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(2,104,109);
+    font-family: Roboto;
+    min-height: 600px;
+}
+
+section {
+    width: 100%;
+}
+
+header {
+    display: none;
+}
+
+table {
+    border: 4px solid red;
+}
+
+nav li:hover {
+    color: rgb(146,201,178);
+    cursor: pointer;
+    background-color: transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+
+
+aside div.intro {
+    top: 20%;
+    color: rgb(146,201,178);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: auto;
+    position: relative;
+    width: 50%;
+}
+
+.Consultant {
+    position: relative;
+    top: 30%;
+    margin: auto;
+    width: 550px;
+}
+
+
+#svgNom:hover rect, #svgNom:hover text {
+    cursor: pointer;
+}
+
+#svgNom:hover rect {
+    fill: rgb(11,145,148);
+}
+
+#svgNom:hover text {
+    fill: #02686d;
+}
+
+article div {
+    height: 300px;
+    border-top: 1px solid rgb(11,145,148);
+}
+
+    article div:nth-child(1) {
+        background-color: rgb(11,145,148);
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        padding-top: 30px;
+        padding-left: 30px;
+    }
+
+        article div:nth-child(1) p {
+            -webkit-column-break-before: right;
+        }
+
+            article div:nth-child(1) p:first-child {
+                -moz-column-width: 100px;
+                -webkit-column-width: 100px;
+                column-width: 100px;
+                height: 269px;
+                border-top: 1px solid rgb(2,104,109);
+                width: 100px;
+                font-size: 2em;
+                color: #fcfaca;
+                text-align: center;
+            }
+
+article > div:not(.none) {
+    padding: 30px 50px;
+}
+
+
+/*********Footer********/
+footer {
+    height: 449px;
+    background-color: rgb(11,145,148);
+}
+
+    footer div {
+        width: 50%;
+        padding-top: 25px;
+        float: left;
+    }
+
+
+        footer div div {
+            width: auto;
+            display: inline-block;
+            float: left;
+            padding-left: 100px;
+            padding-top: 5px;
+        }
+
+
+            footer div div:nth-child(3) {
+                padding-left: 70px;
+            }
+
+
+            footer div div ul {
+                padding-left: 15px;
+                list-style: circle;
+                color: #fcfaca;
+                font-size: 1.2em;
+            }
+
+    footer li {
+        padding: 5px;
+    }
+
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgb(2,104,109);
+    margin: 1em 0;
+    padding: 0;
+    width: 100px;
+    line-height: 2em;
+    margin-left: 100px;
+}
+
+footer div div img {
+    width: 100px;
+    margin: 10px 30px;
+}
+
+
+footer address {
+    clear: both;
+}
+
+.footerSvg {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
+address {
+    margin: auto;
+    width: 50%;
+    padding: 15px 0;
+    text-align: center;
+    color: rgb(146,201,178);
+    font-size: 1.2em;
+}
+
+/*********Menu********/
+
+nav ul {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+nav li {
+    display: table-cell;
+    line-height: 80px;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(146,201,178,0.5);
+}
+
+    nav li:first-child {
+        border-left: 1px solid rgb(11,145,148);
+    }
+
+nav li {
+    border-right: 1px solid rgb(11,145,148);
+}
+
+aside {
+    background: url(/images/photo.png) 50% bottom no-repeat, linear-gradient(to top, rgba(107,186,112,0) 0%,rgba(11,145,148,1) 100%);
+    height: 360px;
+    overflow: hidden;
+    -webkit-animation: animPersonne 3s;
+}
+
+    aside div.nav {
+        position: relative;
+        text-align: center;
+        width: 60%;
+        margin: auto;
+    }
+
+nav {
+    background: none;
+    color: rgb(2,104,109);
+    display: block;
+    font-size: 0.75em;
+    height: 80px;
+    position: relative;
+    z-index: 1000;
+}
+
+@-webkit-keyframes animPersonne {
+    from {
+        background-position: 50% 380px;
+    }
+
+    50% {
+        background-position: 50% bottom;
+    }
+
+    to {
+        background-position: 50% bottom;
+    }
+}

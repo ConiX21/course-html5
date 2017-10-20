@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+jquery.jarodxxx.com	TRUE	/	FALSE	1999999999	PHPSESSID	0171e4d4e09a865b6bd2e7e9ad19b976
+

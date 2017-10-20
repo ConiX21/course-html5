@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" media="all" href="styles.css" />
+    <meta name="author" content="Benjamin De Cock" />
+    <title>Menu animé en CSS</title>
+    
+    <style type="text/css" media="screen">
+		ul {
+			*margin:100px;
+			list-style:none;
+			font: 1em "lucida grande",arial;
+		}
+		li {
+			float:left;
+            /*variant en enlevant le clear*/
+			clear:left;
+			background:#333;
+            *width:200px;
+
+			transition-property: background-color, padding-left;
+			transition-duration: .5s, .3s;
+			transition-timing-function: linear, ease-out;
+		}
+		li:hover {
+			background:#09f;
+			padding-left:200px;
+		}
+		a {
+			display:block;
+			padding:3px 8px;
+			color:#fff;
+			text-decoration:none;	
+		}
+	</style>
+	
+  </head>
+
+
+  <body>
+  
+  	<ul>
+		<li><a href="#">Page d'accueil</a></li>
+		<li><a href="#">Informations</a></li>
+		<li><a href="#">Photographies</a></li>
+		<li><a href="#">Contactez-nous</a></li>
+	</ul>
+    
+  </body>
+
+</html>

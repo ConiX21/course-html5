@@ -1,0 +1,105 @@
+﻿<div id="blockImageAchat">
+    <div class="imgContainer">
+        <img src="images/animal1.jpg" id="img1" data-prix="100" />
+    </div>
+    <div class="imgContainer">
+        <img src="images/Animal2.jpg" id="img2" data-prix="200" />
+    </div>
+    <div class="imgContainer">
+        <img src="images/Paysage2.jpg" id="img3" data-prix="40" />
+    </div>
+    <div class="imgContainer">
+        <img src="images/voiture2.jpg" id="img4" data-prix="120" />
+    </div>
+</div>
+<div></div>
+<aside id="panier">
+    <div id="produit"></div>
+
+</aside>
+<div id="prixTotal">
+    <output name="outputHT">2</output>
+    <output name="outputTTC">1</output>
+</div>
+
+
+<script type="text/javascript">
+
+    //var listeProduit = document.querySelectorAll("#blockImageAchat img");
+    var listeProduit = $("#blockImageAchat img");
+    //var panier = document.querySelector("#panier");
+    var panier = $("#panier");
+
+    //for (var i = 0; i < listeProduit.length; i++) {
+    //    listeProduit[i].addEventListener("dragstart", function (evt) {
+    //        evt.dataTransfer.setData("idImg", evt.currentTarget.id);
+    //        evt.dataTransfer.setData("srcImg", evt.currentTarget.src);
+    //    });
+    //}
+
+    listeProduit.each(function () {
+        $(this).on("dragstart", function () {
+            event.dataTransfer.setData("idImg", event.currentTarget.id);
+            event.dataTransfer.setData("srcImg", event.currentTarget.src);
+            event.dataTransfer.setData("prix", event.currentTarget.dataset.prix);
+
+        });
+    });
+
+    panier.on("dragover", function (evt) {
+        evt.preventDefault();
+    });
+
+    panier.on("drop", function () {
+        produitAchat = document.createElement("img");
+        produitAchat.src = event.dataTransfer.getData("srcImg");
+        produitAchat.id = event.dataTransfer.getData("idImg") + "Achat";
+        produitAchat.dataset.prix = event.dataTransfer.getData("prix");
+
+        /*******Style********/
+        produitAchat.style.width = "80px";
+        produitAchat.style.transform = "rotate(" + (Math.random() * 15) + "deg)";
+        produitAchat.style.paddingLeft = "10px";
+
+        produitAchat.style.transition = "all 1s";
+
+        //Ajout de l'objet dans la DOM (Document Object Model)
+        $("#produit").append(produitAchat);
+
+        calculPanier();
+
+
+
+    });
+
+
+
+    function calculPanier() {
+        var total = 0;
+        var totalTTC = 0;
+        var obj = [];
+
+        $("#panier img").each(function () {
+            total += parseFloat($(this).attr("data-prix"));
+
+            var o = {};
+            o.id = $(this).attr("id");
+            o.prix = $(this).attr("data-prix");
+            obj.push(o);
+        });
+
+        totalTTC = total * 1.2;
+        obj.push({ "prixHT": total, "prixTTC": totalTTC });
+
+        $("output[name=outputHT]").val(total);
+        $("output[name=outputTTC]").val(totalTTC);
+
+        sessionStorage.setItem("panier", JSON.stringify(obj));
+
+        var testObj = JSON.parse(sessionStorage.getItem("panier"));
+        console.log(testObj[0]);
+        console.log(testObj[0].id);
+
+    }
+
+</script>

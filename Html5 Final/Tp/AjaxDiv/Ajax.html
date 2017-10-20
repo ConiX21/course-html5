@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+
+        .cache {
+            visibility: hidden;
+        }
+
+        .affiche {
+            position:absolute;
+            top:0;
+            left:0;
+            text-wrap:normal;
+            height:100%;
+            width:100%;
+            background-color:rgba(128, 128, 128, 0.77);
+            visibility:visible;
+            opacity:1;
+        }
+
+        body > div {
+            opacity:0;
+            transition:opacity 1s ease;
+        }
+
+        span.button {
+            position:relative;
+            text-align:right;
+            top:0;
+        }
+
+            .affiche p {
+                position:relative;
+                margin:auto;
+                padding:22px 0 0 0;
+                top: 25%;
+
+                width:50%;
+                height:50%;
+                background:white;
+                margin:auto;
+                border-radius:10px;
+
+                box-shadow:0px 0px 25px rgb(0, 0, 0);
+            }
+
+    </style>
+    <script type="text/javascript" src="Scripts/jquery-2.0.3.js"></script>
+
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            var cache = document.querySelector(".cache");
+
+            document.querySelector("input[type='button']")
+                .addEventListener("click", function () {
+
+                    cache.className = "affiche";
+
+                    $.ajax(
+                    {
+                       url: 'Personne.php',
+                       async: true,
+                       type: 'GET',
+                       global: false,
+                       cache: false,
+                       success: function (data) {
+                           $("#sortie").html(data);
+                   }
+               });
+
+            });
+
+            document.querySelector("#btnSortie")
+                .addEventListener("click", function (e) {
+                    cache.className = "cache";
+
+            });
+
+
+            document.addEventListener("keydown", function (e) {
+                if (e.keyCode == 27) {
+                    cache.className = "cache";
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <p >
+        Cognitis enim pilatorum caesorumque funeribus nemo deinde ad has stationes appulit navem, sed ut Scironis praerupta letalia declinantes litoribus Cypriis contigui navigabant, quae Isauriae scopulis sunt controversa.
+
+Accedat huc suavitas quaedam oportet sermonum atque morum, haudquaquam mediocre condimentum amicitiae. Tristitia autem et in omni re severitas habet illa quidem gravitatem, sed amicitia remissior esse debet et liberior et dulcior et ad omnem comitatem facilitatemque proclivior.
+
+Tempore quo primis auspiciis in mundanum fulgorem surgeret victura dum erunt homines Roma, ut augeretur sublimibus incrementis, foedere pacis aeternae Virtus convenit atque Fortuna plerumque dissidentes, quarum si altera defuisset, ad perfectam non venerat summitatem.
+
+Alios autem dicere aiunt multo etiam inhumanius (quem locum breviter paulo ante perstrinxi) praesidii adiumentique causa, non benevolentiae neque caritatis, amicitias esse expetendas; itaque, ut quisque minimum firmitatis haberet minimumque virium, ita amicitias appetere maxime; ex eo fieri ut mulierculae magis amicitiarum praesidia quaerant quam viri et inopes quam opulenti et calamitosi quam ii qui putentur beati.
+
+Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus. Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.
+        <input type="button" value="Affiche" />
+    </p>
+    
+    <div class="cache">
+        
+        <p>
+        <span class="button">
+            <a href="#" style="border:0" id="btnSortie">
+                <img src="img/croix.png" height="20" width="20"/>
+            </a>
+        </span>
+        Cognitis enim pilatorum caesorumque funeribus nemo
+         deinde ad has stationes appulit navem, sed ut
+         Scironis praerupta letalia declinantes litoribus
+         Cypriis contigui navigabant, quae Isauriae scopulis 
+        sunt controversa.
+
+            <span id="sortie"></span>
+        </p>
+   
+        
+    </div>
+
+</body>
+</html>

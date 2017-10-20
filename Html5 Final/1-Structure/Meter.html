@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var elem = document.getElementsByTagName("select");
+
+            for (var i = 0; i < elem.length; i++) {
+
+                elem[i].addEventListener("change", function (e) {
+
+                    var ind = e.currentTarget.selectedIndex;
+                    var obj = e.currentTarget[ind];
+
+                    console.log("entre les balises options : " + obj.innerHTML);
+                    console.log("la propriete value de option : " + obj.value);
+                    console.log("attribut data- : " + obj.getAttribute("data-abbr"));
+                    //obj.setAttribute("data-abbr", 10);
+                });
+
+            }
+
+
+        });
+    </script>
+</head>
+<body>
+    <p>
+        Température du corps :
+        <meter min="35" max="43" value="37.5"/>
+    </p>
+    <p>
+        Occupation du disque dur :
+        <meter low="0" high="400" max="500" value="450" optimum="250"/>
+    </p>
+    <p>
+        Score des votes :
+        <meter low="7" high="8" max="10" value="9"/>
+    </p>
+
+    <select>
+        <option value="1" data-abbr="Mr">Monsieur</option>
+        <option value="10" data-abbr="Mme">Madame</option>
+        <option value="2" data-abbr="Mlle">Mademoiselle</option>
+    </select>
+
+    <details>
+        <summary>N1</summary>
+        <details>
+            <summary>N1.1</summary>
+        </details>
+    </details>
+
+</body>
+</html>

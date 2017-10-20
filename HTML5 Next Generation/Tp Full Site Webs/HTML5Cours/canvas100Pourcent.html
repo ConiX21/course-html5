@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+      
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+      
+        canvas {
+            display: block;
+            background-color:red;
+        }
+
+        div{
+            height:200px;
+            *display:inline-block;
+            display: block;
+            
+        }
+
+        .middle{
+            height:100%;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div>header</div>
+    <div class="middle">
+        <canvas></canvas>
+    </div>
+    <div>footer</div>
+    <script>
+
+
+        function draw() {
+            
+            var ctx = document.querySelector("canvas").getContext('2d');
+            document.querySelector("canvas").width = window.innerWidth;
+            document.querySelector("canvas").height = window.innerHeight;
+
+            ctx.fillRect(100, 100, 200, 200);
+        }
+        
+        window.addEventListener("resize", function () {
+            draw();
+        });
+
+        draw();
+        
+    </script>
+
+</body>
+</html>

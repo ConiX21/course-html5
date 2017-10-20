@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        p {
+            padding:0.5em;
+            margin:0;
+            font-family:sans-serif;
+            border-radius:8px;
+        }
+
+        .message {
+            background:#f1f1f1;
+            padding:0.5em;
+            border-top:1px solid #ccc;
+        }
+
+        .erreur {
+            background:red;
+            color:white;
+        }
+
+        #now {
+            font-size : 1.5em;
+            color:#666;
+        }
+
+        .ok {
+            margin-top:0.5em;
+            color:white;
+            background:#A9C832;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function load() {
+
+            var sse = new EventSource("sse.php");
+
+            var now = document.querySelector("#now");
+            var div = document.querySelector("#info");
+
+            sse.addEventListener("message", function (evt) {
+                var donnee = JSON.parse(evt.data);
+                div.innerHTML += "<p class='message'>Data : " + donnee.time + "<br />"+donnee.aleatoire+"</p>";
+            });
+
+            sse.addEventListener("error", function (evt) {
+                div.innerHTML += "<p class='erreur'>Fin : " + evt.srcElement.URL + "</p>";
+                //sse.close();
+            });
+
+            sse.addEventListener("open", function (evt) {
+                div.innerHTML += "<p class='ok'>Ouverture :</p>";
+            });
+
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+    </script>
+   
+</head>
+<body>
+    <p id="now"></p>
+    <div id="info"></div>
+</body>
+</html>

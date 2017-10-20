@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+
+        canvas {
+            background:orange;
+        }
+
+    </style>
+    <script type="text/javascript">
+
+
+        function load() {
+            navigator.vibrate(1000);
+
+            var canvas = document.getElementById("dessin");
+
+            var ctx = canvas.getContext('2d');
+
+            canvas.addEventListener("touchmove", function (evt) {
+                for (var i = 0; i < evt.touches.length; i++) {
+                    var touch = evt.touches[i];
+
+                    ctx.beginPath();
+
+                    ctx.arc(touch.pageX, touch.pageY, 20, 0, 2 * Math.PI, true);
+                    ctx.fill();
+                    ctx.stroke();
+                }
+            });
+            
+            console.log("oooo");
+        }
+
+        document.addEventListener("DOMContentLoaded", load);
+
+    </script>
+</head>
+<body>
+    <canvas id="dessin" height="300" width="300"></canvas>
+   
+</body>
+</html>

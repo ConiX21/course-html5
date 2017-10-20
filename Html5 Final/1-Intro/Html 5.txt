@@ -1,0 +1,21 @@
+﻿How Did HTML5 Get Started?
+
+HTML5 is a cooperation between the World Wide Web Consortium (W3C) and the Web Hypertext Application Technology Working Group (WHATWG).
+
+WHATWG was working with web forms and applications, and W3C was working with XHTML 2.0. In 2006, they decided to cooperate and create a new version of HTML.
+
+Some rules for HTML5 were established:
+•New features should be based on HTML, CSS, DOM, and JavaScript
+•Reduce the need for external plugins (like Flash)
+•Better error handling
+•More markup to replace scripting
+•HTML5 should be device independent
+•The development process should be visible to the public
+
+Les sites a utiliser :
+
+http://www.caniuse.com
+http://validator.w3.org/
+http://www.alsacreations.com/tuto/lire/873-transitions-css3-animations.html
+http://www.alsacreations.com/article/lire/930-css3-media-queries.html
+http://www.w3schools.com/html/html5_webworkers.asp

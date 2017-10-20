@@ -1,0 +1,87 @@
+﻿@font-face {
+    font-family: SymbolVideo;
+    src: url(../fonts/LL_RECOR.woff);
+}
+
+
+div#videoControls input[type='button'] {
+    font-family: SymbolVideo;
+    font-size: 1em;
+    width: 50px;
+    height: 40px;
+    border: 0px;
+    *background: linear-gradient(to bottom, rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+    *color: white;
+    box-shadow: 3px 3px 10px rgba(78,78,78,1);
+    margin-left: inherit;
+    margin-right: inherit;
+    margin-top:40px;
+}
+
+div#videoControls input[value='j'] {
+    color: red;
+}
+
+div#videoControls input[type='range'] {
+    -webkit-appearance: slider-vertical;
+    width: 20px;
+    height: 30px;
+    /*vertical-align: bottom;
+    margin-top:inherit;*/
+}
+
+div#videoControls input {
+    margin-top: 35px;
+}
+
+.standard {
+    position: absolute;
+    opacity: 0.5;
+    background: white;
+    border: 2px solid rgba(78,78,78,1);
+    height: 30px;
+    padding: 5px;
+    overflow: hidden;
+    transition: height 0.6s ease-out;
+    bottom: 10px;
+    width: 400px;
+    margin: 0 auto;
+    transition: all 1s;
+}
+
+#videoControls:hover {
+    opacity: 1;
+}
+
+
+.standard.Down {
+    height: 80px;
+}
+s
+video, #videoControls {
+    border-radius: 4px;
+}
+
+.glyphicon-tasks {
+    height: 30px !important;
+    width: 30px !important;
+    background: white !important;
+    color: red !important;
+    box-shadow: none !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0 !important;
+}
+
+progress {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 315px;
+}
+
+#player {
+    position: relative;
+    display: inline-block;
+}

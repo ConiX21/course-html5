@@ -1,0 +1,86 @@
+﻿<p>Vita est illis semper in fuga uxoresque mercenariae conductae ad tempus ex pacto atque, ut sit species matrimonii, dotis nomine futura coniunx hastam et tabernaculum offert marito, post statum diem si id elegerit discessura, et incredibile est quo ardore apud eos in venerem uterque solvitur sexus.</p>
+<p>Iam virtutem ex consuetudine vitae sermonisque nostri interpretemur nec eam, ut quidam docti, verborum magnificentia metiamur virosque bonos eos, qui habentur, numeremus, Paulos, Catones, Galos, Scipiones, Philos; his communis vita contenta est; eos autem omittamus, qui omnino nusquam reperiuntur.</p>
+<p>Alii nullo quaerente vultus severitate adsimulata patrimonia sua in inmensum extollunt, cultorum ut puta feracium multiplicantes annuos fructus, quae a primo ad ultimum solem se abunde iactitant possidere, ignorantes profecto maiores suos, per quos ita magnitudo Romana porrigitur, non divitiis eluxisse sed per bella saevissima, nec opibus nec victu nec indumentorum vilitate gregariis militibus discrepantes opposita cuncta superasse virtute.</p>
+<div class="VideoComplete">
+    <video src="assets/big.ogg" autoplay></video>
+    <div class="CommandsVideo Open">
+        <progress></progress>
+        <div>
+            <input type="button" value="h" />
+            <input type="button" value="d" />
+            <input type="button" value="g" />
+            <input type="button" value="i" />
+            <input type="button" value="j" />
+            <input class="RangeVolume" type="range" min="0" max="1" step="0.1" />
+            <input type="button" value="o" />
+        </div>
+        <input type="button" value="}" id="EnableCommands" />
+    </div>
+</div>
+<script type="text/javascript">
+    var vitesse = 10;
+    var position;
+    var inter;
+    var video = document.querySelector("video");
+    var progress = document.querySelector("progress");
+    var volumeRange = $(".RangeVolume");
+
+    $(".RangeVolume").change(function () {
+        video.volume = this.value;
+    });
+
+    document.querySelector("video").addEventListener("loadedmetadata", function () {
+        progress.max = this.duration;
+        volumeRange.val(this.volume);
+        //volumeRange.value = this.volume;
+    });
+
+    video.addEventListener("timeupdate", function () {
+        progress.value = this.currentTime;
+    });
+
+    $("input[value='}']").click(function () {
+        $("div.CommandsVideo.Open").toggleClass("Close");
+    });
+
+    $("input[value='h'], input[value='g']").mousedown(function (evt) {
+
+        if (evt.currentTarget.value == "h") {
+            position = (vitesse * -1);
+        }
+        else {
+            position = (vitesse * 1);
+        }
+
+        inter = setInterval(moveInCurrentTime, 400);
+
+    });
+
+    $("input[value='h'], input[value='g']").mouseup(function () {
+        clearInterval(inter);
+    });
+
+    $("input[value='d'], input[value='k']").click(function () {
+        if (video.paused) {
+            video.play();
+            this.value = "d";
+        }
+        else {
+            video.pause();
+            this.value = "k";
+        }
+    });
+
+    $("input[value='i']").click(function () {
+        video.stop();
+    });
+    function moveInCurrentTime() {
+        video.currentTime += position;
+    }
+
+    video.stop = function () {
+        video.pause();
+        video.currentTime = 0;
+    };
+
+</script>

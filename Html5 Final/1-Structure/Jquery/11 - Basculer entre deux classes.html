@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>11 - Basculer entre deux classes</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{ 
+		$("#aSuite").click(function()
+		{
+			//principe du bouton toggle en precisent quel element ce masque ou s'affiche 
+			//en gros soit il place une classe soit il l'enleve
+			$("div").toggleClass("cacher");
+		});
+	});
+</script>
+<style type="text/css">
+	a
+	{
+		color: black;
+	}
+	
+	div 
+	{ 
+		width: 255px; 
+		padding: 3px; 
+		border: 1px dotted black; 
+		cursor: pointer;
+	}
+	
+	.cacher 
+	{ 
+		display: none;
+	}
+</style>
+</head>
+    <body>
+        <p>
+        <a id="aSuite" href="#">In / Out</a>
+        </p>
+        <div>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed
+        non risus. Suspendisse lectus tortor, dignissim sit amet,
+        adipiscing nec, ultricies sed, dolor.
+        </div>
+        <p><a href="#" >Suite de la page...</a></p>
+    </body>
+</html>

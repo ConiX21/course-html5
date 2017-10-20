@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Canvas.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="Palette"></div>
+    <canvas id="dessin" width="480" height="360">
+    </canvas>
+    <form id="frmCanvasParameters" oninput="size.value = strokeSize.value;">
+        <input type="range" min="1" max="20" value="1" step="1" name="strokeSize" />
+        <output for="strokeSize" name="size">1px</output>
+    </form>
+    <script src="Canvas.js"></script>
+</body>
+</html>

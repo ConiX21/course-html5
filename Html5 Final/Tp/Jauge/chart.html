@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        rect {
+           
+            -webkit-transform-origin:bottom center;
+           
+        }
+    </style>
+    <script>
+
+        /*
+   <!--script type="text/javascript" src="jchartfx.system.js">/script-->
+   <script type="text/javascript" src="jchartfx.coreBasic.js"      
+    var chart1;
+
+    function loadChart()
+    {        
+        chart1 = new cfx.Chart();
+        chart1.getData().setSeries(2);
+        chart1.getAxisY().setMin(500);
+        chart1.getAxisY().setMax(2000);
+        var series1 = chart1.getSeries().getItem(0);
+        var series2 = chart1.getSeries().getItem(1);
+        series1.setGallery(cfx.Gallery.Lines);
+        series2.setGallery(cfx.Gallery.Bar);
+        var data = [
+        { "Month": "Jan", "Bikes": 1800, "Parts": 1300 },
+        { "Month": "Feb", "Bikes": 1760, "Parts": 900 },
+        { "Month": "Mar", "Bikes": 1740, "Parts": 970 },
+        { "Month": "Apr", "Bikes": 1750, "Parts": 1010},
+        { "Month": "May", "Bikes": 1810, "Parts": 1070 },
+        { "Month": "Jun", "Bikes": 1920, "Parts": 1180 }
+        ];
+        chart1.setDataSource(data);
+        var divHolder = document.getElementById('ChartDiv');
+        chart1.create(divHolder);            
+    }
+
+
+        */
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var t = document.querySelector("svg");
+            var o = t.createSVGTransform();
+
+            var tfmList = document.querySelector("rect").transform.baseVal;
+
+            tfmList.appendItem(o);
+
+            setInterval(rotate, 500);
+
+            function rotate() {
+
+
+                var plusOrMinus = Math.random() * 180;
+                o.setRotate(plusOrMinus, 110, 100);
+
+
+            }
+
+
+        });
+
+
+
+    </script>
+</head>
+<body>
+
+    <svg width="300" height="150" >
+        <text x="100" y="100">Salut</text>
+        <rect width="100" height="10" x="10" y="100"></rect>
+    </svg>
+</body>
+</html>

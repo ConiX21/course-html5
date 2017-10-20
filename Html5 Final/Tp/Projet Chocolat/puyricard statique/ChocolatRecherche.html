@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Recherche d'un chocolat</title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="1024.css" type="text/css" />
+	<link rel="stylesheet" media="screen and (max-width: 768px)" href="768.css" type="text/css" />
+	<link rel="stylesheet" media="screen and (max-width: 480px)" href="480.css" type="text/css" />
+	
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            document.querySelector("#btnCategorie").addEventListener("click", function () {
+                var svgBalise = document.querySelector("svg");
+                var transformElem = svgBalise.createSVGTransform();
+                var tfmList = document.querySelector(".rotation").transform.baseVal;
+
+                if (document.querySelector("#divCat").className == "" || document.querySelector("#divCat").className == "close") {
+                    document.querySelector("#divCat").className = "open";
+
+                    transformElem.setRotate(180, 93, 41);
+
+                    tfmList.appendItem(transformElem);
+
+
+                }
+                else {
+                    document.querySelector("#divCat").className = "";
+                    transformElem.setRotate(180, 93, 41);
+
+                    tfmList.appendItem(transformElem);
+
+                }
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <section>
+        <header></header>
+        <article>
+			<h1>
+				<img src="Assets/rechercher-par.png" border="0" />
+			</h1>
+			
+            <svg version="1.1" id="btnCategorie" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="185.875px" height="49.667px" viewBox="0 0  185.875 49.667" enable-background="new 0 0 185.875 49.667"
+                xml:space="preserve">
+                <g>
+                    <path fill="transparent" stroke="#2C1912" stroke-width="2" stroke-miterlimit="10" d="M176.236,1H9.639C4.868,1,1,5.204,1,10.39v20.97
+		c0,5.187,3.868,9.39,8.639,9.39h71.167c0-6.7,5.432-12.132,12.132-12.132s12.132,5.432,12.132,12.132h71.167
+		c4.771,0,8.639-4.203,8.639-9.39V10.39C184.875,5.204,181.008,1,176.236,1z" />
+                </g>
+                <g class="rotation">
+                    <path fill="#2C1912" d="M92.938,31.833c-4.925,0-8.917,3.992-8.917,8.917s3.992,8.917,8.917,8.917s8.917-3.992,8.917-8.917
+		S97.862,31.833,92.938,31.833z M91.125,33.875h3.75V40h-3.75V33.875z M96.969,42.387l-3.971,3.965l-3.965-3.97l0.002-3.365
+		L93,42.986l3.97-3.965L96.969,42.387z" />
+                    <rect x="91.125" y="33.875" fill="#FFFFFF" width="3.75" height="6.125" />
+                    <polygon fill="#FFFFFF" points="89.035,39.017 89.033,42.382 92.998,46.352 96.969,42.387 96.971,39.021 93,42.986 	" />
+                </g>
+                <rect x="-0.333" y="12.75" fill="none" width="185.375" height="14.75" />
+                <text transform="matrix(1.13 0 0 1 51.8027 23.3994)" fill="#1D1D1B" font-family="'MyriadPro-Regular'" font-size="15">CATEGORIE</text>
+            </svg>
+			
+            <div id="divCat">
+                <ul>
+                    <li><a href="#">Chocolat au lait</a></li>
+                    <li><a href="#" style="text-decoration:none">Chocolat noir</a></li>
+                    <li><a href="#" style="text-decoration:none">Chocolat noir</a></li>
+                    <li><a href="#" style="text-decoration:none">Chocolat noir</a></li>
+                    <li><a href="#" style="text-decoration:none">Chocolat noir</a></li>
+                    <li><a href="#" style="text-decoration:none">Chocolat noir</a></li>
+
+                </ul>
+            </div>
+			<br />
+            <svg version="1.1" id="btnSousCAtegorie" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="185.875px" height="49.667px" viewBox="0 0 185.875 49.667" enable-background="new 0 0 185.875 49.667"
+                xml:space="preserve">
+                <g>
+                    <path fill="none" stroke="#2C1912" stroke-width="2" stroke-miterlimit="10" d="M176.236,1H9.639C4.868,1,1,5.204,1,10.39v20.97
+		c0,5.187,3.868,9.39,8.639,9.39h71.167c0-6.7,5.432-12.132,12.132-12.132s12.132,5.432,12.132,12.132h71.167
+		c4.771,0,8.639-4.203,8.639-9.39V10.39C184.875,5.204,181.008,1,176.236,1z" />
+                </g>
+                <g>
+                    <path fill="#2C1912" d="M92.938,31.833c-4.925,0-8.917,3.992-8.917,8.917s3.992,8.917,8.917,8.917s8.917-3.992,8.917-8.917
+		S97.862,31.833,92.938,31.833z M91.125,33.875h3.75V40h-3.75V33.875z M96.969,42.387l-3.971,3.965l-3.965-3.97l0.002-3.365
+		L93,42.986l3.97-3.965L96.969,42.387z" />
+                    <rect x="91.125" y="33.875" fill="#FFFFFF" width="3.75" height="6.125" />
+                    <polygon fill="#FFFFFF" points="89.035,39.017 89.033,42.382 92.998,46.352 96.969,42.387 96.971,39.021 93,42.986 	" />
+                </g>
+                <rect x="-0.333" y="12.75" fill="none" width="185.375" height="14.75" />
+
+                <text transform="matrix(1.13 0 0 1 29.522 23.3994)" fill="#1D1D1B" font-family="'MyriadPro-Regular'" font-size="15">SOUS-CATEGORIE</text>
+            </svg>
+			<br />
+            <svg version="1.1" id="btnAllergene" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="185.875px" height="49.667px" viewBox="0 0 185.875 49.667" enable-background="new 0 0 185.875 49.667"
+                xml:space="preserve">
+                <g>
+                    <path fill="none" stroke="#2C1912" stroke-width="2" stroke-miterlimit="10" d="M176.236,1H9.639C4.868,1,1,5.204,1,10.39v20.97
+		c0,5.187,3.868,9.39,8.639,9.39h71.167c0-6.7,5.432-12.132,12.132-12.132s12.132,5.432,12.132,12.132h71.167
+		c4.771,0,8.639-4.203,8.639-9.39V10.39C184.875,5.204,181.008,1,176.236,1z" />
+                </g>
+                <g>
+                    <path fill="#2C1912" d="M92.938,31.833c-4.925,0-8.917,3.992-8.917,8.917s3.992,8.917,8.917,8.917s8.917-3.992,8.917-8.917
+		S97.862,31.833,92.938,31.833z M91.125,33.875h3.75V40h-3.75V33.875z M96.969,42.387l-3.971,3.965l-3.965-3.97l0.002-3.365
+		L93,42.986l3.97-3.965L96.969,42.387z" />
+                    <rect x="91.125" y="33.875" fill="#FFFFFF" width="3.75" height="6.125" />
+                    <polygon fill="#FFFFFF" points="89.035,39.017 89.033,42.382 92.998,46.352 96.969,42.387 96.971,39.021 93,42.986 	" />
+                </g>
+                <rect x="-0.333" y="12.75" fill="none" width="185.375" height="14.75" />
+                <text transform="matrix(1.13 0 0 1 46.8706 23.3994)" fill="#1D1D1B" font-family="'MyriadPro-Regular'" font-size="15">ALLERGENES</text>
+            </svg>
+			
+			<h1>
+				<img src="Assets/rechercher-libre.png" border="0" />
+			</h1>
+			
+			<svg version="1.1" id="btnAllergene" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                width="185.875px" height="49.667px" viewBox="0 0 185.875 49.667" enable-background="new 0 0 185.875 49.667"
+                xml:space="preserve">
+                <g>
+                    <path fill="none" stroke="#2C1912" stroke-width="2" stroke-miterlimit="10" d="M176.236,1H9.639C4.868,1,1,5.204,1,10.39v20.97
+		c0,5.187,3.868,9.39,8.639,9.39h71.167c0-6.7,5.432-12.132,12.132-12.132s12.132,5.432,12.132,12.132h71.167
+		c4.771,0,8.639-4.203,8.639-9.39V10.39C184.875,5.204,181.008,1,176.236,1z" />
+                </g>
+                <g>
+                    <path fill="#2C1912" d="M92.938,31.833c-4.925,0-8.917,3.992-8.917,8.917s3.992,8.917,8.917,8.917s8.917-3.992,8.917-8.917
+		S97.862,31.833,92.938,31.833z M91.125,33.875h3.75V40h-3.75V33.875z M96.969,42.387l-3.971,3.965l-3.965-3.97l0.002-3.365
+		L93,42.986l3.97-3.965L96.969,42.387z" />
+                    <rect x="91.125" y="33.875" fill="#FFFFFF" width="3.75" height="6.125" />
+                    <polygon fill="#FFFFFF" points="89.035,39.017 89.033,42.382 92.998,46.352 96.969,42.387 96.971,39.021 93,42.986 	" />
+                </g>
+                <rect x="-0.333" y="12.75" fill="none" width="185.375" height="14.75" />
+                <text transform="matrix(1.13 0 0 1 46.8706 23.3994)" fill="#1D1D1B" font-family="'MyriadPro-Regular'" font-size="15">MOT(S) CLE(S)</text>
+            </svg>
+			
+        </article>
+        <footer></footer>
+    </section>
+	<div id="footer">
+		Nous contacter&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Conditions Générales de Vente&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Mentions légales
+	</div>
+</body>
+</html>

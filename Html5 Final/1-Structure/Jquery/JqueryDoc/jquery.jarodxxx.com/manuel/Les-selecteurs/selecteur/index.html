@@ -1,0 +1,749 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from jquery.jarodxxx.com/manuel/Les-selecteurs/selecteur/ by HTTrack Website Copier/3.x [XR&CO'2010], Sun, 13 Feb 2011 14:09:39 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jQuery.selecteur $() jQuery documentation, manuel en francais, jQuery par jarodxxx</title>
+<meta name="description" content="Avant toute chose, voici deux liens qui permettent de se familiariser à propos de XPath et CSS (en anglais), et notamment a leur techniques de selection. ,Combiner l'usage de CSS et de Xpath ,jQuery p ..." />
+<meta name="keywords" content="jQuery.selecteur $() , Avant,toute,chose,voici,deux,liens,qui,permettent,de,se,familiariser,à,propos,de,XPath,et,CSS,(en,anglais),et,notamment,a,leur,techniques,de,selection.,Combiner,l'usage,de,CSS,et,de,Xpath,jQuery,p,...,  selecteur $()" />
+
+<meta name="verify-v1" content="RdtM2kUpLJZV+Im7xJt//Hbq/vF+/uEwzo3s3iCaW5k=" />
+<link href="../../../style.css" rel="stylesheet" type="text/css" />
+<link rel="search" type="application/opensearchdescription+xml" title="Rechercher sur Jquery FR" href="http://jquery.jarodxxx.com/jarodxxx-jquery-search.xml">
+<script type="text/javascript" src="../../../js/jquery-1.3.1.min.js"></script>
+<script type="text/javascript" src="../../../js/load.js"></script>
+</head>
+<body>
+<div id="topheader">
+	<div class="topmenu_area"> <a href="http://jquery.jarodxxx.com/home/" class="home">Home</a>
+		<a href="http://jquery.jarodxxx.com/about/" class="about">About</a> 
+		<a href="http://www.jarodxxx.com/index.php?cx=partner-pub-7346806920069561%3A4v6hx65fhyj&amp;cof=FORID%3A10&amp;ie=ISO-8859-1&amp;q=jQuery&amp;sa=ok#1041" class="search">blog</a>
+	</div>
+	<div class="banner_textarea">
+		<p class="banner_head"> Le manuel jQuery recence toutes fonctions du Framework jQuery avec Demonstration et des explications personnelles </p>
+		<p>Vous pouvez essayer chacune des fonctions jQuery, testez leurs comportement, apprenez les astuces, posez vos questions sur jQuery ... </p>
+	</div>
+	<div class="search_menu_banner">
+		<div class="search_background">
+			<div class="searchname">Search</div>
+			<form id="formsearch" name="formsearch" method="get" action="http://jquery.jarodxxx.com/redirect.php">
+				<div class="searchbox">
+					<input name="b" id="b" type="text" class="searchtextbox" />
+				</div>
+				<script type="text/javascript">var q = $("#b").val();</script>				
+				<div class="searchbox">
+					<div align="center"><input type="submit" name="submit" class="go" value="go" /></div>
+				</div>
+			</form>
+		</div>
+		<div class="menu_area">
+		<a href="http://jquery.jarodxxx.com/news/" class="addidea">Blog jQuery</a> <a href="#nl" class="loginhere">Newsletter</a> <a href="../../index.html" class="comments">Manuel</a> <a href="http://jquery.jarodxxx.com/contact/" class="contact">Contact </a> </div>
+	</div>
+</div>
+<div id="body_area">
+
+
+
+	<div class="left">
+		<div class="morelinks_top"></div>
+		<div class="morelinks_area">
+			<div class="morelinks_head">Categories </div>
+			<div class="links_morearea">
+			<a class="morelink_txt" href="../../Les-fonctions-de-base/index.html">Les fonctions de base</a><a href="javascript:void(0);" id="fn1" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-fonctions-de-base/Aliasse-par/index.html">jQuery.// Aliassé par $</a></li>
+<li><a href="../../Les-fonctions-de-base/context/index.html">jQuery.context()</a></li>
+<li><a href="../../Les-fonctions-de-base/data/index.html">jQuery.data()</a></li>
+<li><a href="../../Les-fonctions-de-base/each/index.html">jQuery.each()</a></li>
+<li><a href="../../Les-fonctions-de-base/eq/index.html">jQuery.eq()</a></li>
+<li><a href="../../Les-fonctions-de-base/get/index.html">jQuery.get()</a></li>
+<li><a href="../../Les-fonctions-de-base/gt/index.html">jQuery.gt()</a></li>
+<li><a href="../../Les-fonctions-de-base/index/index.html">jQuery.index()</a></li>
+<li><a href="../../Les-fonctions-de-base/jQueryfnextend/index.html">jQuery.jQuery.fn.extend()</a></li>
+<li><a href="../../Les-fonctions-de-base/jQuerynoConflict/index.html">jQuery.jQuery.noConflict()</a></li>
+<li><a href="../../Les-fonctions-de-base/length/index.html">jQuery.length()</a></li>
+<li><a href="../../Les-fonctions-de-base/lt/index.html">jQuery.lt()</a></li>
+<li><a href="../../Les-fonctions-de-base/removeData/index.html">jQuery.removeData()</a></li>
+<li><a href="../../Les-fonctions-de-base/selector/index.html">jQuery.selector()</a></li>
+<li><a href="../../Les-fonctions-de-base/size/index.html">jQuery.size()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-attributs/index.html">Les attributs</a><a href="javascript:void(0);" id="fn3" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-attributs/addClass/index.html">jQuery.addClass()</a></li>
+<li><a href="../../Les-attributs/attr/index.html">jQuery.attr()</a></li>
+<li><a href="../../Les-attributs/hasClass/index.html">jQuery.hasClass()</a></li>
+<li><a href="../../Les-attributs/html/index.html">jQuery.html()</a></li>
+<li><a href="../../Les-attributs/removeAttr/index.html">jQuery.removeAttr()</a></li>
+<li><a href="../../Les-attributs/text/index.html">jQuery.text()</a></li>
+<li><a href="../../Les-attributs/toggleClass/index.html">jQuery.toggleClass()</a></li>
+<li><a href="../../Les-attributs/val/index.html">jQuery.val()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-parcours/index.html">Les parcours</a><a href="javascript:void(0);" id="fn4" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-parcours/add/index.html">jQuery.add()</a></li>
+<li><a href="../../Les-parcours/children/index.html">jQuery.children()</a></li>
+<li><a href="../../Les-parcours/contents/index.html">jQuery.contents()</a></li>
+<li><a href="../../Les-parcours/end/index.html">jQuery.end()</a></li>
+<li><a href="../../Les-parcours/filter/index.html">jQuery.filter()</a></li>
+<li><a href="../../Les-parcours/find/index.html">jQuery.find()</a></li>
+<li><a href="../../Les-parcours/is/index.html">jQuery.is()</a></li>
+<li><a href="../../Les-parcours/map/index.html">jQuery.map()</a></li>
+<li><a href="../../Les-parcours/next/index.html">jQuery.next()</a></li>
+<li><a href="../../Les-parcours/not/index.html">jQuery.not()</a></li>
+<li><a href="../../Les-parcours/parent/index.html">jQuery.parent()</a></li>
+<li><a href="../../Les-parcours/prev/index.html">jQuery.prev()</a></li>
+<li><a href="../../Les-parcours/siblings/index.html">jQuery.siblings()</a></li>
+<li><a href="../../Les-parcours/slice/index.html">jQuery.slice()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-manipulateurs/index.html">Les manipulateurs</a><a href="javascript:void(0);" id="fn5" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-manipulateurs/after/index.html">jQuery.after()</a></li>
+<li><a href="../../Les-manipulateurs/append/index.html">jQuery.append()</a></li>
+<li><a href="../../Les-manipulateurs/appendTo/index.html">jQuery.appendTo()</a></li>
+<li><a href="../../Les-manipulateurs/before/index.html">jQuery.before()</a></li>
+<li><a href="../../Les-manipulateurs/clone/index.html">jQuery.clone()</a></li>
+<li><a href="../../Les-manipulateurs/empty/index.html">jQuery.empty()</a></li>
+<li><a href="../../Les-manipulateurs/insertAfter/index.html">jQuery.insertAfter()</a></li>
+<li><a href="../../Les-manipulateurs/insertBefore/index.html">jQuery.insertBefore()</a></li>
+<li><a href="../../Les-manipulateurs/prepend/index.html">jQuery.prepend()</a></li>
+<li><a href="../../Les-manipulateurs/prependTo/index.html">jQuery.prependTo()</a></li>
+<li><a href="../../Les-manipulateurs/remove/index.html">jQuery.remove()</a></li>
+<li><a href="../../Les-manipulateurs/wrap/index.html">jQuery.wrap()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-css/index.html">Les css</a><a href="javascript:void(0);" id="fn6" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-css/css/index.html">jQuery.css()</a></li>
+<li><a href="../../Les-css/height/index.html">jQuery.height()</a></li>
+<li><a href="../../Les-css/width/index.html">jQuery.width()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-evenements/index.html">Les evenements</a><a href="javascript:void(0);" id="fn7" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-evenements/bind/index.html">jQuery.bind()</a></li>
+<li><a href="../../Les-evenements/blur/index.html">jQuery.blur()</a></li>
+<li><a href="../../Les-evenements/change/index.html">jQuery.change()</a></li>
+<li><a href="../../Les-evenements/click/index.html">jQuery.click()</a></li>
+<li><a href="../../Les-evenements/dblclick/index.html">jQuery.dblclick()</a></li>
+<li><a href="../../Les-evenements/die/index.html">jQuery.die()</a></li>
+<li><a href="../../Les-evenements/error/index.html">jQuery.error()</a></li>
+<li><a href="../../Les-evenements/focus/index.html">jQuery.focus()</a></li>
+<li><a href="../../Les-evenements/hover/index.html">jQuery.hover()</a></li>
+<li><a href="../../Les-evenements/keydown/index.html">jQuery.keydown()</a></li>
+<li><a href="../../Les-evenements/keypress/index.html">jQuery.keypress()</a></li>
+<li><a href="../../Les-evenements/keyup/index.html">jQuery.keyup()</a></li>
+<li><a href="../../Les-evenements/live/index.html">jQuery.live()</a></li>
+<li><a href="../../Les-evenements/load/index.html">jQuery.load()</a></li>
+<li><a href="../../Les-evenements/mousedown/index.html">jQuery.mousedown()</a></li>
+<li><a href="../../Les-evenements/mousemove/index.html">jQuery.mousemove()</a></li>
+<li><a href="../../Les-evenements/mouseout/index.html">jQuery.mouseout()</a></li>
+<li><a href="../../Les-evenements/mouseover/index.html">jQuery.mouseover()</a></li>
+<li><a href="../../Les-evenements/mouseup/index.html">jQuery.mouseup()</a></li>
+<li><a href="../../Les-evenements/one/index.html">jQuery.one()</a></li>
+<li><a href="../../Les-evenements/ready/index.html">jQuery.ready()</a></li>
+<li><a href="../../Les-evenements/resize/index.html">jQuery.resize()</a></li>
+<li><a href="../../Les-evenements/scroll/index.html">jQuery.scroll()</a></li>
+<li><a href="../../Les-evenements/select/index.html">jQuery.select()</a></li>
+<li><a href="../../Les-evenements/submit/index.html">jQuery.submit()</a></li>
+<li><a href="../../Les-evenements/toggle/index.html">jQuery.toggle()</a></li>
+<li><a href="../../Les-evenements/trigger/index.html">jQuery.trigger()</a></li>
+<li><a href="../../Les-evenements/unbind/index.html">jQuery.unbind()</a></li>
+<li><a href="../../Les-evenements/unload/index.html">jQuery.unload()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-effets/index.html">Les effets</a><a href="javascript:void(0);" id="fn8" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-effets/animate/index.html">jQuery.animate()</a></li>
+<li><a href="../../Les-effets/clearQueue/index.html">jQuery.clearQueue()</a></li>
+<li><a href="../../Les-effets/fadeIn/index.html">jQuery.fadeIn()</a></li>
+<li><a href="../../Les-effets/fadeOut/index.html">jQuery.fadeOut()</a></li>
+<li><a href="../../Les-effets/fadeTo/index.html">jQuery.fadeTo()</a></li>
+<li><a href="../../Les-effets/hide/index.html">jQuery.hide()</a></li>
+<li><a href="../../Les-effets/show/index.html">jQuery.show()</a></li>
+<li><a href="../../Les-effets/slideDown/index.html">jQuery.slideDown()</a></li>
+<li><a href="../../Les-effets/slideToggle/index.html">jQuery.slideToggle()</a></li>
+<li><a href="../../Les-effets/slideUp/index.html">jQuery.slideUp()</a></li>
+<li><a href="../../Les-effets/toggle/index.html">jQuery.toggle()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-fonctions-AJAX/index.html">Les fonctions AJAX</a><a href="javascript:void(0);" id="fn9" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-fonctions-AJAX/ajax/index.html">jQuery.ajax</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxComplete/index.html">jQuery.ajaxComplete()</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxError/index.html">jQuery.ajaxError()</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxSend/index.html">jQuery.ajaxSend()</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxSetup/index.html">jQuery.ajaxSetup()</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxStart/index.html">jQuery.ajaxStart()</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxStop/index.html">jQuery.ajaxStop()</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxSuccess/index.html">jQuery.ajaxSuccess()</a></li>
+<li><a href="../../Les-fonctions-AJAX/ajaxTimeout/index.html">jQuery.ajaxTimeout()</a></li>
+<li><a href="../../Les-fonctions-AJAX/get/index.html">jQuery.get()</a></li>
+<li><a href="../../Les-fonctions-AJAX/getIfModified/index.html">jQuery.getIfModified()</a></li>
+<li><a href="../../Les-fonctions-AJAX/getJSON/index.html">jQuery.getJSON()</a></li>
+<li><a href="../../Les-fonctions-AJAX/getScript/index.html">jQuery.getScript()</a></li>
+<li><a href="../../Les-fonctions-AJAX/load/index.html">jQuery.load()</a></li>
+<li><a href="../../Les-fonctions-AJAX/loadIfModified/index.html">jQuery.loadIfModified()</a></li>
+<li><a href="../../Les-fonctions-AJAX/post/index.html">jQuery.post()</a></li>
+<li><a href="../../Les-fonctions-AJAX/serialize/index.html">jQuery.serialize()</a></li>
+</ul>
+<a class="morelink_txt" href="../../Les-inclassables/index.html">Les inclassables</a><a href="javascript:void(0);" id="fn10" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="../../Les-inclassables/browser/index.html">jQuery.$.browser()</a></li>
+<li><a href="../../Les-inclassables/each/index.html">jQuery.$.each()</a></li>
+<li><a href="../../Les-inclassables/extend/index.html">jQuery.$.extend()</a></li>
+<li><a href="../../Les-inclassables/grep/index.html">jQuery.$.grep()</a></li>
+<li><a href="../../Les-inclassables/map/index.html">jQuery.$.map()</a></li>
+<li><a href="../../Les-inclassables/merge/index.html">jQuery.$.merge()</a></li>
+<li><a href="../../Les-inclassables/trim/index.html">jQuery.$.trim()</a></li>
+</ul>
+<a class="morelink_txt" href="../index.html">Les selecteurs</a><a href="javascript:void(0);" id="fn11" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="index.html">jQuery.selecteur $()</a></li>
+</ul>
+			</div>
+		</div>
+		<div class="morelinks_bottom"></div>
+
+		<br style="clear:both;" /><br />
+		
+		<div class="morelinks_top"></div>
+		<div class="morelinks_area">
+			<div class="morelinks_head">Bonus </div>
+			<div class="links_morearea">
+			<a class="morelink_txt" href="http://jquery.jarodxxx.com/bonus/Liens-en-vrac/">Liens en vrac</a><a href="javascript:void(0);" id="fn12" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="http://jquery.jarodxxx.com/bonus/Liens-en-vrac/Liens-en-vrac/">Liens en vrac</a></li>
+</ul>
+<a class="morelink_txt" href="http://jquery.jarodxxx.com/bonus/Plugins/">Plugins</a><a href="javascript:void(0);" id="fn13" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="http://jquery.jarodxxx.com/bonus/Plugins/Les-meilleurs-plugins/">Les meilleurs plugins</a></li>
+<li><a href="http://jquery.jarodxxx.com/bonus/Plugins/Nice-form/">Nice form</a></li>
+<li><a href="http://jquery.jarodxxx.com/bonus/Plugins/Rss-Reader/">Rss Reader</a></li>
+</ul>
+<a class="morelink_txt" href="http://jquery.jarodxxx.com/bonus/Fonctions-utiles/">Fonctions utiles</a><a href="javascript:void(0);" id="fn14" class="morelink">&nbsp;</a>
+<ul class="ss_menu">
+<li><a href="http://jquery.jarodxxx.com/bonus/Fonctions-utiles/Ajouter-aux-favoris/">Ajouter aux favoris</a></li>
+</ul>
+			</div>
+		</div>
+		<div class="morelinks_bottom"></div>
+	
+	
+	</div>
+
+
+
+
+
+	<div class="body_area1">
+		<div class="banner_bottom"></div>
+		<div class="mid">
+		<div id="linksbar">
+		<a class="share" href="javascript:void(0);"><img src="../../../images/bookmarklet.png" alt="Envoyer a un ami" /></a>
+		<a href="javascript:void(0);" id="extender"><img src="../../../images/etendre.png" alt="Etendre" /></a>
+		</div>
+			<script type="text/javascript">
+	$().ready(function(){	
+		$("#fn11").next("ul.ss_menu").show();
+		$("#fn_11").next("ul.ss_menu").show();
+	});
+</script>
+
+
+	<div class="inner_banner"><h1>jQuery.selecteur $()</h1><p>Avant toute chose, voici deux liens qui permettent de se familiariser &agrave; propos de <a onclick="window.open(this.href,'_blank');return false;" href="http://fr.wikipedia.org/wiki/XPath">XPath</a> et <a href="http://en.wikipedia.org/wiki/CSS">CSS (en anglais)</a>, et notamment a leur techniques de selection.</p>
+<h3>Combiner l'usage de CSS et de Xpath</h3>
+<p>jQuery permet de cr&eacute;er des s&eacute;lecteurs en utilisant la syntaxe de CSS et de Xpath combin&eacute;, ce qui peut s'av&eacute;rer tr&egrave;s pratique:</p>
+<p>Cache tous les &eacute;lements fils d'un paragraphe contenant des liens:</p>
+<code> $(&quot;p[a]&quot;).hide();</code>
+<p>Affiche le premier paragraphe de la page:</p>
+<code> $(&quot;p:eq(0)&quot;).show();</code>
+<p>Cache tous les div qui sont affich&eacute;s:</p>
+<code> $(&quot;div:visible&quot;).hide();</code>
+<p>Permet d'obtenir la liste des items d'une liste non ordonn&eacute;e:</p>
+<code> $(&quot;ul/li&quot;);</code>
+<p>ou</p>
+<code> $(&quot;ul&gt;li&quot;);</code>
+<p>R&eacute;cup&egrave;re tous les paragraphes de la classe &quot;test&quot;, et contenant au moins un lien:</p>
+<code> $(&quot;p.test[a]&quot;);</code>
+<p>R&eacute;cup&egrave;re tous les &eacute;lements de liste contenant le texte &quot;test&quot;:</p>
+<code> $(&quot;li[a:contains('test')]&quot;);</code>
+<p>Retourne les valeurs des champs input ayant pour nom &quot;Valider&quot;:</p>
+<code> $(&quot;input[@name=Valider]&quot;).val();</code>
+<p>Retourne la liste des cases a cocher qui sont coch&eacute;es:</p>
+<code> $(&quot;input[@type=radio][@checked]&quot;)</code>
+<h3>S&eacute;lecteurs CSS</h3>
+jQuery supporte les selecteurs utilisant les normes allant de CSS1 &agrave; CSS3.
+<h4>Liste des selecteurs support&eacute;s</h4>
+<p>Pour plus d'informations sur les s&eacute;lecteurs &eacute;nonc&eacute;s ci-dessous, rendez-vous sur <a onclick="window.open(this.href,'_blank');return false;" href="http://www.w3.org/TR/css3-selectors/#selectors">la documentation officielle concernant les selecteurs CSS</a>.</p>
+<ul>
+    <li><strong>*</strong>: n'importe quel &eacute;l&eacute;ment</li>
+    <li><strong>E</strong>: &eacute;l&eacute;ment de type E</li>
+    <li><strong>E:nth-child(n)</strong>: &eacute;l&eacute;ment E, le n-i&egrave;me fils de son p&egrave;re</li>
+    <li><strong>E:first-child</strong>: &eacute;l&eacute;ment E, le premier fils de son p&egrave;re</li>
+    <li><strong>E:last-child</strong>: &eacute;l&eacute;ment E, le dernier fils de son p&egrave;re</li>
+    <li><strong>E:only-child</strong>: &eacute;l&eacute;ment E, seul fils de son p&egrave;re</li>
+    <li><strong>E:empty</strong>: &eacute;l&eacute;ment E qui n'a pas de fils (en incluant les noeuds textes)</li>
+    <li><strong>E:enabled</strong>: &eacute;l&eacute;ment de type interface (&eacute;lement de formulaire) E qui n'est pas d&eacute;sactiv&eacute;</li>
+    <li><strong>E:disabled</strong>: &eacute;l&eacute;ment de type interface E qui est d&eacute;sactiv&eacute;</li>
+    <li><strong>E:checked</strong>: &eacute;l&eacute;ment de type interface E qui est coch&eacute; (case a cocher, bouton radio...)</li>
+    <li><strong>E:selected</strong>: &eacute;l&eacute;ment de type interface E qui est s&eacute;lectionn&eacute; (options d'un select).<em>Ce selecteur n'est pas dans la sp&eacute;cification CSS, mais est support&eacute; par jQuery.</em></li>
+    <li><strong>E.warning</strong>: &eacute;lement E dont la classe est &quot;warning&quot;</li>
+    <li><strong>E#myID</strong>: &eacute;lement E dont l'id est &quot;myID&quot;. ne retourne qu'un &eacute;lement maximum.</li>
+    <li><strong>E:not(s)</strong>: &eacute;lement E qui ne repond pas a la condition du selecteur s. Exemple: E:not(enabled) = E:disabled</li>
+    <li><strong>E F</strong>: &eacute;lement F descendant d'un &eacute;lement E.</li>
+    <li><strong>E &gt; F</strong>: &eacute;lement F fils d'un &eacute;lement E.</li>
+    <li><strong>E + F</strong>: &eacute;lement F imm&eacute;diatemment pr&eacute;c&eacute;d&eacute; d'un &eacute;lement E.</li>
+    <li><strong>E ~ F</strong>: &eacute;lement F pr&eacute;c&eacute;d&eacute; d'un &eacute;lement E.</li>
+    <li><strong>E,F,G</strong>: s&eacute;lectionne tous les &eacute;lements E, F et G.</li>
+</ul>
+<h4>Autres s&eacute;lecteurs support&eacute;s</h4>
+<p>Les selecteurs d'attributs ont &eacute;t&eacute; &eacute;crits suivant les r&egrave;gles de XPath (du fait que tous les attributs devraient d&eacute;buter par le symbole @).<br />
+<br />
+<u><strong><em>Depuis les recentes mises a jours (1.2) Le signe @ est devenue obsolete, les Xpath reste les meme mais sans le @</em></strong></u><br />
+&nbsp;</p>
+<ul>
+    <li><strong>E[@foo]</strong>: &eacute;l&eacute;ment E avec un attribut &quot;foo&quot;.</li>
+    <li><strong>E[@foo=bar]</strong>: &eacute;l&eacute;ment E avec un attribut &quot;foo&quot; valant &quot;bar&quot;.</li>
+    <li><strong>E[@foo^=bar]</strong>: &eacute;l&eacute;ment E avec un attribut &quot;foo&quot; dont la valeur d&eacute;bute par la chaine &quot;bar&quot;.</li>
+    <li><strong>E[@foo$=bar]</strong>: &eacute;l&eacute;ment E avec un attribut &quot;foo&quot; dont la valeur se termine par la chaine &quot;bar&quot;.</li>
+    <li><strong>E[@foo*=bar]</strong>: &eacute;l&eacute;ment E avec un attribut &quot;foo&quot; dont la valeur contient la chaine &quot;bar&quot;.</li>
+</ul>
+<h4>Slecteurs non support&eacute;s</h4>
+<p>jQuery ne supporte que les slecteurs qui S&eacute;lectionne des elements dom, les autres sont ignor&eacute;s:</p>
+<ul>
+    <li><strong>E:link</strong></li>
+    <li><strong>E:visited</strong></li>
+    <li><strong>E:active</strong></li>
+    <li><strong>E:hover</strong></li>
+    <li><strong>E:focus</strong></li>
+    <li><strong>E:target</strong></li>
+    <li><strong>E::first-line</strong></li>
+    <li><strong>E::first-letter</strong></li>
+    <li><strong>E::selection</strong></li>
+    <li><strong>E::before</strong></li>
+    <li><strong>E::after</strong></li>
+</ul>
+<p>jQuery ne supporte pas non plus les s&eacute;lecteurs suivants en raison de leur utilit&eacute; tr&egrave;s limit&eacute;e:</p>
+<ul>
+    <li><strong>E:nth-last-child(n)</strong></li>
+    <li><strong>E:nth-of-type(n)</strong></li>
+    <li><strong>E:nth-last-of-type(n)</strong></li>
+    <li><strong>E:first-of-type</strong></li>
+    <li><strong>E:last-of-type</strong></li>
+    <li><strong>E:only-of-type</strong></li>
+    <li><strong>E:lang(fr)</strong></li>
+    <li><strong>E[foo~=&quot;test&quot;]</strong></li>
+    <li><strong>E[hreflang|=&quot;en&quot;]</strong></li>
+</ul>
+<h3>S&eacute;lecteurs XPath</h3>
+<p>jQuery supporte &eacute;galement une partie du langage <a href="http://www.w3.org/TR/xpath">XPath</a> pour la constitution de s&eacute;lecteurs.</p>
+<h4>Les chemins</h4>
+<p>Les chemins absolus:</p>
+<code>  $(&quot;/html/body//p&quot;)  $(&quot;/*/body//p&quot;)  $(&quot;//p/../div&quot;) </code>
+<p>Les chemins relatifs:</p>
+<code> $(&quot;a&quot;,this) $(&quot;p/a&quot;,this) </code>
+<h4>Les selecteurs d'&quot;axes&quot;</h4>
+<p><strong>Descendant:</strong> Element qui a un &eacute;lement descendant. <br />
+Recherche les &eacute;lements p contenus dans un div:</p>
+<code> 	$(&quot;//div//p&quot;) </code>
+<p><strong>Fils:</strong> Element qui a un element fils . <br />
+Recherche les &eacute;lements p fils de div:</p>
+<code> 	$(&quot;//div/p&quot;) </code>
+<p><strong>Elements fr&egrave;res:</strong> Element qui a un element fr&egrave;re (sur le m&ecirc;me axe). <br />
+Recherche les formulaires qui pr&eacute;c&egrave;dent un div:</p>
+<code> 	$(&quot;//div ~ form&quot;) </code>
+<p><strong>Parent:</strong> S&eacute;lection du parent d'un &eacute;lement. <br />
+Recherche les &eacute;lements p contenus dans un div:</p>
+<code> 	$(&quot;//div/../p&quot;) </code>
+<h4>Les pr&eacute;dicats</h4>
+<h5>Les pr&eacute;dicats support&eacute;s</h5>
+<p><strong>[@foo]:</strong> Element qui a un attribut foo.</p>
+<code> $(&quot;//input[@checked]&quot;)</code>
+<p><strong>[@foo='test']:</strong> Element qui a un attribut foo qui est &eacute;gal &agrave; 'test'.</p>
+<code> $(&quot;//a[@ref='nofollow']&quot;)</code>
+<p><strong>[Nodelist]:</strong> Element qui contient une liste de noeuds.</p>
+<code> $(&quot;//div[p]&quot;)//liste des paragraphes contenus dans un div  $(&quot;//div[p/a]&quot;) //liste des lien contenus dans les paragrpaghe d'un div  </code>
+<h5>Les pr&eacute;dicats support&eacute;s, mais avec une syntaxe diff&eacute;rente</h5>
+<p><strong>[last()] or [position()=last()]</strong> devient <strong>:last</strong></p>
+<code> $(&quot;p:last&quot;)</code>
+<p><strong>[0] or [position()=0]</strong> devient <strong>:eq(0)</strong> ou <strong>:first</strong></p>
+<code>   	$(&quot;p:first&quot;)  	$(&quot;p:eq(0)&quot;)  </code>
+<p><strong>[position() &lt; 5]</strong> devient <strong>:lt(5)</strong></p>
+<code>   	$(&quot;p:lt(5)&quot;) </code>
+<p><strong>[position() &gt; 2]</strong> devient <strong>:gt(2)</strong></p>
+<code>   	$(&quot;p:gt(2)&quot;) </code>
+<h3>S&eacute;lecteurs sp&eacute;cifiques a jQuery</h3>
+<p>Certaines expressions ne sont pas incluses dans Xpath ou CSS, mais elles s'av&egrave;rent &ecirc;tre bien utiles dans le cas de traitement de documents HTML. En voici la liste:</p>
+<h4>S&eacute;lecteurs g&eacute;n&eacute;raux</h4>
+<ul>
+    <li><strong>:even</strong>: S&eacute;lectionne les &eacute;lement de la s&eacute;lection dont l'index est pair.</li>
+    <li><strong>:odd</strong>: S&eacute;lectionne les &eacute;lement de la s&eacute;lection dont l'index est impair.</li>
+    <li><strong>:eq(0) and&nbsp;:nth(0)</strong>: S&eacute;lectionne le n-i&egrave;me &eacute;l&eacute;ment de la selection.</li>
+    <li><strong>:gt(N)</strong>: S&eacute;lectionne les &eacute;lements dont l'index est sup&eacute;rieur &agrave; 4.</li>
+    <li><strong>:lt(N)</strong>: S&eacute;lectionne les &eacute;lements dont l'index est inf&eacute;rieur &agrave; 4.</li>
+    <li><strong>:first</strong>: Equivalent de <strong>:eq(0)</strong></li>
+    <li><strong>:last</strong>: S&eacute;lectionne les dernier &eacute;lement de la s&eacute;lection.</li>
+    <li><strong>:parent</strong>: S&eacute;lectionne les &eacute;lements de la selection qui ont des enfants (noeuds texte inclus).</li>
+    <li><strong>:contains('test')</strong>: S&eacute;lectionne les &eacute;lements de la s&eacute;lection qui contiennent le texte sp&eacute;cifi&eacute;.</li>
+    <li><strong>:visible</strong>: S&eacute;lection tous les &eacute;lements de la s&eacute;lection visibles (&eacute;lements qui ont la propri&eacute;t&eacute; display:block ou display:inline, visibility:visible, et ne sont pas des &eacute;lements de formulaire de type input hidden)</li>
+    <li><strong>:hidden</strong>: S&eacute;lection tous les &eacute;lements de la s&eacute;lection cach&eacute;s (&eacute;lements qui ont la propri&eacute;t&eacute; display:none, ou visibility:hidden, ou sont des &eacute;lements de formulaire de type input:hidden)</li>
+</ul>
+<p>Quelques exemples:</p>
+<code> $(&quot;p:first&quot;).css(&quot;fontWeight&quot;,&quot;bold&quot;); //met en gras le premier paragraphe $(&quot;div:hidden&quot;).show(); //montre tous les div cach&eacute;s $(&quot;div:contains('test')&quot;).hide(); //cache les div contenant 'test' </code>
+<h4>S&eacute;lecteurs pour les formulaires</h4>
+<ul>
+    <li><strong>:input</strong>: S&eacute;lectionne tous les &eacute;lements de formulaire (input, select, textarea, button).</li>
+    <li><strong>:text</strong>: S&eacute;lectionne tous les champs texte (type=&quot;text&quot;).</li>
+    <li><strong>:password</strong>: S&eacute;lectionne tous les champs mot de passe (type=&quot;password&quot;).</li>
+    <li><strong>:radio</strong>: S&eacute;lectionne tous les champs de type boutons radio (type=&quot;radio&quot;).</li>
+    <li><strong>:checkbox</strong>: S&eacute;lectionne tous les champs de type case a cocher (type=&quot;checkbox&quot;).</li>
+    <li><strong>:submit</strong>: S&eacute;lectionne tous les boutons d'envoi (type=&quot;submit&quot;).</li>
+    <li><strong>:image</strong>: S&eacute;lectionne tous les champs de type image (type=&quot;image&quot;)</li>
+    <li><strong>:reset</strong>: S&eacute;lectionne tous les boutons de r&eacute;initialisation (type=&quot;reset&quot;).</li>
+    <li><strong>:button</strong>: S&eacute;lectionne tous les autres boutons(type=&quot;button&quot;).</li>
+    <li><strong>:file</strong>: S&eacute;lectionne les champs input de type file (type=&quot;file&quot;).</li>
+</ul>
+<p>Voir aussi <strong>:hidden</strong>, d&eacute;crit dans la section pr&eacute;c&eacute;dente.<br />
+Il est recommand&eacute; de d&eacute;finir une s&eacute;lection limit&eacute;e pour l'utilisation de ces s&eacute;lecteurs :</p>
+<p>Exemple:<br />
+va s&eacute;lectionner tous les champ de type input du formulaire myForm.</p>
+<code>  $('#myForm :input')</code>
+<p>Exemple:<br />
+va s&eacute;lectionner tous les champs de type radio du formulaire myForm (syntaxe a utiliser si vous disposez d&eacute;ja d'une r&eacute;f&eacute;rence au formulaire).<br />
+A noter que ce s&eacute;lecteur est sensiblement le m&ecirc;me que [@input=radio], mais sera un petit plus rapide que ce dernier.</p>
+ou, <code> $('input:radio', myForm)</code><br /><div class="perso">
+<h3><img src="../../../images/idea.png" alt="astuce">Les Astuces du développeur ...</h3>Notez que depuis la mise a jour de la version 1.2 le sigle @ est devenue obsolete. <br />
+Vous pouvez utiliser les Xptah comme avant mais en enlevant les @ .<br />
+</div>
+</div><div class="inner_banner"><h1>Envie de vous exprimer ?</h1><form id="myform" name="formsearch" method="post" action="#">
+ <input type="hidden" name="fonction" value="79" />
+		<div class="search_background_comm">
+			<div class="searchname2">Nom / Pseudo <sup>(*)</sup></div>
+			<div class="searchbox"><input type="text"  value=""  name="nom" class="commenttextbox"/></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2">Email <sup>(*)</sup></div>
+			<div class="searchbox"><input type="text" value="" name="email" class="commenttextbox"/></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2">Site Web</div>
+			<div class="searchbox"><input type="text" name="web" value="" class="commenttextbox"/></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2">Commentaire <sup>(*)</sup></div>
+			<div class="searchbox2"><textarea class="commenttexareatbox" name="message"></textarea></div>
+		</div>
+		<div class="search_background_comm">
+			<div class="searchname2"> </div>
+			<div class="searchbox"><input type="submit" name="submit_comment" class="register"/></div>
+		</div>
+	</form>
+<br style="clear:both;" />
+<h1>Ils ont osé le dire ...</h1>
+<table summary="commentaires" cellspacing="0" cellpadding="0">
+<tbody>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de Sébastien Couix" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=7058c6acc26dfa9e629c04ca7b082e6c&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 5</span> - Le jeudi 05 février &agrave; 17h 50min 25s par <a href="http://www.deefuz.net/">Sébastien Couix</a>
+			<p>Attention si vous activez le mode noConflict() pour faire tourner jQuery avec d'autres librairies, il ne faut pas marquer $() mais jQuery() !
+
+Au fait, beau travail JarodXXX !</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de Julien B." class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=e9b3f16048bd55130efb7eaaef108e85&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 7</span> - Le lundi 09 février &agrave; 15h 08min 38s par Julien B.
+			<p>Vous pouvez aussi prendre l habitude d utiliser la syntaxe suivante
+
+(function($) { // encapsule l alias
+
+     // ici votre code avec l alias
+    $('p').addClass('ma_classe');
+
+})(jQuery);</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de Fanch" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=3ce046985f27310ecae4bf6b8fa5d204&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 22</span> - Le mardi 24 février &agrave; 18h 13min 02s par <a href="www.vertige-mondain.html">Fanch</a>
+			<p>Bonjour,
+
+Merci pour le tuto.
+
+Je suis en train de galérer comme un con depuis le début de l'après sur un simple "select All/None".
+
+Dans la dernière partie de ton tuto, tu dis que l'on peut utiliser la syntaxe $('input:radio', myForm).
+
+Ma question est tout simplement la suivante : à quoi correspond le "myForm" ? l'ID du formulaire en question ? l'objet jQuery du tag &lt;form id="myForm"&gt; ?
+
+Je voudrais bien utiliser cette syntaxe car c'est celle qui semble la plus rapide ; bizarrement j'ai trouvé plein de sources sur le net mais très peu parlent de celle-là. Si tu as plus d'infos à me donner là-dessus, je suis preneur.
+
+Merci d'avance.
+
+Fanch</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de jarodxxx" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=98f6b7fb6fc57933de5521bf18f81228&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 23</span> - Le mercredi 25 février &agrave; 09h 59min 08s par <a href="http://www.jarodxxx.com/">jarodxxx</a>
+			<p>@Fanch MyForm corespond a l'ID du formulaire , au cas ou  ta page comporte plusieurs form et  que ces form ont  tous des eventuelle 'rario' , tu  peut  ainsi pointer sur les 'radio' de l'un des form preciser via son ID, il s'agit  donc bien de l'ID du Formulair (&lt;form id="myform" action=" ....)</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de eric" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=dc46f1eceb36afe18f050480002e4521&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 48</span> - Le jeudi 07 mai &agrave; 16h 58min 37s par eric
+			<p>Je ne trouve pas commet sélectionner un descendant (pas direct) de $this
+là un exemple foireux.
+But:  au hover d'un &lt;li class="l1"&gt; on déclenche
+le masquage de tous les ul.niv2 (sous menus)  ET on réouvre LE sous menu (li.l1 ul.niv2)  correspondant au li.l1 survolé (this ds la fonction.
+
+ $("#menu-r-fx li.l1").hover( function () {
+
+         $("#menu-r-fx ul.niv2:visible").slideUp();
+         ***      $(this,"//ul.niv2").slideDown(Slow); ***
+      
+  });
+
+Merci</p>
+		</td>
+  </tr>
+	<tr>
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100" valign="top" class="gravat">
+			<img alt="Gravatar de sami ferjani" class="gravatar_img" src="http://www.gravatar.com/avatar.php?gravatar_id=936786b44b1e86f57609ae6f334fe22a&amp;default=http%3A%2F%2Fwww.jarodxxx.com%2Fthemes%2Fjarodxxx%2Fimages%2Fdefault_gravatar.png&amp;size=80"/>
+		</td>
+		<td width="7" class="pre_snok"> 
+		</td>
+		<td width="15" valign="top"><br/>
+			<img alt="jarodxx" src="../../../images/snook.gif"/>
+		</td>
+		<td valign="top" class="comm"><br/>
+		<span># 2083</span> - Le mardi 23 février &agrave; 10h 41min 50s par sami ferjani
+			<p>Merci pour votre explication.
+c'est trés clair maintenant.</p>
+		</td>
+  </tr>
+</tbody>
+</table>
+</div>
+		</div>
+<script language="JavaScript" type="text/javascript"><!--
+function addEngine() {
+  if ((typeof window.sidebar == "object") &&
+      (typeof window.sidebar.addSearchEngine == "function"))
+  {
+    window.sidebar.addSearchEngine(
+       "http://jquery.jarodxxx.com/jarodxxx-jquery-search.xml",
+        "Manuel jquery FR", "Script");
+  } else {
+    alert("Votre navigateur n'est pas compatible avec ce service. Utilisez FireFox ou Mozilla.");
+  }
+}
+//--></script>
+        
+		<div class="right_area">
+			<div class="right_top"></div>
+            <a href="javascript:addEngine();" style="display:block; width:171px; margin:0 auto;"><img src="../../../images/addEngine.png" alt="Ajoutez le moteur de recherche jquery a Firefox" /></a><br />
+			<div class="right_head">
+				<div class="morelinks_head">Liens sponsorisé</div>
+			</div>
+			<div class="right_links_area">
+				<script type="text/javascript"><!--
+			google_ad_client = "pub-7346806920069561";
+			/* 180x90, date de création 30/01/09 */
+			google_ad_slot = "7233790499";
+			google_ad_width = 180;
+			google_ad_height = 90;
+			//-->
+			</script>
+				<script type="text/javascript"
+			src="../../../../pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div>
+			<div class="right_head">
+				<div class="morelinks_head">Publicite</div>
+			</div>
+			<div class="right_links_area">
+				<script src="http://www.blogbang.com/demo/js/blogbang_ad.php?id=aec3866638&amp;bg=2&amp;c=FDF9EE&amp;w=190" type="text/javascript"></script>
+			</div>
+			<div class="right_bottom"></div>
+		</div>
+	</div>
+</div>
+<br style="clear:both" />
+
+<div class="body_areabackground">
+	<div id="body_area1">
+		<div class="inner_tabarea">
+			<div class="inner_menu">
+				<div align="center"> <a href="javascript:void(0)" class="innermenu_hover">Masquer</a> </div>
+			</div>
+		</div>
+		<div id="hider">
+			<div id="news_box">
+								<div class="tab_text">
+					<p class="tab_head">2009-02-25 11:48:44</p>
+					<p><span class="tab_head1">Nouvelles fonctions dans le manuel</span><br />
+						Et paf ca tombe comme s'il en pleuvait , les nouvelles fonctions jquertÂ  apport ... </p>
+				</div>
+				<div class="tab_readmore">
+					<p align="right" class="tab_head"><a class="readmore" href="http://jquery.jarodxxx.com/news/6/Nouvelles-fonctions-dans-le-manuel/">En savoir + </a></p>
+				</div>
+								<div class="tab_text">
+					<p class="tab_head">2009-02-05 17:03:07</p>
+					<p><span class="tab_head1">Insertion des commentaires</span><br />
+						Et voila , comme promis les commentaires sont ouverts a tous (et a toutes ;) 
+P ... </p>
+				</div>
+				<div class="tab_readmore">
+					<p align="right" class="tab_head"><a class="readmore" href="http://jquery.jarodxxx.com/news/5/Insertion-des-commentaires/">En savoir + </a></p>
+				</div>
+							</div>
+
+		<script type="text/javascript">
+$().ready(function(){
+	$("#confirm").hide();			   
+
+	$('.registered').click(function(){
+		$.ajax({ 
+			type: "POST", 
+			url: "/ajax/inscription_nl.php",
+			data: "nom="+ $("#name_nl").val() +"&email="+ $("#email_nl").val() +"", 
+			success: function(msg){ 
+				$("#form1").append( msg );
+			} 
+		});
+	});
+
+});
+
+</script>
+
+<div class="login_area">
+    <div class="login_head"><a name="nl"></a>Inscription Newsletter</div>
+    <form id="form1" name="form1" method="post" action="#">
+        <div class="login_textarea">
+            <div class="login_name">Prenom </div>
+            <div class="login_box">
+                <input id="name_nl" name="name_nl" type="text" class="logintextbox" />
+            </div>
+        </div>
+        <div class="login_textarea">
+            <div class="login_name">Email </div>
+            <div class="login_box">
+                <input id="email_nl" name="email_nl" type="text" class="logintextbox" />
+            </div>
+        </div>
+    <div class="login_textarea"><a  class="register registered">Je m'inscris</a></div>
+    </form>
+</div>
+
+		<div class="toolfree_area">
+        <a href="#" class="bookmark jqbookmark" title="Jquery documentation en francais ">Bookmark This Page</a>
+		Envie de nous soutenir ?<br />
+        <img src="../../../images/125x125jquery.png" alt="jquery documentation francaise" />
+        </div>
+		</div>
+		
+	</div>
+</div>
+<div id="fotter">
+	<div id="fotter_1">
+		<div class="fotter_leftarea">
+			<div class="fotter_links">
+				<a href="http://jquery.jarodxxx.com/home/" class="fotterlink">Home</a> | 
+				<a href="http://jquery.jarodxxx.com/about/" class="fotterlink">A propos</a>| 
+				<a href="http://jquery.jarodxxx.com/news/" class="fotterlink">Nouveaut&eacute;s</a> | 
+				<a href="http://jquery.jarodxxx.com/contact/" class="fotterlink">Contact</a> |
+				<script type="text/javascript">
+				try {Noowho_ref = top.document.referrer;}catch(e) {Noowho_ref = document.referrer;} 
+				document.write('<script type="text/javascript" src="http://www.noowho.com/text.php?site=67086&ref='+Noowho_ref.replace(/[<>"]/g, '').replace(/&/g, '%26')+'">');  
+				</script></script>
+
+				| <a href="http://jquery.developpeur-web2.com/">Traduction française JQuery</a> 
+			</div>
+			
+		</div>
+		<div class="fotter_rightarea">
+			<div class="fotter_validation">
+				<a href="http://validator.w3.org/check?uri=referer" class="validation">XHTML</a> 
+				<a href="http://jigsaw.w3.org/css-validator/check/referer" class="validation">CSS</a>
+				<a href="http://jquery.jarodxxx.com/sitemap/" class="validation">Sitemap</a>
+			</div>
+		</div>
+	</div>
+	<br style="clear:both;" />
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-827525-9");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+
+<!-- Mirrored from jquery.jarodxxx.com/manuel/Les-selecteurs/selecteur/ by HTTrack Website Copier/3.x [XR&CO'2010], Sun, 13 Feb 2011 14:09:40 GMT -->
+</html>

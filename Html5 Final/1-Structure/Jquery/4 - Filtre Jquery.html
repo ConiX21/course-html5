@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>4 - Filtre Jquery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		//filtre jquery 
+		//first, last, even(element paire), odd (element impaire), eq(index) (element choisit)
+		//gt(index) (LES emelents suivant), lt(index) (LES element precedent
+		//header (Selectionne titre h1 ...), not(selecteur) (ne selectionne pas un element)
+		$("#table1 tr:first").css("background", "#9cf");
+		$("#table1 td:last").css("background", "#9cf");
+		$("#table2 td:even").css("background", "#9cf");
+
+		$("#table3 tr:odd").css("background", "#9cf");
+		$("#table3 td:eq(0)").css("background", "red");//les index commence a 0
+
+		$("#table4 tr:gt(0)").css("background", "red");
+
+		$("#table5 tr:lt(2)").css("background", "green");
+
+		$(":header").css("background", "green");
+
+		$("#table6 td:not(:first, :last)").css("background", "#9cf");
+
+		
+	});
+</script>
+
+<style type="text/css">
+	table 
+	{ 
+		width: 210px; 
+		border-collapse: collapse;
+		border: 1px solid black;
+ 	}
+	
+	td 
+	{ 
+		text-align: center;
+		border: 1px solid black;
+	}
+</style>
+</head>
+    <body>
+    	<h1>Filtres JQuery</h1>
+        <table id="table1">
+            <tr>
+            	<td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+            	<td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+            	<td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+            	<td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </table>
+        <br />
+        <table id="table2">
+            <tr>
+            	<td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+            	<td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+            	<td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+            	<td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </table>
+        <br />
+         <table id="table3">
+            <tr>
+            	<td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+            	<td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+            	<td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+            	<td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </table>
+        <br />
+         <table id="table4">
+            <tr>
+            	<td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+            	<td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+            	<td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+            	<td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </table>
+         <br />
+         <table id="table5">
+            <tr>
+            	<td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+            	<td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+            	<td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+            	<td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </table>
+        <br />
+        <h2>Toujours les Filtres mais d'en-tetes cette fois</h2>
+         <table id="table6">
+         	<tr>
+            	<th>nb 1</th>
+                <th>nb 2</th>
+                <th>nb 3</th>
+            </tr>
+            <tr>
+            	<td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+            	<td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+            	<td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+            	<td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </table>
+        
+    </body>
+</html>

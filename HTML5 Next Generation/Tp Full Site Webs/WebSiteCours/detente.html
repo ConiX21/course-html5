@@ -1,0 +1,139 @@
+﻿<div class="DetenteContainer">
+    <div class="Palette">
+    </div>
+    <canvas id="dessin" width="400" height="400"></canvas>
+</div>
+<div id="confCercle">
+    <input type="button" value="x" class="CloseConf" id="fermeConf" />
+    <div>
+        <label class="nomForme"></label>
+        <label>X : </label>
+        <input type="text" value="" id="txtX"/>
+        <label>Y : </label>
+        <input type="text" value="" id="txtY" />
+        <label>Rayon : </label>
+        <input type="text" value="" id="txtRayon" />
+        <input type="button" name="name" value="Ajouter" id="addForme" />
+    </div>
+</div>
+<script type="text/javascript">
+    var palette = document.querySelector("div.Palette");
+    var canvas = document.querySelector("#dessin");
+    var ctx = canvas.getContext("2d");
+    var tabCouleurs = [
+        "#1E2A73", "#644385", "#8C706B",
+        "#E38D1E", "#F25B00", "#39732E", "transparent"
+    ];
+    var tabForms = ["Cercle", "rectange"];
+    var enDessin = false;
+    
+    $("#confCercle").draggable();
+
+    canvas.addEventListener("mousedown", function () {
+        enDessin = true;
+        ctx.beginPath();
+        //ctx.moveTo(event.offsetX, event.offsetY);
+    });
+
+    canvas.addEventListener("mouseup", function () {
+        enDessin = false;
+    });
+
+    canvas.addEventListener("mousemove", function () {
+        if (enDessin) {
+            console.log(event.offsetX + " : " + event.offsetY);
+            dessin(event.offsetX, event.offsetY);
+        }
+    });
+
+    document.querySelector("#fermeConf").addEventListener("click", function () {
+        this.parentNode.style.display = "none";
+    });
+
+    document.querySelector("#addForme").addEventListener("click", function () {
+        valueX = document.querySelector("#txtX").value;
+        valueY = document.querySelector("#txtY").value;
+        rayon = document.querySelector("#txtRayon").value;
+
+        ctx.beginPath();
+        ctx.arc(valueX, valueY, rayon, 0, 2 * Math.PI);
+        ctx.stroke();
+    });
+
+    for (var i in tabCouleurs) {
+        createSpanColor(tabCouleurs[i]);
+    }
+
+    for (var i in tabForms) {
+        createSpanForme(tabForms[i]);
+    }
+
+    palette.addEventListener("click", function () {
+
+        
+        if (event.target.dataset.couleur != "undefined") {
+            eventColor();
+        }
+
+        if (event.target.dataset.forme == "Cercle" && event.target.dataset.forme != "undefined") {
+            console.log(event.target.dataset.forme);
+            eventForme(event.target.dataset.forme);
+           
+        }
+       
+        
+    });
+
+    function eventColor() {
+        couleur = event.target.dataset.couleur;
+        if (couleur == "transparent") {
+            if (confirm("Voulez-vous supprimer le dessin?")) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+        else {
+            ctx.strokeStyle = couleur;
+        }
+    }
+
+    function eventForme(forme) {
+        console.log("#conf" + forme);
+       document.querySelector("#conf"+forme).style.display = "block";
+    }
+
+    function dessin(x, y) {
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    }
+  
+    function createSpanColor(color) {
+        span = document.createElement("span");
+        span.style.border = "2px solid transparent";
+        span.style.display = "inline-block";
+        span.style.height = "40px";
+        span.style.width = "40px";
+        span.style.cursor = "pointer";
+        span.style.margin = "5px";
+        span.style.borderRadius = "4px";
+        span.style.transition = "all 1s";
+        span.style.backgroundColor = color;
+        span.dataset.couleur = color;
+        span.innerHTML = (color == "transparent") ? "clear" : "&nbsp;";
+        palette.appendChild(span);
+    }
+
+    function createSpanForme(forme) {
+        span = document.createElement("span");
+        span.style.border = "2px solid green";
+        span.style.display = "inline-block";
+        span.style.height = "40px";
+        span.style.width = "40px";
+        span.style.cursor = "pointer";
+        span.style.margin = "5px";
+        span.style.borderRadius = "4px";
+        span.innerHTML = forme;
+        span.style.transition = "all 1s";
+        span.dataset.forme = forme;
+        palette.appendChild(span);
+    }
+</script>

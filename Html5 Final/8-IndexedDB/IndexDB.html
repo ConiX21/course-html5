@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function load() {
+            var db;
+
+            var peopleData = [
+                                            { name: "John Dow", email: "john@company.com" },
+                                            { name: "Don Dow", email: "don@company.com" }
+            ];
+
+            //db
+
+            function initDb() {
+                var request = indexedDB.open("GeoBase2", 1);
+
+                request.onsuccess = function (evt) {
+                    db = evt.target.result;
+                    console.log(db);
+                };
+
+                request.onerror = function (evt) {
+                    console.log("IndexedDB error: " + evt.target.errorCode);
+                };
+
+                request.onupgradeneeded = function (evt) {
+
+                    // var objectStore = evt.currentTarget.result.createObjectStore("pays", { keyPath: "id" }, true);
+                    var objectStore = evt.currentTarget.result.createObjectStore("pays",
+                                                                     { keyPath: "id", autoIncrement: true });
+
+                    objectStore.createIndex("alt", "alt", { unique: false });
+
+
+                    /*
+
+                    objectStore.createIndex("name", "name", { unique: false });
+                    objectStore.createIndex("email", "email", { unique: true });
+*/
+                    for (i in peopleData) {
+                        objectStore.add(peopleData[i]);
+                    }
+                };
+            }
+
+            var btnAdd = document.getElementById("insere");
+            btnAdd.addEventListener("click", insertion_db);
+
+
+            function insertion_db() {
+
+                console.log(db);
+
+                // Nouvelle transaction 
+                var transaction = db.transaction("pays", "readwrite");
+
+                /*transaction.oncomplete = function () {
+                    log("Insertion complète");
+                };
+
+                transaction.onerror = function () {
+                    log("Erreur lors de l'insertion");
+                };*/
+                // Récupération du catalogue d’objets 
+                 var objStore = transaction.objectStore("pays");
+                // Objets à insérer 
+                var ville1 =
+                {
+                    id: 1,
+                    lat: 48.58177,
+                    lng: 7.750555,
+                    alt: 142,
+                    desc: "Strasbourg"
+                };
+
+                var ville2 =
+                {
+                    id: 2,
+                    lat: 48.458807,
+                    lng: -5.088043,
+                    alt: 19,
+                    desc: "Ouessant"
+                };
+
+                var ville3 =
+                {
+                    id: 3,
+                    lat: 49.0525,
+                    lng: 7.425833,
+                    alt: 249,
+                    desc: "Bitche"
+                };
+
+                // Affichage pour information
+                /* affiche(ville1);
+                 affiche(ville2);
+                 affiche(ville3);;*/
+                  
+                //objStore.add(ville1);
+                 // Ajout au catalogue 
+                 objStore.put(ville1);
+                 objStore.put(ville2);
+                 objStore.put(ville3)
+            }
+
+            initDb();
+
+        }
+
+
+
+        document.addEventListener("DOMContentLoaded", load);
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <form>
+            <p><strong>Journal IndexedDB</strong></p>
+            <div name="log" id="log"></div>
+            <p>
+                <input type="type" name="name" value=" " />
+                <input type="button" value="Insérer les données" id="insere">
+            </p>
+            <p>
+                <input type="button" value="Sélectionner tout le contenu" id="tout">
+            </p>
+            <p>
+                <input type="button" value="Sélectionner par clé" id="get">
+                <label for="dbid">id = </label>
+                <input type="text" id="dbid" style="width: 3em" value="2">
+            </p>
+            <p>
+                <input type="button" value="Sélectionner avec condition" id="filtre1">
+                <label for="alt">alt = </label>
+                <input type="text" id="alt" style="width: 3em" value="19">
+            </p>
+            <p>
+                <input type="button" value="Sélectionner avec condition" id="filtre2">
+                <label for="minalt">alt > </label>
+                <input type="text" id="minalt" style="width: 3em" value="100">
+            </p>
+            <p>
+                <input type="button" value="Supprimer les données" id="vide">
+            </p>
+        </form>
+    </div>
+</body>
+</html>

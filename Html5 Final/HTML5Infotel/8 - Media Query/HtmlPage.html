@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        .newsPaper {
+            column-count: 2;
+            -webkit-column-count: 2;
+        }
+
+        .grand, .moyen {
+            visibility: collapse;
+        }
+
+        .normal {
+            visibility: visible;
+        }
+
+
+        @media screen and (min-width: 640px) {
+            .newsPaper {
+                column-count: 3;
+                -webkit-column-count: 3;
+            }
+
+            .moyen {
+                visibility: visible;
+            }
+
+            .grand ,.normal{
+                visibility: collapse;
+            }
+        }
+
+         @media screen and (min-width: 1024px) {
+            .newsPaper {
+                column-count: 5;
+                -webkit-column-count: 5;
+            }
+
+            .moyen , .normal{
+                visibility: collapse;
+            }
+
+            .grand {
+                visibility: visible;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <p class="normal">Normal</p>
+    <p class="moyen">Moyen</p>
+    <p class="grand">Grand</p>
+
+    <div class="newsPaper">
+        Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim velut ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas.
+    </div>
+</body>
+</html>

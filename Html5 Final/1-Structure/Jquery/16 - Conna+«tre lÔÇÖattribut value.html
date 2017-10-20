@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>16 - Connaître l'attribut value</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("#btnTrouver").click(function()
+		{
+			var choix = $('input:radio:checked').val();
+			
+			$("div").text(choix);
+		});
+	});
+</script>
+<style type="text/css">
+div { width: 150px; 
+      height: 16px; 
+      border: 1px dotted black;}
+</style>
+</head>
+<body>
+<form action="">
+<input type="radio" name="1" value="Internet Explorer" />Internet
+Explorer<br />
+<input type="radio" name="1" value="Firefox" />Firefox<br />
+<input type="radio" name="1" value="Safari" />Safari<br />
+<input type="radio" name="1" value="Opera" />Opera<br />
+<input type="radio" name="1" value="Google" />Google<br />
+<input type="radio" name="1" value="Autre" />Autre
+</form>
+<p>Votre choix est :
+<input type="button" value="Trouver" id="btnTrouver"/></p>
+<div></div>
+</body>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        canvas{
+            border:1px solid red;
+            background-color:orange;
+        }
+    </style>
+    <script type="text/javascript">
+        
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var canvas = document.querySelector("#monCanvas");
+            var ctx = canvas.getContext("2d");
+
+            ctx.lineWidth = 2;
+            ctx.fillStyle = "red";
+            ctx.strokeStyle = "#ccc";
+            ctx.stroke();
+
+
+            ctx.fillRect(10, 10, 200, 100);
+            ctx.clearRect(100, 20, 20, 80);
+            ctx.clearRect(70, 50, 80, 20);
+            ctx.strokeStyle = "turquoise";
+            ctx.moveTo(20, 40);
+            ctx.bezierCurveTo(80, 70, 80, 20, 140, 40);
+            ctx.stroke();
+            ctx.moveTo(20, 50);
+            ctx.bezierCurveTo(80, 80, 80, 30, 140, 50);
+            ctx.stroke();
+
+
+            ctx.fillStyle = "yellowgreen";
+            ctx.strokeStyle = "steelblue";
+
+            ctx.beginPath();
+
+            ctx.lineWidth = 20;
+
+            ctx.moveTo(10, 200);
+            ctx.lineTo(10, 130);
+            ctx.lineTo(130, 200);
+            //ctx.closePath();
+            ctx.stroke();
+            ctx.fill();
+            
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <canvas id="monCanvas" width="400" height="400">
+
+    </canvas>
+</body>
+</html>
